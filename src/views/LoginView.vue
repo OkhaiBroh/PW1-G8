@@ -4,14 +4,14 @@
             <p class="title"> Open Events </p>
             <div class="panel">
                 <div class="horizontal">
-                    <img class="ico" src="PNG/user_ico.png"/>
+                    <img class="ico" src="../svgs/ico_user.svg"/>
                     <div class="input-form">
                         <input name="username" placeholder="Username" type="text">
                         <label for="username"> Username </label>
                     </div>
                 </div>
                 <div class="horizontal">
-                    <img class="ico" src="PNG/pass_ico.png"/>
+                    <img class="ico" src="../svgs/ico_pass.svg"/>
                     <div class="input-form">
                         <input name="password" placeholder="Password" type="password">
                         <label for="password"> Password </label>
