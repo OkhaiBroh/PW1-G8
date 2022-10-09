@@ -4,14 +4,48 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header>
-        <nav>
+        <nav style="text-align: right">
+
+          
             <div class="header">
-            <RouterLink class="header-text" to="/messages">Messages</RouterLink>
-            <RouterLink class="header-text" to="/events">events</RouterLink>
-            <RouterLink class="header-text" to="/friends">friends</RouterLink>
-            <RouterLink class="header-text" to="/profile">profile</RouterLink>
+
+              <div class="header-option">
+                <RouterLink class="header-text" to="/messages">
+                   <img class="ico_header" src="./svgs/ico_message.svg">
+
+                  <p>Messages</p>
+                </RouterLink>
+              </div>
+
+            
+              <div class="header-option">
+                <RouterLink class="header-text" to="/events">
+                <img class="ico_header" src="./svgs/ico_event.svg">
+                  <p>Events</p>
+                  
+                  </RouterLink>
+              </div>
+
+              <div class="header-option">
+                <RouterLink class="header-text" to="/friends">
+                <img class="ico_header" src="./svgs/ico_friends.svg">
+                  <p>Friends</p>
+                  
+                  </RouterLink>
+              </div>   
+
+              <div  class="header-option">
+                <RouterLink class="header-text" to="/profile">
+                <img class="ico_header" src="./svgs/ico_user.svg">
+                  <p>Profile</p>
+                  
+                  </RouterLink>
+              </div>           
 
             </div>
+            
+
+            
         </nav>
 
         </header>

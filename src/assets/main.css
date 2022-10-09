@@ -1,4 +1,13 @@
-@import "./base.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@import "./login.css";
+@import "./header.css";
+
+
+:root {
+    --font_title: 'Poppins';
+    --bg_button: #0071F2;
+}
 
 /************************************
 
