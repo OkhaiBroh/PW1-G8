@@ -15,28 +15,28 @@
             </div>
             <div class="panel">
                 <div class="horizontal">
-                    <img class="ico" src="PNG/user_ico.png"/>
+                    <img class="ico" src="../assets/icons/ico_user.svg"/>
                     <div class="input-form">
                         <input name="name" placeholder="Name" type="text" required>
                         <label for="name"> Name* </label>
                     </div>
                 </div>
                 <div class="horizontal">
-                    <img class="ico" src="PNG/user_ico.png"/>
+                    <img class="ico" src="../assets/icons/ico_user.svg"/>
                     <div class="input-form">
                         <input name="lastname" placeholder="Lastname" type="text" required>
                         <label for="lastname"> Lastname* </label>
                     </div>
                 </div>
                 <div class="horizontal">
-                    <img class="ico" src="./SVG/ico_email.svg"/>
+                    <img class="ico" src="../assets/icons/ico_email.svg"/>
                     <div class="input-form">
-                        <input class="text-input" name="email" placeholder="Email" type="email" required>
-                        <label class="label-input" for="email"> Email* </label>
+                        <input name="email" placeholder="Email" type="email" required>
+                        <label for="email"> Email* </label>
                     </div>
                 </div>
                 <div class="horizontal">
-                    <img class="ico" src="./SVG/ico_image.svg"/>
+                    <img class="ico" src="../assets/icons/ico_image.svg"/>
                     <div class="input-form">
                         <label class="label-file" for="file-upload"> Select profile picture... </label>
                         <input id="file-upload" type="file">
