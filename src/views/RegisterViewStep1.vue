@@ -4,9 +4,9 @@
             <p class="title"> Open Events </p>
             <div class="bar-container">
                 <div class="line-container">
-                    <span class="circle"></span>
+                    <span class="circle-gray"></span>
                     <hr class="line">
-                    <span class="circle"></span>
+                    <span class="circle-gray"></span>
                 </div>
                 <div class="text-container">
                     <p class="bar-text1"> Account </p>
@@ -51,3 +51,10 @@
         </div>
     </div> 
 </template>
+
+<style scoped>
+    .line {
+        border: 2px solid var(--gray_color);
+        width: 100px;
+    }
+</style>
