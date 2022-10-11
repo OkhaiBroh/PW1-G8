@@ -42,8 +42,9 @@
                         <input class="input-file" id="file-upload" type="file">
                     </div>
                 </div>
-                <button class="next"> Next </button>
-                <p class="login-text"> Registered? Log in </p>
+            
+                <RouterLink class="link-button" to="/"> Next </RouterLink>
+                <RouterLink class="login-text" to="/"> Registered? Log in </RouterLink>
             </div>
         </div>
         <div class="column">
@@ -51,3 +52,4 @@
         </div>
     </div> 
 </template>
+
