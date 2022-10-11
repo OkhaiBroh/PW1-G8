@@ -5,13 +5,18 @@
 
     text-align: center;
     padding: 25px;
-    display:inline-flex;
+    justify-content: flex-end;
+    display: flex ;
+    flex-direction: row;
     
 
     
 }
 
 .header-option {
+    display: flex;
+    flex-direction: column;
+    
     margin-right: 50px;
     align-content: center;
     text-decoration: none;

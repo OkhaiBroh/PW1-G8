@@ -4,14 +4,13 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header  >
-    <div style="display:inline-flex">
 
-        <img src="./assets/icons/ico_user.svg" class="logo">
+       
 
-        <nav style="text-align: right;">
+        <nav class="header">
 
           
-            <div class="header">
+            
 
               <div class="header-option">
                 <RouterLink class="header-text" to="/messages">
@@ -46,13 +45,12 @@ import { RouterLink, RouterView } from "vue-router";
                   </RouterLink>
               </div>           
 
-            </div>
             
 
             
         </nav>
 
-        </div>
+        
 
         </header>
 
