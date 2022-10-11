@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <button> Login </button>
-                <p class="login-text"> Not registered? Register </p>
+                <RouterLink class="login-text" to="/register"> Not registered? Register </RouterLink>
             </div>
         </div>
         <div class="column">
