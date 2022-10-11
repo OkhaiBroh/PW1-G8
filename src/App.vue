@@ -3,8 +3,12 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header>
-        <nav style="text-align: right">
+  <header  >
+    <div style="display:inline-flex">
+
+        <img src="./assets/icons/ico_user.svg" class="logo">
+
+        <nav style="text-align: right;">
 
           
             <div class="header">
@@ -47,6 +51,8 @@ import { RouterLink, RouterView } from "vue-router";
 
             
         </nav>
+
+        </div>
 
         </header>
 
