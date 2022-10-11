@@ -43,7 +43,7 @@
                     </div>
                 </div>
             
-                <RouterLink class="link-button" to="/"> Next </RouterLink>
+                <RouterLink class="link-button" to="/register-security"> Next </RouterLink>
                 <RouterLink class="login-text" to="/"> Registered? Log in </RouterLink>
             </div>
         </div>

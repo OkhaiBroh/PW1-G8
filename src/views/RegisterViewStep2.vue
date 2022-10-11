@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <button class="next"> Register </button>
-                <p class="login-text"> Registered? Log in </p>
+                <RouterLink class="login-text" to="/"> Registered? Log in </RouterLink>
             </div>
         </div>
         <div class="column">
