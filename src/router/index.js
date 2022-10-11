@@ -19,6 +19,11 @@ const router = createRouter({
       name: "register security",
       component: () => import("../views/RegisterViewStep2.vue"),
     },
+    {
+      path: "/register-sucessful",
+      name: "register successful",
+      component: () => import("../views/RegisterViewStep3.vue"),
+    },
   ],
 });
 
