@@ -28,7 +28,8 @@
                         <label class="label-input" for="confirm-password"> Confirm Password* </label>
                     </div>
                 </div>
-                <button class="next"> Register </button>
+                <RouterLink class="link-button" to="/register-successful"> Register </RouterLink>
+                <!--<button class="next"> Register </button>-->
                 <RouterLink class="login-text" to="/"> Registered? Log in </RouterLink>
             </div>
         </div>

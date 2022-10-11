@@ -20,7 +20,7 @@ const router = createRouter({
       component: () => import("../views/RegisterViewStep2.vue"),
     },
     {
-      path: "/register-sucessful",
+      path: "/register-successful",
       name: "register successful",
       component: () => import("../views/RegisterViewStep3.vue"),
     },
