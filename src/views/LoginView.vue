@@ -6,15 +6,15 @@
                 <div class="horizontal">
                     <img class="ico" src="../assets/icons/ico_user.svg"/>
                     <div class="input-form">
-                        <input name="username" placeholder="Username" type="text">
-                        <label for="username"> Username </label>
+                        <input class="text-input" name="username" placeholder="Username" type="text">
+                        <label class="label-input" for="username"> Username </label>
                     </div>
                 </div>
                 <div class="horizontal">
                     <img class="ico" src="../assets/icons/ico_pass.svg"/>
                     <div class="input-form">
-                        <input name="password" placeholder="Password" type="password">
-                        <label for="password"> Password </label>
+                        <input class="text-input" name="password" placeholder="Password" type="password">
+                        <label class="label-input" for="password"> Password </label>
                     </div>
                 </div>
                 <button> Login </button>
