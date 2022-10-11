@@ -30,21 +30,19 @@
     align-items: center;
     background-color: aqua;
 }
-.ico_header {
-    width: 50px;
-    height: 50px;
-    
-    
+.ico {
+    width: 35px;
+    height: 35px;
 }
-.ico_profile {
-    width: 30px;
+.ico_friends {
+    width: 45px;
+    height: 35px;
+    
+
+}
+.ico_user {
+    width: 35px;
     height: 30px;
     
-    padding-bottom: 20px;
-}
-.ico_messages {
-    width: 40px;
-    height: 40px;
-    
-    padding-bottom: 10px;
+    margin-top: 5px;
 }
