@@ -20,7 +20,7 @@
 }
 .header-text {
     text-decoration: none;
-    font-family: var(--font);
+    
     color: black;
 
 }
@@ -34,5 +34,17 @@
     width: 50px;
     height: 50px;
     
-    margin-top: 10px;
+    
+}
+.ico_profile {
+    width: 30px;
+    height: 30px;
+    
+    padding-bottom: 20px;
+}
+.ico_messages {
+    width: 40px;
+    height: 40px;
+    
+    padding-bottom: 10px;
 }
