@@ -11,7 +11,7 @@ import { RouterLink, RouterView } from "vue-router";
 
               <div class="header-option">
                 <RouterLink class="header-text" to="/messages">
-                   <img class="ico_header" src="./svgs/ico_message.svg">
+                   <img class="ico" src="./assets/icons/ico_message.svg">
 
                   <p>Messages</p>
                 </RouterLink>
@@ -20,7 +20,7 @@ import { RouterLink, RouterView } from "vue-router";
             
               <div class="header-option">
                 <RouterLink class="header-text" to="/events">
-                <img class="ico_header" src="./svgs/ico_event.svg">
+                <img class="ico" src="./assets/icons/ico_event.svg">
                   <p>Events</p>
                   
                   </RouterLink>
@@ -28,7 +28,7 @@ import { RouterLink, RouterView } from "vue-router";
 
               <div class="header-option">
                 <RouterLink class="header-text" to="/friends">
-                <img class="ico_header" src="./svgs/ico_friends.svg">
+                <img class="ico_friends" src="./assets/icons/ico_friends.svg">
                   <p>Friends</p>
                   
                   </RouterLink>
@@ -36,11 +36,12 @@ import { RouterLink, RouterView } from "vue-router";
 
               <div  class="header-option">
                 <RouterLink class="header-text" to="/profile">
-                <img class="ico_header" src="./svgs/ico_user.svg">
+                <img class="ico_user" style="margin-top:5px" src="./assets/icons/ico_user.svg">
                   <p>Profile</p>
                   
                   </RouterLink>
-              </div>           
+              </div>     
+                    
 
             </div>
             

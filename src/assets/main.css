@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-@import "./login.css";
-@import "./header.css";
-@import "./friends.css";
+@import "./css/login.css";
+@import "./css/header.css";
+@import "./css/friends.css";
 
 
-
-:root {
-    --font: 'Poppins';
+:root { 
+    --font_title: 'Poppins';
     --bg_button: #0071F2;
     --gray_color: #D9D9D9
 }
@@ -19,6 +18,12 @@
     font-family: var(--font);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--font_title);
+}
 /************************************
 
 
