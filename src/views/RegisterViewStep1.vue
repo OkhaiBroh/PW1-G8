@@ -4,7 +4,7 @@
             <p class="title"> Open Events </p>
             <div class="bar-container">
                 <div class="line-container">
-                    <span class="circle-gray"></span>
+                    <span class="circle-blue"></span>
                     <hr class="line">
                     <span class="circle-gray"></span>
                 </div>
@@ -55,7 +55,7 @@
 
 <style scoped>
     .line {
-        border: 2px solid var(--gray_color);
+        border: 2px solid var(--bg_button);
         width: 100px;
     }
 </style>

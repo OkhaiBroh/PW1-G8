@@ -6,7 +6,7 @@
                 <div class="line-container">
                     <span class="circle-blue"></span>
                     <hr class="line">
-                    <span class="circle-gray"></span>
+                    <span class="circle-blue"></span>
                 </div>
                 <div class="text-container">
                     <p class="bar-text1"> Account </p>
