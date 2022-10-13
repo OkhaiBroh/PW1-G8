@@ -5,7 +5,7 @@
             <div class="bar-container">
                 <div class="line-container">
                     <span class="circle-blue"></span>
-                    <hr class="line">
+                    <hr class="line-blue">
                     <span class="circle-gray"></span>
                 </div>
                 <div class="text-container">
@@ -54,7 +54,7 @@
 </template>
 
 <style scoped>
-    .line {
+    .line-blue {
         border: 2px solid var(--bg_button);
         width: 100px;
     }

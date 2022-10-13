@@ -217,7 +217,7 @@ body {
 .line-container {
     display: flex;
     align-items: center;
-    margin-left: 25px;
+    justify-content: center;
 }
 
 .text-container {
