@@ -2,8 +2,8 @@
 import { RouterLink, RouterView } from "vue-router";
 </script>
 
-<template>
-  <header>
+<template >
+  <header v-if="!['login'].includes($route.name)"> <!-- Here we include the names where we don't want to display the header-->
       
         <img class="ico_logo" src="./assets/icons/ico_logo.svg" >
       
@@ -56,3 +56,5 @@ import { RouterLink, RouterView } from "vue-router";
           <RouterView />
 
 </template>
+
+
