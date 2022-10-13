@@ -1,0 +1,92 @@
+.panel {
+    text-align: center;
+    width: 250px;
+    
+    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+
+    padding: 35px 75px 50px 75px;
+}
+
+.title {
+    font-size: 35px;
+    font-weight: 700;
+} 
+
+.login-text {
+    font-size: 15px;
+    color: var(--bg_button);
+    margin-top: 25px;
+}
+
+.login-text:hover {
+    color: var(--selected_button);
+    cursor: pointer;
+}
+
+.horizontal {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.circle-gray {
+    height: 15px;
+    width: 15px;
+    border: 4px solid var(--gray_color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle-blue {
+    height: 15px;
+    width: 15px;
+    border: 4px solid var(--bg_button);
+    background-color: var(--bg_button);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.text-container {
+    display: flex;
+    margin-top: 15px;
+}
+
+.bar-text1 {
+    margin-right: 25px;
+}
+
+.bar-text2 {
+    margin-left: 25px;
+}
+
+.bar-container {
+    margin: 25px 0 50px 0px;
+}
+
+.input-file {
+    display: none;
+}
+
+.label-file {
+    border: 1px solid #ccc;
+    border-radius: 25px;
+
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+
+    font-size: 15px;
+    color: black;
+}
+
+.input-file:focus, .label-file:hover {
+    background-color: var(--gray_color);
+    border-radius: 25px;
+}
