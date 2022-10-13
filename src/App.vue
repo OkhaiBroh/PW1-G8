@@ -3,14 +3,12 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header  >
-
-       
-
-        <nav class="header">
-
-          
-            
+  <header>
+      
+        <img class="ico_logo" src="./assets/icons/ico_logo.svg" >
+      
+      
+        <nav class="options">
 
               <div class="header-option">
                 <RouterLink class="header-text" to="/messages">
@@ -49,6 +47,7 @@ import { RouterLink, RouterView } from "vue-router";
 
             
         </nav>
+        
 
         
 

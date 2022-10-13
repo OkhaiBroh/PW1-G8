@@ -1,13 +1,14 @@
 
 
 
-.header {
+.options {
 
     text-align: center;
     padding: 25px;
-    justify-content: flex-end;
     display: flex ;
     flex-direction: row;
+
+
     
 
     
@@ -51,10 +52,18 @@
     
     margin-top: 5px;
 }
-.logo {
-    margin:10px;
-    width: 70px;
-    height: 70px;
+.ico_logo {
+    
+    width: 100px;
+    height: 100px;
+    margin-left: 40px;
 
 
 }
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
