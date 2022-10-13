@@ -2,16 +2,21 @@
 
 
 .header {
-
+    
     text-align: center;
     padding: 25px;
-    display:inline-flex;
+    justify-content: flex-end;
+    display: flex ;
+    flex-direction: row;
     
 
     
 }
 
 .header-option {
+    display: flex;
+    flex-direction: column;
+    
     margin-right: 50px;
     align-content: center;
     text-decoration: none;
@@ -30,7 +35,6 @@
     align-items: center;
     background-color: aqua;
 }
-
 .ico {
     width: 35px;
     height: 35px;
@@ -39,11 +43,19 @@
     width: 45px;
     height: 35px;
     
+
 }
 .ico_user {
     width: 35px;
     height: 30px;
+    
     margin-top: 5px;
+}
+.logo {
+    margin:10px;
+    width: 70px;
+    height: 70px;
+
 
 }
 

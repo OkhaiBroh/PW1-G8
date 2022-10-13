@@ -3,11 +3,14 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header>
-        <nav style="text-align: right">
+  <header  >
+
+       
+
+        <nav class="header">
 
           
-            <div class="header">
+            
 
               <div class="header-option">
                 <RouterLink class="header-text" to="/messages">
@@ -36,18 +39,19 @@ import { RouterLink, RouterView } from "vue-router";
 
               <div  class="header-option">
                 <RouterLink class="header-text" to="/profile">
-                <img class="ico_user" style="margin-top:5px" src="./assets/icons/ico_user.svg">
+                <img class="ico_user" src="./assets/icons/ico_user.svg">
                   <p>Profile</p>
                   
                   </RouterLink>
               </div>     
                     
 
-            </div>
             
 
             
         </nav>
+
+        
 
         </header>
 
