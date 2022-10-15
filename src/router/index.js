@@ -14,6 +14,8 @@ const router = createRouter({
       name: "messages",
     
       component: () => import("../views/MessagesView.vue"),
+    },
+    {
       path: "/register-account",
       name: "register account",
       component: () => import("../views/RegisterViewStep1.vue"),

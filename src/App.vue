@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import "../css/header.css";
 </script>
 
 <template >
@@ -17,7 +18,6 @@ import { RouterLink, RouterView } from "vue-router";
                 </RouterLink>
               </div>
 
-            
               <div class="header-option">
                 <RouterLink class="header-text" to="/events">
                 <img class="ico" src="./assets/icons/ico_event.svg">
