@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 @import "./css/login.css";
+@import "./css/header.css";
+
+
 @import "./css/register.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
     --font: 'Poppins';
@@ -16,6 +20,7 @@
 
     font-family: var(--font);
 }
+
 
 /************************************
 

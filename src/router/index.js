@@ -10,6 +10,12 @@ const router = createRouter({
       component: LoginView,
     },
     {
+      path: "/messages",
+      name: "messages",
+    
+      component: () => import("../views/MessagesView.vue"),
+    },
+    {
       path: "/register-account",
       name: "register account",
       component: () => import("../views/RegisterViewStep1.vue"),
@@ -23,6 +29,24 @@ const router = createRouter({
       path: "/register-successful",
       name: "register successful",
       component: () => import("../views/RegisterViewStep3.vue"),
+    },
+    {
+      path: "/events",
+      name: "events",
+    
+      component: () => import("../views/EventsView.vue"),
+    },
+    {
+      path: "/friends",
+      name: "friends",
+    
+      component: () => import("../views/FriendsView.vue"),
+    },
+    {
+      path: "/profile",
+      name: "profile",
+    
+      component: () => import("../views/ProfileView.vue"),
     },
   ],
 });

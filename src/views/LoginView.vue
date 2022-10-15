@@ -1,4 +1,6 @@
+
 <template>
+
     <div class="row">
         <div class="column center">
             <p class="title"> Open Events </p>
