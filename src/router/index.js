@@ -48,12 +48,6 @@ const router = createRouter({
     
       component: () => import("../views/ProfileView.vue"),
     },
-    {
-      path: "/home",
-      name: "home",
-    
-      component: () => import("../views/HomeView.vue"),
-    },
   ],
 });
 
