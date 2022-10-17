@@ -14,6 +14,7 @@
     --red_color: #E11601;
     --selected_orange_color: #cc7a00;
     --selected_red_color: #ad1201;
+    --statistics_blue_opacity: rgba(0, 113, 242, 0.3);
 }
 
 * {
@@ -127,18 +128,4 @@ button {
 
     text-decoration: none;
     display: block;
-}
-
-html {
-    height: 100%;
-}
-
-body {
-    height: 100%;
-}
-
-#app {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
 }

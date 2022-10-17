@@ -54,7 +54,45 @@
             </section>
 
             <section class="statistics">
-                
+                <div class="statistics-container box-shadow">
+                    <p class="title-text center-text"> Statistics </p>
+                    <div class="graphs"> 
+                        <div class="statistics-block"> 
+                            <p class="statistics-text"> Average Event Score </p>
+                            <div class="circle-wrap">
+                                <div class="circle">
+                                    <div class="mask full">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="mask half">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="inside-circle"> 75 </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="statistics-block"> 
+                            <p class="statistics-text"> Number of Comments </p>
+                            <div>
+                                <p class="num-comm-text"> 53 </p>
+                            </div>
+                        </div>
+                        <div class="statistics-block"> 
+                            <p class="statistics-text"> % Users with lower number of comments </p>
+                            <div class="circle-wrap">
+                                <div class="circle">
+                                    <div class="mask full">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="mask half">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="inside-circle"> 35 % </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="timeline">
@@ -65,6 +103,98 @@
 </template>
 
 <style scoped>
+
+    .circle, .circle-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle-wrap {
+        width: 150px;
+        height: 150px;
+        background-color: var(--statistics_blue_opacity);
+        border-radius: 50%;
+    }
+
+    .circle-wrap .circle .mask,
+    .circle-wrap .circle .fill {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .mask .fill {
+        clip: rect(0px, 75px, 150px, 0px);
+        background-color: #227ded;
+    }
+
+    .circle-wrap .circle .mask {
+        clip: rect(0px, 150px, 150px, 75px);
+    }
+
+    .mask.full,
+    .circle .fill {
+        animation: fill ease-in-out 3s;
+        transform: rotate(135deg);
+    }
+
+    @keyframes fill {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(135deg);
+        }
+    }
+
+    .circle-wrap .inside-circle {
+        width: 112px;
+        height: 112px;
+        
+        border-radius: 50%;
+        line-height: 120px;
+        background: white;
+        text-align: center;
+
+        color: black;
+        position: absolute;
+        z-index: 100;
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+
+    .num-comm-text {
+        font-size: 35px;
+        font-weight: 700;
+        margin: 50px;
+    }
+
+    .statistics-text {
+        font-size: 15px;
+        margin-bottom: 25px;
+        max-width: 175px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .statistics-block {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .graphs {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+
+        margin-top: 50px;
+    }
+
     .div-container {
         width: fit-content;
     }
@@ -196,12 +326,11 @@
 
     .background-color {
         background-color: var(--gray_color);
-        height: 100%;
         display: flex;
         justify-content: center;
     }
 
-    .security-container {
+    .security-container, .statistics-container {
         display: flex;
         flex-direction: column;
 
@@ -211,6 +340,10 @@
 
         margin-top: 50px;
         padding: 50px;
+    }
+
+    .statistics {
+        margin-bottom: 50px;
     }
 
     .inputs-container {
