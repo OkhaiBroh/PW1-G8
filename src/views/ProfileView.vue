@@ -96,7 +96,49 @@
             </section>
 
             <section class="timeline">
-                
+                <div class="timeline-container box-shadow">
+                    <p class="title-text center-text"> Timeline </p>
+                    <div class="events-container">
+                        <div class="event-container box-shadow">
+                            <img class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
+                            <p class="timeline-title-text"> La Fiestita </p>
+                            <div class="info-container">
+                                <img class="ico" src="../assets/icons/location_ico.svg" alt="location ico">
+                                <p class="timeline-info-text"> Barcelona </p>
+                            </div>
+                            <div class="info-container">
+                                <img class="ico" src="../assets/icons/calendar_ico.svg" alt="calendar ico">
+                                <p class="timeline-info-text"> 01/10/2022 - 05/10/2022 </p>
+                            </div>
+                        </div>
+
+                        <div class="event-container box-shadow">
+                            <img class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
+                            <p class="timeline-title-text"> La Fiestita </p>
+                            <div class="info-container">
+                                <img class="ico" src="../assets/icons/location_ico.svg" alt="location ico">
+                                <p class="timeline-info-text"> Barcelona </p>
+                            </div>
+                            <div class="info-container">
+                                <img class="ico" src="../assets/icons/calendar_ico.svg" alt="calendar ico">
+                                <p class="timeline-info-text"> 01/10/2022 - 05/10/2022 </p>
+                            </div>
+                        </div>
+
+                        <div class="event-container box-shadow">
+                            <img class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
+                            <p class="timeline-title-text"> La Fiestita </p>
+                            <div class="info-container">
+                                <img class="ico" src="../assets/icons/location_ico.svg" alt="location ico">
+                                <p class="timeline-info-text"> Barcelona </p>
+                            </div>
+                            <div class="info-container">
+                                <img class="ico" src="../assets/icons/calendar_ico.svg" alt="calendar ico">
+                                <p class="timeline-info-text"> 01/10/2022 - 05/10/2022 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
@@ -330,7 +372,9 @@
         justify-content: center;
     }
 
-    .security-container, .statistics-container {
+    .security-container, 
+    .statistics-container,
+    .timeline-container {
         display: flex;
         flex-direction: column;
 
@@ -342,7 +386,7 @@
         padding: 50px;
     }
 
-    .statistics {
+    .statistics, .timeline {
         margin-bottom: 50px;
     }
 
@@ -355,5 +399,62 @@
 
     .margin-btn-password {
         margin-top: 50px;
+    }
+
+    /********************************************
+    *
+    *
+    *               TIMELINE SECTION
+    * 
+    * 
+    ********************************************/
+
+    .timeline-title-text {
+        font-weight: 700;
+        font-size: 20px;
+
+        margin-top: 20px;
+    }
+
+    .timeline-info-text {
+        font-size: 14px;
+    }
+
+    .ico {
+        width: 25px;
+        height: 25px;
+
+        margin-right: 10px;
+    }
+
+    .info-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+
+        margin-top: 10px;
+    }
+
+    .event-image {
+        max-width: 175px;
+        border-radius: 15px;
+    }
+
+    .events-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 50px;
+    }
+
+    .event-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 35px;
+        margin: 25px;
+
+        border-radius: 25px;
     }
 </style>
