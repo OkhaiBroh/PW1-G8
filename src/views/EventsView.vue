@@ -1,61 +1,27 @@
 <template>
-    <div class="row">
-        <div class="sorter">
-            <p class="sort-by-text"> Sort By </p>
-            <button> Name </button>
-            <button> Date </button>
-            <button> Location </button>
-            <button> Rating </button>
-        </div>
-        <div class="searcher">
-            <section class="bar">
-                <button> Search... </button>
-                <button> Create </button>
+    <div class="background">
+        <div class="general-container">
+            <section class="sorter-pack">
+                <div class="sorter-panel">
+                    <p class="sort-by-text"> Sort By </p>
+                    <button class="name-sort-but"> Name </button>
+                    <button class="date-sort-but"> Date </button>
+                    <button class="location-sort-but"> Location </button>
+                    <button class="rating-sort-but"> Rating </button>
+                </div>
             </section>
-            <section class="elements">
-                <article>
-                    <img class="location1-img" src="../assets/icons/ico_user.svg"/>
-                    <p class="event-name1"> La Fiestita </p>
-                    <div class="location1">
-                        <img class="loc-ico" src="../assets/icons/ico_user.svg"/>
-                        <p class="location1-name"> Barcelona </p>
+            <section class="searcher-panel">
+                <div class="upper-searcher-section">
+                    <div class="search-bar">
+                        <input class="search-input" name="search-query" placeholder="Search..." type="text">
+                        <button class="search-btn"> </button>
                     </div>
-                    <div class="date1">
-                        <img class="date-ico" src="../assets/icons/ico_user.svg"/>
-                        <p class="start-date1"> 01/10/2022 </p>
-                        <p class="hyphen"> - </p>
-                        <p class="start-date1"> 05/10/2022 </p>
-                    </div>
-                </article>
-                <article>
-                    <img class="location1-img" src="../assets/icons/ico_user.svg"/>
-                    <p class="event-name1"> La Fiestita </p>
-                    <div class="location1">
-                        <img class="loc-ico" src="../assets/icons/ico_user.svg"/>
-                        <p class="location1-name"> Barcelona </p>
-                    </div>
-                    <div class="date1">
-                        <img class="date-ico" src="../assets/icons/ico_user.svg"/>
-                        <p class="start-date1"> 01/10/2022 </p>
-                        <p class="hyphen"> - </p>
-                        <p class="start-date1"> 05/10/2022 </p>
-                    </div>
-                </article>
-                <article>
-                    <img class="location1-img" src="../assets/icons/ico_user.svg"/>
-                    <p class="event-name1"> La Fiestita </p>
-                    <div class="location1">
-                        <img class="loc-ico" src="../assets/icons/ico_user.svg"/>
-                        <p class="location1-name"> Barcelona </p>
-                    </div>
-                    <div class="date1">
-                        <img class="date-ico" src="../assets/icons/ico_user.svg"/>
-                        <p class="start-date1"> 01/10/2022 </p>
-                        <p class="hyphen"> - </p>
-                        <p class="start-date1"> 05/10/2022 </p>
-                    </div>
-                </article>
-            </section>    
+                    <button class="create-btn"> Create </button>
+                </div>
+                <div class="events-panel">
+                
+                </div>
+            </section>
         </div>
     </div>
 </template>
