@@ -145,69 +145,6 @@
 </template>
 
 <style scoped>
-
-    .circle, .circle-wrap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .circle-wrap {
-        width: 150px;
-        height: 150px;
-        background-color: var(--statistics_blue_opacity);
-        border-radius: 50%;
-    }
-
-    .circle-wrap .circle .mask,
-    .circle-wrap .circle .fill {
-        width: 150px;
-        height: 150px;
-        position: absolute;
-        border-radius: 50%;
-    }
-
-    .mask .fill {
-        clip: rect(0px, 75px, 150px, 0px);
-        background-color: #227ded;
-    }
-
-    .circle-wrap .circle .mask {
-        clip: rect(0px, 150px, 150px, 75px);
-    }
-
-    .mask.full,
-    .circle .fill {
-        animation: fill ease-in-out 3s;
-        transform: rotate(135deg);
-    }
-
-    @keyframes fill {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(135deg);
-        }
-    }
-
-    .circle-wrap .inside-circle {
-        width: 112px;
-        height: 112px;
-        
-        border-radius: 50%;
-        line-height: 120px;
-        background: white;
-        text-align: center;
-
-        color: black;
-        position: absolute;
-        z-index: 100;
-        font-weight: 700;
-        font-size: 25px;
-    }
-
-
     .num-comm-text {
         font-size: 35px;
         font-weight: 700;
@@ -243,7 +180,7 @@
 
     .profile-data {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
 
         margin-top: 50px;
     }
@@ -399,6 +336,69 @@
 
     .margin-btn-password {
         margin-top: 50px;
+    }
+
+    /* Progres bar Statistics */
+
+    .circle, .circle-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle-wrap {
+        width: 150px;
+        height: 150px;
+        background-color: var(--statistics_blue_opacity);
+        border-radius: 50%;
+    }
+
+    .circle-wrap .circle .mask,
+    .circle-wrap .circle .fill {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .mask .fill {
+        clip: rect(0px, 75px, 150px, 0px);
+        background-color: #227ded;
+    }
+
+    .circle-wrap .circle .mask {
+        clip: rect(0px, 150px, 150px, 75px);
+    }
+
+    .mask.full,
+    .circle .fill {
+        animation: fill ease-in-out 3s;
+        transform: rotate(135deg);
+    }
+
+    @keyframes fill {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(135deg);
+        }
+    }
+
+    .circle-wrap .inside-circle {
+        width: 112px;
+        height: 112px;
+        
+        border-radius: 50%;
+        line-height: 120px;
+        background: white;
+        text-align: center;
+
+        color: black;
+        position: absolute;
+        z-index: 100;
+        font-weight: 700;
+        font-size: 25px;
     }
 
     /********************************************
