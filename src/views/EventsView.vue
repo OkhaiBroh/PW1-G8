@@ -97,6 +97,67 @@
         margin: 20px 0 50px 0;
     }
 
-    
+    /*************************
+        SEARCHER + CREATE
+    **************************/
+
+    .searcher-panel {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+
+        background-color: white;
+        padding: 30px 40px 10px 40px;
+
+        border-radius: 20px;
+        margin-top: 40px;
+    }
+
+    .upper-searcher-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+
+        border: 2px solid var(--bg_button);
+        border-radius: 20px;
+        margin-top: 2px;
+    }
+
+    .search-input {
+        height: 30px;
+        width: 542px;
+        vertical-align: center;
+        flex-grow: 2;
+        border: none;
+        margin: 2px 0px 2px 15px;
+    }
+
+    .search-input:focus {
+        outline: none;
+    }
+
+    .create-btn {
+        border: 2px solid var(--bg_button); 
+        font-weight: 700;
+        height: 40px;
+        width: 150px;
+        margin: 0 0 0 20px;
+    }
+
+    .search-btn {
+        width: 20px;
+        height: 20px;
+        border-radius: 0px;
+        background: url(../assets/icons/ico_search.svg) no-repeat;
+        margin: 6px 18px 2px 0;
+    }
+
     
 </style>
