@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import "../css/header.css";
+//import "../css/header.css";
 </script>
 
 <template >
