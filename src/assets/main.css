@@ -2,15 +2,13 @@
 
 @import "./css/login.css";
 @import "./css/header.css";
-
-
 @import "./css/register.css";
 
 
 :root {
     --font: 'Poppins';
     --bg_button: #0071F2;
-    --gray_color: #D9D9D9;
+    --gray_color: #F5F5F7;
     --selected_button: #0058bd;
 }
 
