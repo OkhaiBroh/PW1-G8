@@ -10,7 +10,8 @@
 :root {
     --font: 'Poppins';
     --bg_button: #0071F2;
-    --gray_color: #D9D9D9;
+    --gray_color: #F5F5F7;
+    --message-gray-color: #A5A5A5;
     --selected_button: #0058bd;
 }
 
@@ -19,6 +20,15 @@
     padding: 0;
 
     font-family: var(--font);
+}
+
+html, body, #app {
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
 }
 
 

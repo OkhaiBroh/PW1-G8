@@ -1,172 +1,201 @@
 <template>
-    <div class="main_div">
+    <div class="background">
         <div class="left">
-            <h1>Messages</h1>
+            <h1> Messages </h1>
             <img class="ico" src="../assets/icons/ico_user_chat.svg"/>
-            <p class="p_style">Tomas Uzcudun</p>
+            <p class="p_style"> Tomas Uzcudun </p>
         </div>
         <div class="right">
-            <div>
+            <div class="ico-and-name">
                 <img class="my_ico" src="../assets/icons/ico_user_chat.svg"/>
-                <p class="p_style_user">Arnau Ros Sánchez</p>
+                <p class="p_style_user"> Arnau Ros Sánchez </p>
             </div>
-            <hr>
+            <hr class="line">
             <div class="chat">
                 <div class="message_cotainer">
-                    <div class="my_message">
-                        <div class="flr">
-                            <div class="message">
-                                <p class="p_message">Vamos volando en webs</p>
-                            </div>
-                        </div>
+                    <div class="message-background my-message-background">
+                        <p class="message-text"> Un Mensaje </p>
                     </div>
                 </div>
-                <article class="message_cotainer">
-                    <div class="friend_message">
-                        <div class="flr">
-                            <div class="message">
-                                <p class="p_message">Si jajaj</p>
-                            </div>
-                        </div>
+                <div class="message_cotainer">
+                    <div class="message-background other-message-background">
+                        <p class="message-text"> Otro Mensaje </p>
                     </div>
-                </article>
+                </div>
             </div>
-            <div id="write">
+            <div class="write">
+                <input class="message-input" type="text" autocomplete="on" placeholder="Message..."/>
                 <button class="button_ico"></button>
-                <input type="text" autocomplete="on" placeholder="Message"/>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-    .message{
-        flex: 1 0 auto;
+
+    /****************************************
+    *          Setting the Background       *
+    *****************************************/
+
+    .background {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 10vh;
+        background-color: var(--gray_color);
     }
-    .message_container{
+
+    /****************************************
+    *        Profile Ico and Name Text      *
+    *****************************************/
+
+    .ico-and-name {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+        margin: 20px 0 20px 0;
+    }
+
+    .my_ico {
+        width: 40px;
+        height: 40px;
+    }
+
+    .p_style_user{
+        font-size: 18px;
+        margin-left: 15px;
+    }
+
+    /****************************************
+    *             Separation Line           *
+    *****************************************/
+
+    .line {
+        border: 2px solid black;
+        margin-bottom: 25px;
+    }
+
+    /****************************************
+    *              Chat Messages            *
+    *****************************************/
+
+    .chat {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 70%;
+    }
+
+    .message-background {
+        display: flex;
+        width: fit-content;
+        border-radius: 10px;
+        margin: 0 0 5px 0;
+    }
+
+    .my-message-background {
+        float: right;
+        background-color: var(--bg_button);
+    }
+
+    .other-message-background {
+        float: left;
+        background-color: var(--message-gray-color);
+    }
+
+    .message-text {
+        display: inline-block;
+        font-size: 13px;
+        padding: 10px;
+        color: white;
+    }
+
+    .message_container {
         position: relative;
         display: inline-block;
         width: 100%;
         margin: 0 0 10px 0;
         padding: 0;
     }
-    .flr{
-        flex: 1 0 auto;
+
+    /****************************************
+    *                Right Side              *
+    *****************************************/
+
+    .right {
+        width: 50%;
+        padding: 5px 50px 50px 50px;
+        border-radius: 20px;
+        margin-left: 5vw;
+        background-color: white;
+    }
+
+    /****************************************
+    *                Left Side              *
+    *****************************************/
+
+    .left {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        width: calc(100% - 50px);
-    }
-    .p_message{
-        display: inline-block;
-        font-size: 13px;
-        padding: 10px;
-    }
-    .my_message{
-        display: flex;
-        float: right;
-        width:fit-content;
-        background-color: #336699;
+
+        padding: 100px;
         border-radius: 20px;
-        margin: 0 0 4px 0;
+        background-color: white;
     }
-    .friend_message{
-        display: flex;
-        float: left;
-        width:fit-content;
-        background-color: gray;
-        border-radius: 20px;
-        margin: 0 0 4px 0;
+
+    .p_style {
+        font-size: 25px;
+        text-align: center;
     }
+
     .ico {
         width: 200px;
         height: 200px;
         border-radius: 100px;
-        background-color: #336699;
         margin-top: 70px;
         margin-bottom: 70px;
     }
-    .my_ico {
-        width: 40px;
-        height: 40px;
-        border-radius: 100px;
-        background-color: #336699;
-        margin-left: 300px;
-    }
-    .p_style_user{
-        float: right;
-        font-size: 20px;
-        margin-right: 250px;
-        margin-top: 5px;
-    }
-    .p_style{
-        font-size: 25px;
-    }
-    .main_div{
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        padding: 30px;
-        align-content: center;
-        padding: 50px;
-        background-color: #F3F3F5;
-    }
-    .right {
-        float: right;
-        width: 60%;
-        height: 470px;
-        padding: 10px;
-        border-radius: 20px;
-        text-align: center;
-        margin-left: 2%;
-        background-color: white;
-    }
-    .left{
-        float: left;
-        width: 20%;
-        height: 470px;
-        padding: 10px;
-        border-radius: 20px;
-        text-align: center;
-        background-color: white;
-    }
-    #write{
-        width: 100%;
-        height: 10px;
+    
+    /****************************************
+    *             Send Message Bar          *
+    *****************************************/
+    
+    .write {
         margin-top: 10px;
         border-radius: 20px;
-        background-color:#F3F3F5;
-        padding-bottom: 50px;
-        position: relative;
-    }
-    #write button{
-        background-color: #F3F3F5;
-        background-image: url(../assets/icons/ico_send_message.svg);
-        background-size: 50px 50px;
-        border: none;
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        right: 5px;
-        bottom: 5px;
-    }
-    #write input{
-        width: 90%;
-        height: 100%;
-        background-color: #F3F3F5;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        border-radius: 20px;
-        border: none;
-        padding-left: 10px;
-    }
-    .chat{
+        background-color:var(--gray_color);
+
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 70%;
-        margin-top: 5px;
+        flex-direction: row;
+        padding: 15px;
+    }
+
+    .button_ico {
+        background-color: var(--gray_color);
+        background-image: url(../assets/icons/ico_send_message.svg);
+        background-size: 35px 30px;
+        
+        cursor: pointer;
+        
+        width: 35px;
+        height: 30px;
+
+        margin-right: 10px;
+    }
+
+    .message-input {
+        background-color: var(--gray_color);
         border-radius: 20px;
+        padding-left: 10px;
+        border: none;
+        outline: none;
+
+        width: 100%;
+        padding-right: 10px;
     }
 </style>
