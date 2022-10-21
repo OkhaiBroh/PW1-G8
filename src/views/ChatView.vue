@@ -12,7 +12,7 @@
             </div>
             <hr>
             <div class="chat">
-                <article class="message_cotainer">
+                <div class="message_cotainer">
                     <div class="my_message">
                         <div class="flr">
                             <div class="message">
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                </article>
+                </div>
                 <article class="message_cotainer">
                     <div class="friend_message">
                         <div class="flr">
@@ -31,10 +31,9 @@
                     </div>
                 </article>
             </div>
-            <div class="write">
-                <img class="send_message_ico" src="../assets/icons/ico_send_message.svg">
-                <p class="write_style">Message...</p>
-                
+            <div id="write">
+                <button class="button_ico"></button>
+                <input type="text" autocomplete="on" placeholder="Message"/>
             </div>
         </div>
     </div>
@@ -103,8 +102,7 @@
         font-size: 25px;
     }
     .main_div{
-        width: 1335px;
-        height: 100%;
+        height: 100vh;
         display: flex;
         justify-content: center;
         padding: 30px;
@@ -131,32 +129,43 @@
         text-align: center;
         background-color: white;
     }
-    .write{
+    #write{
         width: 100%;
-        height: 40px;
+        height: 10px;
         margin-top: 10px;
         border-radius: 20px;
-        text-align: left;
         background-color:#F3F3F5;
+        padding-bottom: 50px;
+        position: relative;
     }
-    .send_message_ico {
-        width: 30px;
-        height: 30px;
-        float: right;
-        padding-right: 15px;
-        padding-top: 5px;
+    #write button{
+        background-color: #F3F3F5;
+        background-image: url(../assets/icons/ico_send_message.svg);
+        background-size: 50px 50px;
+        border: none;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
     }
-    .write_style{
-        font-size: 15px;
-        padding-top: 7.5px;
-        padding-left: 15px;
-        color:gray;
+    #write input{
+        width: 90%;
+        height: 100%;
+        background-color: #F3F3F5;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 20px;
+        border: none;
+        padding-left: 10px;
     }
     .chat{
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 77%;
+        height: 70%;
         margin-top: 5px;
         border-radius: 20px;
     }
