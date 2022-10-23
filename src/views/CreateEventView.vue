@@ -1,0 +1,3 @@
+<template>
+    Create Event
+</template>

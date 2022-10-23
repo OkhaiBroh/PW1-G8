@@ -48,6 +48,12 @@ const router = createRouter({
     
       component: () => import("../views/ProfileView.vue"),
     },
+    {
+      path: "/create-event",
+      name: "create event",
+    
+      component: () => import("../views/CreateEventView.vue"),
+    },
   ],
 });
 
