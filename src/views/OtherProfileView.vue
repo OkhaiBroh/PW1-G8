@@ -41,4 +41,45 @@
               PROFILE
     **************************/
 
+    .profile-section {
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 40px;
+        margin-right: 30px;
+    }
+
+    .profile-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border-radius: 20px;
+
+        background-color: white;
+        padding: 30px 30px 10px 30px;
+    }
+
+    .profile-title {
+        font-weight: 900;
+        font-size: 25px;
+
+        margin-bottom: 30px;
+    }
+
+    .ppic {
+        width: 165px;
+        height: 165px;
+        border-radius: 50%;
+    }
+
+    .send-request-btn {
+        border: 2px solid var(--bg_button); 
+        font-weight: 700;
+        height: 40px;
+        width: 170px;
+        margin: 30px 0 20px 0;
+    }
+
+
 </style>
