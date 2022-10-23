@@ -40,5 +40,27 @@
         display: flex;
         flex-direction: row;
     }
+
+    .main-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border-radius: 20px;
+
+        background-color: white;
+        padding: 30px;
+    }
+
+    .title-and-bar, .data-input, .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .name-description-camps {
+        display: flex;
+        flex-direction: column;
+    }
     
 </style>
