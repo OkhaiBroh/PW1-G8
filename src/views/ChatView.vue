@@ -1,9 +1,37 @@
 <template>
     <div class="background">
         <div class="left">
-            <h1> Messages </h1>
-            <img class="ico" src="../assets/icons/ico_user_chat.svg"/>
-            <p class="p_style"> Tomas Uzcudun </p>
+            <div class="search">
+                <input class="input_search" type="text" placeholder="search"/>
+            </div>
+            <ul class="list_chats">
+                <li>
+                    <div class="user_chat">
+                        <button class="button_chat">
+                            <img class="ico" src="../assets/icons/ico_user_chat.svg"/>
+                            <p class="p_style"> Tomas Uzcudun </p>
+                        </button>
+                    </div>
+                    <div class="user_chat">
+                        <button class="button_chat">
+                            <img class="ico" src="../assets/icons/ico_user_chat.svg"/>
+                            <p class="p_style"> Arnau Ros </p>
+                        </button>
+                    </div>
+                    <div class="user_chat">
+                        <button class="button_chat">
+                            <img class="ico" src="../assets/icons/ico_user_chat.svg"/>
+                            <p class="p_style"> David Deu </p>
+                        </button>
+                    </div>
+                    <div class="user_chat">
+                        <button class="button_chat">
+                            <img class="ico" src="../assets/icons/ico_user_chat.svg"/>
+                            <p class="p_style"> Open Events </p>
+                        </button>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="right">
             <div class="ico-and-name">
@@ -49,7 +77,6 @@
     /****************************************
     *        Profile Ico and Name Text      *
     *****************************************/
-
     .ico-and-name {
         display: flex;
         justify-content: center;
@@ -139,53 +166,84 @@
 
     .left {
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-direction: column;
-
-        padding: 100px;
-        border-radius: 20px;
         background-color: white;
+        width: 300px;
     }
 
+    /****************************************
+    *             Chat users                *
+    *****************************************/
+    .list_chats{
+        list-style: none;
+        width: 100%;
+    }
+    .search{
+        display: flex;
+        width: 100%;
+        height: 30px;
+        border: 1px solid white;
+    }
+    .input_search{
+        width: 100%;
+        border: none;
+        background-color: var(--gray_color);
+        padding-left: 10px;
+        outline: none;
+    }
+    .user_chat{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+    }
     .p_style {
-        font-size: 25px;
-        text-align: center;
+        font-size: 20px;
+        color: #000;
+        padding-left: 20px;
+    }
+    .ico {
+        width: 30px;
+        height: 30px;
     }
 
-    .ico {
-        width: 200px;
-        height: 200px;
-        border-radius: 100px;
-        margin-top: 70px;
-        margin-bottom: 70px;
+    .button_chat{
+        background-color: var(--gray_color);
+        display: flex;
+        border: 1px solid white;
+        align-items: center;
+        cursor: pointer;
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        border-radius: 0px;
+        margin-bottom: 35px;
     }
-    
+
     /****************************************
     *             Send Message Bar          *
     *****************************************/
     
     .write {
-        margin-top: 10px;
+        margin-top: 5px;
         border-radius: 20px;
         background-color:var(--gray_color);
-
         display: flex;
         flex-direction: row;
+        align-items: center;
         padding: 15px;
+        height: 20px;
     }
 
     .button_ico {
         background-color: var(--gray_color);
         background-image: url(../assets/icons/ico_send_message.svg);
         background-size: 35px 30px;
-        
         cursor: pointer;
-        
         width: 35px;
         height: 30px;
-
-        margin-right: 10px;
+        margin-bottom: 35px;
     }
 
     .message-input {
@@ -194,7 +252,6 @@
         padding-left: 10px;
         border: none;
         outline: none;
-
         width: 100%;
         padding-right: 10px;
     }
