@@ -4,12 +4,25 @@
             <section class="profile-section">
                 <div class="profile-panel">
                     <p class="profile-title"> Profile </p>
-                    <img class="ppic" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="profile pic">
+                    <img class="ppic" src="../assets/icons/ico_profile_default.svg" alt="profile pic">
                     <button class="send-request-btn"> Send Request </button>
                 </div>
             </section>
             <section class="data-section">
-                Personal Data
+                <div class="data-panel">
+                    <p class="personal-data-title"> Personal Data </p>
+                    <div class="user-data">
+                        <div class="user-name-lastname">
+                            <div class="user-name">
+                            </div>
+                            <div class="user-lastname">
+                            </div>
+                        </div>
+                        <div class="user-email">
+                        </div>
+                    </div>
+                    <button class="send-message-btn"> Send Message </button>
+                </div>
             </section>
         </div>
     </div>
@@ -78,7 +91,7 @@
         font-weight: 700;
         height: 40px;
         width: 170px;
-        margin: 30px 0 20px 0;
+        margin: 40px 0 30px 0;
     }
 
 
