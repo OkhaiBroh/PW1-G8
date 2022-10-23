@@ -5,15 +5,30 @@
                 <div class="title-and-bar">
                     <p class="create-event-title"> Create Event </p>
                     <div class="progress-bar">
+                        <span class="circle-gray"></span>
+                        <hr class="line">
+                        <span class="circle-gray"></span>
+                        <hr class="line">
+                        <span class="circle-gray"></span>
                     </div>
                 </div>
                 <section class="data-input">
                     <div class="name-description-camps">
+                        <div class="event-name-input">
+                            <p class="camp-title name"> Name </p>
+                            <input class="input name-input" name="event-name" type="text">
+                        </div>
+                        <div class="event-location-input">
+                            <p class="camp-title location"> Location </p>
+                            <input class="input location-input" name="event-location" type="text">
+                        </div>
                     </div>
-
+                    <div class="event-description-input">
+                        <p class="camp-title description"> Description </p>
+                        <input class="input description-input" name="event-description" type="text">
+                    </div>
                 </section>
-                <div class="buttons">
-                </div>
+                <button class="next-btn"> Next </button>
             </div>
         </div>
     </div>
@@ -61,6 +76,30 @@
     .name-description-camps {
         display: flex;
         flex-direction: column;
+    }
+
+    .create-event-title {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .progress-bar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .camp-title {
+        font-weight: bold;
+        margin-bottom: 6px;
+        margin-left: 15px;
+    }
+
+    .input {
+        width: 180px;
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 5px 15px 5px 15px;
+        margin-bottom: 20px;
     }
     
 </style>
