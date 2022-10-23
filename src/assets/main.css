@@ -5,10 +5,14 @@
 @import "./css/friends.css";
 
 
-:root { 
-    --font_title: 'Poppins';
+@import "./css/register.css";
+
+
+:root {
+    --font: 'Poppins';
     --bg_button: #0071F2;
-    --gray_color: #D9D9D9
+    --gray_color: #D9D9D9;
+    --selected_button: #0058bd;
 }
 
 * {
@@ -18,12 +22,7 @@
     font-family: var(--font);
 }
 
-* {
-    margin: 0;
-    padding: 0;
 
-    font-family: var(--font_title);
-}
 /************************************
 
 
@@ -32,10 +31,25 @@
 
 *************************************/
 
+.link-button {
+    background-color: var(--bg_button);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    
+    border: none;
+    border-radius: 25px;
+
+    padding: 10px;
+    margin-top: 35px;
+}
+
 button {
     background-color: var(--bg_button);
     color: white;
-    
+
     width: 100%;
     
     border: none;
@@ -45,8 +59,9 @@ button {
     margin-top: 35px;
 }
 
-button:hover {
+.link-button:hover, button:hover {
     cursor: pointer;
+    background-color: var(--selected_button);
 }
 
 /*******************************
@@ -64,7 +79,7 @@ button:hover {
     min-width: 100px;
 }
 
-input {
+.text-input {
     display: block;
     font-weight: 400;
     border: none;
@@ -73,12 +88,12 @@ input {
     outline: none;
 }
 
-input, label {
+.text-input, .label-input {
     transition: 0.4s ease;
     font-size: 15px;
 }
 
-label {
+.label-input {
     transform: translate(4px, -14px) scale(1.02);
     margin-bottom: 2px;
     cursor: text;
@@ -87,24 +102,28 @@ label {
     position: absolute; 
 }
 
-input::placeholder {
+.text-input::placeholder {
     opacity: 0;
 }
 
-input:focus,
-input:not(:placeholder-shown) {
+.text-input:focus,
+.text-input:not(:placeholder-shown) {
     border-bottom: 2px solid #000000;
 }
 
-input:not(:placeholder-shown) ~ label, 
-input:focus ~ label {
+.text-input:not(:placeholder-shown) ~ .label-input, 
+.text-input:focus ~ .label-input {
     transform: translate(0px, -35px) scale(0.8);
     padding-left: 0px;
     color: black;
-}   
+}     
 
 .login-text {
-    font-size: 12px;
+    font-size: 15px;
     color: var(--bg_button);
+
     margin-top: 25px;
+
+    text-decoration: none;
+    display: block;
 }

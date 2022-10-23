@@ -1,32 +1,72 @@
-<template  >
-    <div class="background">
-    <div class="panel borders">
+<template>
+  <div class="background">
+    <div class="bg2">
+      <div class="panel">
+        
         <p class="friends">Friends</p>
 
         <div class="option">
-            <p class="option_text">Requests</p>
-            <img src="../assets/icons/ico_user.svg" class="ico">
+          <b class="option_text">Requests</b>
+          <img src="../assets/icons/ico_user.svg" class="ico" />
         </div>
 
         <div class="option">
-            <p class="option_text">List</p>
-            <img src="../assets/icons/ico_user.svg" class="ico">
+          <b class="option_text">List</b>
+          <img src="../assets/icons/ico_user.svg" class="ico" />
         </div>
+      </div>
 
-      
-        </div>
-       
-        <div class="panel panel1 borders"   >
-            <!-- Example of a friend -->
-             <div class="friend_div borders"  > 
-                <img src="../assets/icons/ico_user.svg" class="ico">
-                <div >
-                    <b>Tomas Uzcudun</b>
-                </div>
-             </div>
-        </div>  
-        
+      <!-- List of friends-->
+      <section class="panel list_panel borders">
+        <section class="friend_row">
+          <!-- Example of a friend -->
+          <article class="friend_div borders">
+            <img src="../assets/icons/ico_user.svg" class="friend_ico" />
+            <div class="friend_text">
+              <b>Tomas Uzcudun</b>
+            </div>
+          </article>
 
+          <article class="friend_div borders">
+            <img src="../assets/icons/ico_user.svg" class="friend_ico" />
+            <div class="friend_text">
+              <b>Tomas Uzcudun</b>
+            </div>
+          </article>
+
+          <article class="friend_div borders">
+            <img src="../assets/icons/ico_user.svg" class="friend_ico" />
+            <div class="friend_text">
+              <b>Tomas Uzcudun</b>
+            </div>
+          </article>
+
+        </section>
+
+        <section class="friend_row">
+          <!-- Example of a friend -->
+          <article class="friend_div borders">
+            <img src="../assets/icons/ico_user.svg" class="friend_ico" />
+            <div class="friend_text">
+              <b>Tomas Uzcudun Es un boludo</b>
+            </div>
+          </article>
+          <article class="friend_div borders">
+            <img src="../assets/icons/ico_user.svg" class="friend_ico" />
+            <div class="friend_text">
+              <b>Arnau Ros Sánchez</b>
+            </div>
+          </article>
+
+          <article class="friend_div borders">
+            <img src="../assets/icons/ico_user.svg" class="friend_ico" />
+            <div class="friend_text">
+              <b>Tomas Uzcudun</b>
+            </div>
+          </article>
+
+        </section>
+      </section>
     </div>
-   
+  </div>
 </template>

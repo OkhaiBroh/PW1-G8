@@ -16,6 +16,21 @@ const router = createRouter({
       component: () => import("../views/MessagesView.vue"),
     },
     {
+      path: "/register-account",
+      name: "register account",
+      component: () => import("../views/RegisterViewStep1.vue"),
+    },
+    {
+      path: "/register-security",
+      name: "register security",
+      component: () => import("../views/RegisterViewStep2.vue"),
+    },
+    {
+      path: "/register-successful",
+      name: "register successful",
+      component: () => import("../views/RegisterViewStep3.vue"),
+    },
+    {
       path: "/events",
       name: "events",
     
@@ -33,14 +48,6 @@ const router = createRouter({
     
       component: () => import("../views/ProfileView.vue"),
     },
-    {
-      path: "/home",
-      name: "home",
-    
-      component: () => import("../views/HomeView.vue"),
-    },
-
-
   ],
 });
 
