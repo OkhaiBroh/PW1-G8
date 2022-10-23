@@ -2,32 +2,32 @@
     <div class="background-color">
         <div class="div-container"> 
             <section class="profile-data">
-            <div class="profile box-shadow">
-                <p class="title-text center-text"> Profile </p>
-                <img class="profile-image" src="../assets/icons/ico_user.svg">
-                <button class="log-out-button"> Log Out </button>
-                <button class="del-acc-button"> Delete Account </button>
-            </div>
-            <div class="personal-data box-shadow">
-                <p class="title-text center-text"> Personal Data </p>
-                <div class="name-lastname-container">
-                    <div class="container">
-                        <label class="input-text" for="name"> Name </label>
-                        <input class="input input-margin" type="text" name="name" id="name">
-                    </div>
-                    <div class="container"> 
-                        <label class="input-text" for="lastname"> Lastname </label>
-                        <input class="input" type="text" name="lastname" id="lastneme">
-                    </div>
+                <div class="profile box-shadow">
+                    <p class="title-text center-text"> Profile </p>
+                    <img class="profile-image" src="../assets/icons/ico_user.svg">
+                    <button class="log-out-button"> Log Out </button>
+                    <button class="del-acc-button"> Delete Account </button>
                 </div>
-                <div class="email-container">
-                    <label class="input-text" for="email"> Email </label>
-                    <input class="input longer" type="text" name="email" id="email">
+                <div class="personal-data box-shadow">
+                    <p class="title-text center-text"> Personal Data </p>
+                    <div class="name-lastname-container">
+                        <div class="container">
+                            <label class="input-text" for="name"> Name </label>
+                            <input class="input input-margin" type="text" name="name" id="name">
+                        </div>
+                        <div class="container"> 
+                            <label class="input-text" for="lastname"> Lastname </label>
+                            <input class="input" type="text" name="lastname" id="lastneme">
+                        </div>
+                    </div>
+                    <div class="email-container">
+                        <label class="input-text" for="email"> Email </label>
+                        <input class="email-input" type="text" name="email" id="email">
+                    </div>
+                    <div class="save-changes-container">
+                        <button class="save-changes"> Save Changes </button>
+                    </div>    
                 </div>
-                <div class="save-changes-container">
-                    <button class="save-changes"> Save Changes </button>
-                </div>    
-            </div>
             </section>
 
             <section class="security">
@@ -145,6 +145,179 @@
 </template>
 
 <style scoped>
+
+    /*****************************************
+    *               Background               *
+    ******************************************/
+
+    .background-color {
+        background-color: var(--gray_color);
+        display: flex;
+        justify-content: center;
+    }
+
+    .div-container {
+        width: fit-content;
+    }
+
+    /*****************************************
+    *             Profile Section            *
+    ******************************************/
+
+    .profile-data {
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 50px;
+    }
+
+    /*****************************************
+    *               Profile Box              *
+    ******************************************/
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border-radius: 20px;
+
+        background-color: white;
+
+        margin-right: 25px;
+        padding: 45px;
+    }
+
+    .box-shadow {
+        box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .title-text {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .center-text {
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 200px;
+
+        margin: 25px 50px 25px 50px;
+    }
+
+    .log-out-button {
+        font-weight: 700;
+        background-color: var(--orange_color);
+        margin: 0;
+    }
+
+    .del-acc-button {
+        font-weight: 700;
+        background-color: var(--red_color);
+        margin: 25px 0 0 0;
+    }
+
+    .del-acc-button:hover {
+        background-color: var(--selected_red_color);
+    }
+
+    .log-out-button:hover {
+        background-color: var(--selected_orange_color);
+    }
+
+    /*****************************************
+    *            Personal Data Box           *
+    ******************************************/
+
+    .personal-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        border-radius: 20px;
+
+        background-color: white;
+
+        margin-left: 25px;
+        padding: 45px 65px 45px 65px;
+
+        flex: 1;
+    }
+
+    .name-lastname-container {
+       display: flex;
+        justify-content: space-between;
+    }
+
+    .input-text {
+        font-size: 15px;
+        font-weight: 700;
+
+        margin-left: 20px;
+    }
+
+    .email-input {
+        outline: none;
+        border: 3px solid black;
+        border-radius: 25px;
+        height: 35px;
+
+        margin-top: 10px;
+        padding-left: 15px;
+    }
+
+    .input {
+        outline: none;
+        border: 3px solid black;
+        border-radius: 25px;
+        width: 200px;
+        height: 35px;
+
+        margin-top: 10px;
+        padding-left: 15px;
+    }
+
+    .input-margin {
+        margin-right: 25px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .email-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .save-changes {
+        font-weight: 700;
+        margin: 0;
+        width: fit-content;
+        padding: 10px 25px 10px 25px;
+    }
+
+    .save-changes-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    /*****************************************
+    *             Security Section           *
+    ******************************************/
+
+    .margin-btn-password {
+        margin-top: 50px;
+    }
+
+    /*****************************************
+    *           Statistics Section           *
+    ******************************************/
+
     .num-comm-text {
         font-size: 35px;
         font-weight: 700;
@@ -174,141 +347,6 @@
         margin-top: 50px;
     }
 
-    .div-container {
-        width: fit-content;
-    }
-
-    .profile-data {
-        display: flex;
-        justify-content: space-between;
-
-        margin-top: 50px;
-    }
-
-    .profile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        border-radius: 20px;
-
-        background-color: white;
-
-        margin-right: 25px;
-        padding: 45px;
-    }
-
-    .profile-image {
-        width: 100px;
-        height: 200px;
-
-        margin: 25px 50px 25px 50px;
-    }
-
-    .title-text {
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    .center-text {
-        text-align: center;
-    }
-
-    .input-text {
-        font-size: 15px;
-        font-weight: 700;
-
-        margin-left: 20px;
-    }
-
-    .input {
-        outline: none;
-        border: 3px solid black;
-        border-radius: 25px;
-        width: 200px;
-        height: 35px;
-
-        margin-top: 10px;
-        padding-left: 15px;
-    }
-
-    .input-margin {
-        margin-right: 25px;
-    }
-
-    .longer {
-        width: 100%;
-    }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .name-lastname-container {
-        display: flex;
-    }
-
-    .personal-data {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        border-radius: 20px;
-
-        background-color: white;
-
-        margin-left: 25px;
-        padding: 45px 65px 45px 65px;
-    }
-
-    .box-shadow {
-        box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .email-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .save-changes {
-        font-weight: 700;
-        margin: 0;
-        width: fit-content;
-        padding: 10px 25px 10px 25px;
-    }
-
-    .save-changes-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .log-out-button {
-        font-weight: 700;
-        background-color: var(--orange_color);
-        margin: 0;
-    }
-
-    .del-acc-button {
-        font-weight: 700;
-        background-color: var(--red_color);
-        margin: 25px 0 0 0;
-    }
-
-    .del-acc-button:hover {
-        background-color: var(--selected_red_color);
-    }
-
-    .log-out-button:hover {
-        background-color: var(--selected_orange_color);
-    }
-
-    .background-color {
-        background-color: var(--gray_color);
-        display: flex;
-        justify-content: center;
-    }
-
     .security-container, 
     .statistics-container,
     .timeline-container {
@@ -334,11 +372,9 @@
         margin-top: 50px;
     }
 
-    .margin-btn-password {
-        margin-top: 50px;
-    }
-
-    /* Progres bar Statistics */
+    /*****************************************
+    *           Rounded Progress Bar         *
+    ******************************************/
 
     .circle, .circle-wrap {
         display: flex;
@@ -401,13 +437,9 @@
         font-size: 25px;
     }
 
-    /********************************************
-    *
-    *
-    *               TIMELINE SECTION
-    * 
-    * 
-    ********************************************/
+    /*****************************************
+    *             Timeline Section           *
+    ******************************************/
 
     .timeline-title-text {
         font-weight: 700;
