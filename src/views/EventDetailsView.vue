@@ -16,7 +16,7 @@
                             <p>Barcelona</p>
                         </div>
                         <div class="date-info">
-                            <img class="ico-location" src="../assets/icons/ico_location.svg" alt="">
+                            <img class="ico-location" src="../assets/icons/ico_calendar.svg" alt="">
                             <p>1/10/2022 - 5/10/2022</p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
 
                 <div class="comment-bar">
                         <input class="comment-input" name="message-query" placeholder="Message..." type="text">
-                        <img class="send_button" src="../assets/icons/ico_profile_default.svg" >
+                        <img class="send_button" src="../assets/icons/ico_send_message.svg" >
 
                 </div>
             </div>
