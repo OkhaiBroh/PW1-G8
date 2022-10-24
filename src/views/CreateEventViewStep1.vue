@@ -1,33 +1,40 @@
 <template>
     <div class="background">
-        <div class="general-container">
-            <div class="main-panel">
-                <div class="title-and-bar">
-                    <p class="create-event-title"> Create Event </p>
-                    <div class="progress-bar">
-                        <span class="circle-gray"></span>
-                        <hr class="line">
-                        <span class="circle-gray"></span>
-                        <hr class="line">
-                        <span class="circle-gray"></span>
+        <div class="main-panel">
+            <div class="title-and-bar">
+                <p class="create-event-title"> Create Event </p>
+                <div class="progress-bar">
+                    <div class="progress">
+                        <span class="circle-gray circle1"></span>
+                        <hr class="line line1">
+                        <span class="circle-gray circle2"></span>
+                        <hr class="line line2">
+                        <span class="circle-gray circle3"></span>
+                    </div>
+                    <div class="progress-titles">
+                        <p class="circle-name"> Step 1 </p>
+                        <p class="circle-name step"> Step 2 </p>
+                        <p class="circle-name step"> Step 3 </p>
                     </div>
                 </div>
-                <section class="data-input">
-                    <div class="name-description-camps">
-                        <div class="event-name-input">
-                            <p class="camp-title name"> Name </p>
-                            <input class="input name-input" name="event-name" type="text">
-                        </div>
-                        <div class="event-location-input">
-                            <p class="camp-title location"> Location </p>
-                            <input class="input location-input" name="event-location" type="text">
-                        </div>
+            </div>
+            <section class="data-input">
+                <div class="name-description-camps">
+                    <div class="event-name-input">
+                        <p class="camp-title name"> Name </p>
+                        <input class="input name-input" name="event-name" type="text">
                     </div>
-                    <div class="event-description-input">
-                        <p class="camp-title description"> Description </p>
-                        <input class="input description-input" name="event-description" type="text">
+                    <div class="event-location-input">
+                        <p class="camp-title location"> Location </p>
+                        <input class="input location-input" name="event-location" type="text">
                     </div>
-                </section>
+                </div>
+                <div class="event-description-input">
+                    <p class="camp-title description"> Description </p>
+                    <input class="input description-input" name="event-description" type="text">
+                </div>
+            </section>
+            <div class="button-panel">
                 <button class="next-btn"> Next </button>
             </div>
         </div>
@@ -49,25 +56,82 @@
         height: 100vh;
     }
 
-    .general-container {
-        width: fit-content;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-    }
-
     .main-panel {
+        width: 50vw;
+        height: 55vh;
+
         display: flex;
         flex-direction: column;
         align-items: center;
 
         border-radius: 20px;
 
+        margin-top: 40px;
         background-color: white;
         padding: 30px;
     }
 
-    .title-and-bar, .data-input, .buttons {
+    /**********************
+     PROGRESS BAR & TITLE
+    **********************/
+
+    .title-and-bar {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    .create-event-title {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .progress-bar {
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+    }
+
+    .progress, .progress-titles {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .progress {
+        margin-bottom: 5px;
+        margin-left: 8px;
+    }
+
+    .circle-name {
+        font-size: 12px;
+    }
+
+    .step {
+        margin-left: 60px;
+    }
+
+    .circle-gray {
+        height: 12px;
+        width: 12px;
+        border-color: var(--progress_color);
+    }
+
+    .line {
+        border: 2px solid var(--progress_color);
+        height: fit-content;
+        width: 70px;
+        margin-top: 8px;
+    }
+
+    /**********************
+          DATA INPUT
+    **********************/
+
+    .data-input {
+        width: 95%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -78,14 +142,8 @@
         flex-direction: column;
     }
 
-    .create-event-title {
-        font-weight: bold;
-        font-size: 25px;
-    }
-
-    .progress-bar {
-        display: flex;
-        flex-direction: row;
+    .event-description-input {
+        margin-right: 30px;
     }
 
     .camp-title {
@@ -95,11 +153,35 @@
     }
 
     .input {
-        width: 180px;
+        width: 240px;
         border: 2px solid black;
         border-radius: 20px;
         padding: 5px 15px 5px 15px;
-        margin-bottom: 20px;
+    }
+
+    .event-name-input {
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+
+    .description-input {
+        height: 96px;
+    }
+
+    /**********************
+          BUTTON
+    **********************/
+
+    .button-panel {
+        width: 86%;
+        display: flex;
+        justify-content: right;
+    }
+
+    .next-btn {
+        width: 180px;
+        font-weight: bold;
+        font-size: 14px;
     }
     
 </style>
