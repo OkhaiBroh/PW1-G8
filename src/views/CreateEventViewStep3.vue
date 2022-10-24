@@ -19,23 +19,18 @@
                 </div>
             </div>
             <section class="data-input">
-                <div class="name-description-camps">
-                    <div class="event-name-input">
-                        <p class="camp-title name"> Name </p>
-                        <input class="input name-input" name="event-name" type="text">
-                    </div>
-                    <div class="event-location-input">
-                        <p class="camp-title location"> Location </p>
-                        <input class="input location-input" name="event-location" type="text">
-                    </div>
+                <div class="event-participants-input">
+                    <p class="camp-title participants"> Participants </p>
+                    <input class="input participants-input" name="event-participants" type="text">
                 </div>
-                <div class="event-description-input">
-                    <p class="camp-title description"> Description </p>
-                    <input class="input description-input" name="event-description" type="text">
+                <div class="event-type-input">
+                    <p class="camp-title type"> Type </p>
+                    <input class="input type-input" name="event-type" type="text">
                 </div>
             </section>
             <div class="button-panel">
-                <button class="next-btn"> Next </button>
+                <button class="back-btn"> Back </button>
+                <button class="create-btn"> Create </button>
             </div>
         </div>
     </div>
@@ -116,14 +111,18 @@
     .circle-gray {
         height: 12px;
         width: 12px;
-        border-color: var(--progress_color);
+        border-color: var(--bg_button);
     }
 
     .line {
-        border: 2px solid var(--progress_color);
+        border: 2px solid var(--bg_button);
         height: fit-content;
         width: 70px;
         margin-top: 8px;
+    }
+
+    .circle3 {
+        border-color: var(--progress_color);
     }
 
     /**********************
@@ -137,12 +136,7 @@
         justify-content: space-between;
     }
 
-    .name-description-camps {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .event-description-input {
+    .event-participants-input, .event-type-input {
         margin-right: 30px;
     }
 
@@ -154,18 +148,10 @@
 
     .input {
         width: 240px;
+        height: 96px;
         border: 2px solid black;
         border-radius: 20px;
         padding: 5px 15px 5px 15px;
-    }
-
-    .event-name-input {
-        margin-top: 2px;
-        margin-bottom: 10px;
-    }
-
-    .description-input {
-        height: 96px;
     }
 
     /**********************
@@ -173,15 +159,19 @@
     **********************/
 
     .button-panel {
-        width: 86%;
+        width: 96%;
         display: flex;
-        justify-content: right;
+        justify-content: space-between;
     }
 
-    .next-btn {
+    .create-btn, .back-btn {
         width: 180px;
         font-weight: bold;
         font-size: 14px;
+    }
+    
+    .create-btn {
+        margin-right: 30px;
     }
     
 </style>
