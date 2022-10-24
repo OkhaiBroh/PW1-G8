@@ -18,20 +18,12 @@
                     </div>
                 </div>
             </div>
-            <section class="data-input">
-                <div class="name-description-camps">
-                    <div class="event-name-input">
-                        <p class="camp-title name"> Name </p>
-                        <input class="input name-input" name="event-name" type="text">
-                    </div>
-                    <div class="event-location-input">
-                        <p class="camp-title location"> Location </p>
-                        <input class="input location-input" name="event-location" type="text">
-                    </div>
-                </div>
-                <div class="event-description-input">
-                    <p class="camp-title description"> Description </p>
-                    <input class="input description-input" name="event-description" type="text">
+            <section class="successful-creation-message">
+                <p class="congrats-mssg"> Congratulations </p>
+                <div class="success-mssg">
+                    <hr class="mssg-line">
+                    <p class="creation-mssg"> The event has been</p><p>successfully created! </p>
+                    <hr class="mssg-line">
                 </div>
             </section>
             <div class="button-panel">
@@ -130,42 +122,11 @@
           DATA INPUT
     **********************/
 
-    .data-input {
+    .successful-creation-message {
         width: 95%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .name-description-camps {
-        display: flex;
         flex-direction: column;
-    }
-
-    .event-description-input {
-        margin-right: 30px;
-    }
-
-    .camp-title {
-        font-weight: bold;
-        margin-bottom: 6px;
-        margin-left: 15px;
-    }
-
-    .input {
-        width: 240px;
-        border: 2px solid black;
-        border-radius: 20px;
-        padding: 5px 15px 5px 15px;
-    }
-
-    .event-name-input {
-        margin-top: 2px;
-        margin-bottom: 10px;
-    }
-
-    .description-input {
-        height: 96px;
+        justify-content: space-between;
     }
 
     /**********************
