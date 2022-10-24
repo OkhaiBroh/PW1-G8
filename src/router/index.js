@@ -49,10 +49,10 @@ const router = createRouter({
       component: () => import("../views/ProfileView.vue"),
     },
     {
-      path: "/create-event",
+      path: "/create-event-1",
       name: "create event",
     
-      component: () => import("../views/CreateEventView.vue"),
+      component: () => import("../views/CreateEventViewStep1.vue"),
     },
   ],
 });
