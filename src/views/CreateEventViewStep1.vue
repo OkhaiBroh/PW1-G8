@@ -144,6 +144,8 @@
 
     .event-description-input {
         margin-right: 30px;
+        display: flex;
+        flex-direction: column;
     }
 
     .camp-title {

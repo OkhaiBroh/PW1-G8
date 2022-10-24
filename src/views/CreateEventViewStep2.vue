@@ -19,19 +19,19 @@
                 </div>
             </div>
             <section class="data-input">
-                <div class="name-description-camps">
-                    <div class="event-name-input">
-                        <p class="camp-title name"> Name </p>
-                        <input class="input name-input" name="event-name" type="text">
+                <div class="dates-camps">
+                    <div class="event-start-date-input">
+                        <p class="camp-title start-date"> Start Date </p>
+                        <input class="input start-date-input" name="event-start-date" type="text">
                     </div>
-                    <div class="event-location-input">
-                        <p class="camp-title location"> Location </p>
-                        <input class="input location-input" name="event-location" type="text">
+                    <div class="event-end-date-input">
+                        <p class="camp-title end-date"> End Date </p>
+                        <input class="input end-date-input" name="event-end-date" type="text">
                     </div>
                 </div>
-                <div class="event-description-input">
-                    <p class="camp-title description"> Description </p>
-                    <input class="input description-input" name="event-description" type="text">
+                <div class="event-image-input">
+                    <p class="camp-title image"> Image </p>
+                    <img class="event-photo" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
                 </div>
             </section>
             <div class="button-panel">
@@ -137,13 +137,15 @@
         justify-content: space-between;
     }
 
-    .name-description-camps {
+    .dates-camps {
         display: flex;
         flex-direction: column;
     }
 
-    .event-description-input {
+    .event-image-input {
         margin-right: 30px;
+        display: flex;
+        flex-direction: column;
     }
 
     .camp-title {
@@ -159,13 +161,14 @@
         padding: 5px 15px 5px 15px;
     }
 
-    .event-name-input {
+    .event-start-date-input {
         margin-top: 2px;
         margin-bottom: 10px;
     }
 
-    .description-input {
+    .event-photo {
         height: 96px;
+        width: 240px;
     }
 
     /**********************
