@@ -50,9 +50,15 @@ const router = createRouter({
     },
     {
       path: "/create-event-1",
-      name: "create event",
+      name: "create event 1",
     
       component: () => import("../views/CreateEventViewStep1.vue"),
+    },
+    {
+      path: "/create-event-3",
+      name: "create event 3",
+    
+      component: () => import("../views/CreateEventViewStep3.vue"),
     },
   ],
 });
