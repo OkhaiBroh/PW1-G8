@@ -30,6 +30,7 @@ body {
     padding-bottom: 30px; 
     margin-top: 0px;
     margin-bottom: 0px;
+
     
 }
 .friends {
@@ -49,12 +50,13 @@ body {
     padding-left: 50px;
     padding-right: 50px;
     margin-bottom: 50px;
-
+    
     margin-top: 50px;
 }
 .option_text {
     margin-bottom: 15px;
     font-size: 20px;
+    
 
 }
 
@@ -100,8 +102,9 @@ body {
     padding: 40px;
 }
 .friend_text {
-    margin-top: 20px;
+    margin-top: 100px;
     font-size: 20px;
+    text-align: center;
 
 }
 
