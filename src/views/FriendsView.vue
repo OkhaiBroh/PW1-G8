@@ -66,10 +66,12 @@
             </div>
             <div class="buttons">
               <div class="accept-button">
-                  Accept
+                <img src="../assets/icons/ico_tick.svg" class="ico-accept" />
+
               </div>
               <div class="reject-button">
-                  Reject
+                <img src="../assets/icons/ico_close.svg" class="ico-reject" />
+
               </div>
             </div>
           </article>
@@ -157,7 +159,8 @@ body {
     align-items: center;
   
     margin: 50px;
-    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.15);
+    background: #FFFFFF;
+    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
 
     padding: 30px; 
     margin-top: 0px;
@@ -192,13 +195,19 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
 }
 
 .accept-button, .reject-button{
   background-color: green;
   border-radius: 40px;
-  padding: 10px;
+  padding: 5px;
   margin: 10px;
+  padding-left: 23px;
+  padding-top: 10px;
+  padding-right: 23px;
+  justify-content: center;
   
 }
 .reject-button {
@@ -236,6 +245,10 @@ body {
 .friend-text-buttons {
   font-size: 20px;
   margin-top:30px;
+}
+.ico-accept, .ico-reject {
+  width: 20px;
+  height: 20px;
 }
 
 
