@@ -22,12 +22,15 @@
                 <p class="congrats-mssg"> Congratulations </p>
                 <div class="success-mssg">
                     <hr class="mssg-line">
-                    <p class="creation-mssg"> The event has been</p><p>successfully created! </p>
+                    <div class="creation-mssg">
+                        <p> The event has been</p>
+                        <p> successfully created! </p>
+                    </div>
                     <hr class="mssg-line">
                 </div>
             </section>
             <div class="button-panel">
-                <button class="next-btn"> Next </button>
+                <button class="done-btn"> Done </button>
             </div>
         </div>
     </div>
@@ -108,25 +111,48 @@
     .circle-gray {
         height: 12px;
         width: 12px;
-        border-color: var(--progress_color);
+        border-color: var(--bg_button);
     }
 
     .line {
-        border: 2px solid var(--progress_color);
+        border: 2px solid var(--bg_button);
         height: fit-content;
         width: 70px;
         margin-top: 8px;
     }
 
     /**********************
-          DATA INPUT
+       CREATION MESSAGE
     **********************/
 
     .successful-creation-message {
-        width: 95%;
+        width: 35%;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .success-mssg {
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .congrats-mssg {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .mssg-line {
+        border: 2px solid black;
+        height: fit-content;
+        width: 100%;
+        margin-top: 8px; 
     }
 
     /**********************
@@ -135,11 +161,10 @@
 
     .button-panel {
         width: 86%;
-        display: flex;
-        justify-content: right;
+        text-align: center;
     }
 
-    .next-btn {
+    .done-btn {
         width: 180px;
         font-weight: bold;
         font-size: 14px;
