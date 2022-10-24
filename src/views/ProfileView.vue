@@ -59,16 +59,14 @@
                     <div class="graphs"> 
                         <div class="event-container box-shadow statistics-block"> 
                             <p class="statistics-text"> Average Event Score </p>
-                            <div class="circle-wrap">
-                                <div class="circle">
-                                    <div class="mask full">
-                                        <div class="fill"></div>
-                                    </div>
-                                    <div class="mask half">
-                                        <div class="fill"></div>
-                                    </div>
-                                    <div class="inside-circle"> 75 </div>
-                                </div>
+                            <div class="progress-container">
+                                <svg class="bg-circle"> 
+                                    <circle cx="70" cy="70" r="60" stroke-linecap="round" pathLength="100"> </circle>
+                                </svg>
+                                <svg class="aes-progress-circle"> 
+                                    <circle cx="70" cy="70" r="60" stroke-linecap="round" pathLength="100"> </circle>
+                                </svg>
+                                <p class="progress-text"> 6,5 </p>
                             </div>
                         </div>
                         <div class="event-container box-shadow statistics-block"> 
@@ -79,16 +77,14 @@
                         </div>
                         <div class="event-container box-shadow statistics-block"> 
                             <p class="statistics-text"> % Users with lower number of comments </p>
-                            <div class="circle-wrap">
-                                <div class="circle">
-                                    <div class="mask full">
-                                        <div class="fill"></div>
-                                    </div>
-                                    <div class="mask half">
-                                        <div class="fill"></div>
-                                    </div>
-                                    <div class="inside-circle"> 35 % </div>
-                                </div>
+                            <div class="progress-container">
+                                <svg class="bg-circle"> 
+                                    <circle cx="70" cy="70" r="60" stroke-linecap="round" pathLength="100"> </circle>
+                                </svg>
+                                <svg class="ulnc-progress-circle"> 
+                                    <circle cx="70" cy="70" r="60" stroke-linecap="round" pathLength="100"> </circle>
+                                </svg>
+                                <p class="progress-text"> 45 % </p>
                             </div>
                         </div>
                     </div>
@@ -404,67 +400,90 @@
 
     /*****************************************
     *           Rounded Progress Bar         *
+    *           Average Event Score          *
     ******************************************/
+    
+    .aes-progress-circle {
+        position: absolute;
 
-    .circle, .circle-wrap {
+        width: 140px;
+        height: 140px;
+        
+        fill: none;
+
+        stroke: var(--bg_button);
+        stroke-width: 20px;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+
+        animation: anim 2s linear forwards;
+    }
+
+    .bg-circle {
+        position: absolute;
+
+        width: 140px;
+        height: 140px;
+
+        fill: none;
+        
+        stroke: var(--progress_color);
+        stroke-width: 20px;
+        stroke-dasharray: 472;
+    }
+
+    /* 
+        100 - 65 = 35
+
+        100 = maximo del progress
+        65 el porcetaje que quieres mostrar
+    */ 
+
+    @keyframes anim {
+        100% {
+            stroke-dashoffset: 35;
+        }
+    }
+
+    .progress-container {
+        width: 140px;
+        height: 140px;
+
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .circle-wrap {
-        width: 150px;
-        height: 150px;
-        background-color: var(--statistics_blue_opacity);
-        border-radius: 50%;
-    }
-
-    .circle-wrap .circle .mask,
-    .circle-wrap .circle .fill {
-        width: 150px;
-        height: 150px;
-        position: absolute;
-        border-radius: 50%;
-    }
-
-    .mask .fill {
-        clip: rect(0px, 75px, 150px, 0px);
-        background-color: #227ded;
-    }
-
-    .circle-wrap .circle .mask {
-        clip: rect(0px, 150px, 150px, 75px);
-    }
-
-    .mask.full,
-    .circle .fill {
-        animation: fill ease-in-out 3s;
-        transform: rotate(135deg);
-    }
-
-    @keyframes fill {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(135deg);
-        }
-    }
-
-    .circle-wrap .inside-circle {
-        width: 112px;
-        height: 112px;
-        
-        border-radius: 50%;
-        line-height: 120px;
-        background: white;
-        text-align: center;
-
-        color: black;
-        position: absolute;
-        z-index: 100;
-        font-weight: 700;
+    .progress-text {
         font-size: 25px;
+        font-weight: 700;
+    }
+
+    /*****************************************
+    *           Rounded Progress Bar         *
+    *           Users Lower Num Com          *
+    ******************************************/
+
+    .ulnc-progress-circle {
+        position: absolute;
+
+        width: 140px;
+        height: 140px;
+        
+        fill: none;
+
+        stroke: var(--bg_button);
+        stroke-width: 20px;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+
+        animation: anim2 2s linear forwards;
+    }
+
+    @keyframes anim2 {
+        100% {
+            stroke-dashoffset: 55;
+        }
     }
 
     /*****************************************
