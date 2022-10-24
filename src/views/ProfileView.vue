@@ -137,6 +137,12 @@
                                 <p class="timeline-info-text"> 01/10/2022 - 05/10/2022 </p>
                             </div>
                         </div>
+
+                        <div class="round-button-arrow">
+                            <button class="rounded-button">
+                                <img class="arrow-ico" src="../assets/icons/ico_right_arrow.svg" /> 
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -145,6 +151,30 @@
 </template>
 
 <style scoped>
+
+    .arrow-ico {
+        width: 25px;
+        height: 25px;
+    }
+
+    .round-button-arrow {
+        display: flex;
+        align-items: center;
+    }
+
+    .rounded-button {
+        width: 75px;
+        height: 75px;
+
+        border-radius: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
 
     /*****************************************
     *               Background               *
