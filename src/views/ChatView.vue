@@ -170,6 +170,7 @@
         flex-direction: column;
         background-color: white;
         width: 300px;
+        border-radius: 20px;
     }
 
     /****************************************
@@ -184,6 +185,7 @@
         width: 100%;
         height: 30px;
         border: 1px solid white;
+        border-radius: 20px;
     }
     .input_search{
         width: 100%;
@@ -191,12 +193,14 @@
         background-color: var(--gray_color);
         padding-left: 10px;
         outline: none;
+        border-radius: 20px;
     }
     .user_chat{
         display: flex;
         align-items: center;
         width: 100%;
         height: 50px;
+        padding-top: 10px;
     }
     .p_style {
         font-size: 20px;
@@ -219,6 +223,7 @@
         height: 50px;
         border-radius: 0px;
         margin-bottom: 35px;
+        border-radius: 20px;
     }
 
     /****************************************
