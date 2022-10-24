@@ -57,7 +57,7 @@
                 <div class="statistics-container box-shadow">
                     <p class="title-text center-text"> Statistics </p>
                     <div class="graphs"> 
-                        <div class="statistics-block"> 
+                        <div class="event-container box-shadow statistics-block"> 
                             <p class="statistics-text"> Average Event Score </p>
                             <div class="circle-wrap">
                                 <div class="circle">
@@ -71,13 +71,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="statistics-block"> 
+                        <div class="event-container box-shadow statistics-block"> 
                             <p class="statistics-text"> Number of Comments </p>
                             <div>
                                 <p class="num-comm-text"> 53 </p>
                             </div>
                         </div>
-                        <div class="statistics-block"> 
+                        <div class="event-container box-shadow statistics-block"> 
                             <p class="statistics-text"> % Users with lower number of comments </p>
                             <div class="circle-wrap">
                                 <div class="circle">
