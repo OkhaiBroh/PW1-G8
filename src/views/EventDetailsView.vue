@@ -113,9 +113,7 @@
 </template>
 
 <style scoped>
-    body {
-        overflow: hidden;
-    }
+   
    .background {
         background-color: var(--gray_color);
         display: flex;
@@ -156,7 +154,7 @@
     .ico-event {
         width: 500px;
         height: 300px;
-        border-radius: 10%;
+        border-radius: 20px;
         margin-top: 20px;
     }
     
@@ -180,7 +178,7 @@
         align-self: flex-end;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         margin-top: 30px;
     }
 
@@ -210,6 +208,7 @@
         flex-direction: row;
         color:white;
         text-decoration: none;
+        align-items: center;
 
     }
     .share-ico {
@@ -227,6 +226,7 @@
     }
     .button-text {
         margin-right: 10px;
+        font-size: 17px;
         
     }
  
@@ -258,7 +258,8 @@
         padding: 20px;
         color:white;
         padding-left: 50px;
-        padding-right: 50px
+        padding-right: 50px;
+        align-items: center;
         
     }
     .right-container {
@@ -300,9 +301,4 @@
     
 </style>
 
-<script>
-function myFunction() {
-  document.getElementById("star3").style.backgroundColor = "lightblue";
-}
-</script>
 
