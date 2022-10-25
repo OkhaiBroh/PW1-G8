@@ -18,24 +18,19 @@
                     </div>
                 </div>
             </div>
-            <section class="data-input">
-                <div class="name-description-camps">
-                    <div class="event-name-input">
-                        <p class="camp-title name"> Name </p>
-                        <input class="input name-input" name="event-name" type="text">
+            <section class="successful-creation-message">
+                <p class="congrats-mssg"> Congratulations </p>
+                <div class="success-mssg">
+                    <hr class="mssg-line">
+                    <div class="creation-mssg">
+                        <p> The event has been</p>
+                        <p> successfully created! </p>
                     </div>
-                    <div class="event-location-input">
-                        <p class="camp-title location"> Location </p>
-                        <input class="input location-input" name="event-location" type="text">
-                    </div>
-                </div>
-                <div class="event-description-input">
-                    <p class="camp-title description"> Description </p>
-                    <input class="input description-input" name="event-description" type="text">
+                    <hr class="mssg-line">
                 </div>
             </section>
             <div class="button-panel">
-                <button class="next-btn"> Next </button>
+                <button class="done-btn"> Done </button>
             </div>
         </div>
     </div>
@@ -116,58 +111,48 @@
     .circle-gray {
         height: 12px;
         width: 12px;
-        border-color: var(--progress_color);
+        border-color: var(--bg_button);
     }
 
     .line {
-        border: 2px solid var(--progress_color);
+        border: 2px solid var(--bg_button);
         height: fit-content;
         width: 70px;
         margin-top: 8px;
     }
 
     /**********************
-          DATA INPUT
+       CREATION MESSAGE
     **********************/
 
-    .data-input {
-        width: 95%;
+    .successful-creation-message {
+        width: 35%;
+        height: 40vh;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+
+        text-align: center;
         justify-content: space-between;
     }
 
-    .name-description-camps {
+    .success-mssg {
+        height: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     }
 
-    .event-description-input {
-        margin-right: 30px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .camp-title {
+    .congrats-mssg {
         font-weight: bold;
-        margin-bottom: 6px;
-        margin-left: 15px;
+        font-size: 18px;
+        margin-bottom: 20px;
     }
 
-    .input {
-        width: 240px;
+    .mssg-line {
         border: 2px solid black;
-        border-radius: 20px;
-        padding: 5px 15px 5px 15px;
-    }
-
-    .event-name-input {
-        margin-top: 2px;
-        margin-bottom: 10px;
-    }
-
-    .description-input {
-        height: 96px;
+        height: fit-content;
+        width: 100%;
+        margin-top: 8px; 
     }
 
     /**********************
@@ -176,11 +161,10 @@
 
     .button-panel {
         width: 86%;
-        display: flex;
-        justify-content: right;
+        text-align: center;
     }
 
-    .next-btn {
+    .done-btn {
         width: 180px;
         font-weight: bold;
         font-size: 14px;
