@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@import "./css/login.css";
+@import "./css/header.css";
+
+
+@import "./css/register.css";
+
+
+:root {
+    --font: 'Poppins';
+    --bg_button: #0071F2;
+    --gray_color: #F5F5F7;
+    --message-gray-color: #A5A5A5;
+    --selected_button: #0058bd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--font);
+}
+
+html, body, #app {
+    height: 100%;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/************************************
+
+
+               Buttons
+
+
+*************************************/
+
+.link-button {
+    background-color: var(--bg_button);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    
+    border: none;
+    border-radius: 25px;
+
+    padding: 10px;
+    margin-top: 35px;
+}
+
+button {
+    background-color: var(--bg_button);
+    color: white;
+
+    width: 100%;
+    
+    border: none;
+    border-radius: 25px;
+
+    padding: 10px;
+    margin-top: 35px;
+}
+
+.link-button:hover, button:hover {
+    cursor: pointer;
+    background-color: var(--selected_button);
+}
+
+/*******************************
+
+
+          Input Fields 
+
+
+********************************/
+
+.input-form {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 10px;
+    min-width: 100px;
+}
+
+.text-input {
+    display: block;
+    font-weight: 400;
+    border: none;
+    border-bottom: 2px solid black;
+    margin: 10px 0 10px 0;
+    outline: none;
+}
+
+.text-input, .label-input {
+    transition: 0.4s ease;
+    font-size: 15px;
+}
+
+.label-input {
+    transform: translate(4px, -14px) scale(1.02);
+    margin-bottom: 2px;
+    cursor: text;
+    transform-origin: left top;
+    color: #757575;
+    position: absolute; 
+}
+
+.text-input::placeholder {
+    opacity: 0;
+}
+
+.text-input:focus,
+.text-input:not(:placeholder-shown) {
+    border-bottom: 2px solid #000000;
+}
+
+.text-input:not(:placeholder-shown) ~ .label-input, 
+.text-input:focus ~ .label-input {
+    transform: translate(0px, -35px) scale(0.8);
+    padding-left: 0px;
+    color: black;
+}     
+
+.login-text {
+    font-size: 15px;
+    color: var(--bg_button);
+
+    margin-top: 25px;
+
+    text-decoration: none;
+    display: block;
+}
