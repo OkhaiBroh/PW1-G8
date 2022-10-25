@@ -1,9 +1,7 @@
 <template>
     <div class="background">
         <div class="left">
-            <div class="search">
-                <input class="input_search" type="text" placeholder="search"/>
-            </div>
+            <input class="input_search" type="text" placeholder="search"/>
             <ul class="list_chats">
                 <li>
                     <div class="user_chat">
@@ -114,6 +112,8 @@
         flex-direction: column;
         width: 100%;
         height: 70%;
+
+        flex-grow: 1;
     }
 
     .message-background {
@@ -154,10 +154,15 @@
 
     .right {
         width: 50%;
-        padding: 5px 50px 50px 50px;
+        padding: 5px 50px 25px 50px;
         border-radius: 20px;
         margin-left: 5vw;
         background-color: white;
+
+        display: flex;
+        flex-direction: column;
+
+        box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
     }
 
     /****************************************
@@ -171,6 +176,10 @@
         background-color: white;
         width: 300px;
         border-radius: 20px;
+
+        box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
+
+        padding: 50px 25px 50px 25px;
     }
 
     /****************************************
@@ -180,20 +189,15 @@
         list-style: none;
         width: 100%;
     }
-    .search{
-        display: flex;
-        width: 100%;
-        height: 30px;
-        border: 1px solid white;
-        border-radius: 20px;
-    }
+
     .input_search{
         width: 100%;
         border: none;
         background-color: var(--gray_color);
-        padding-left: 10px;
+        padding: 20px 0 20px 0px;
         outline: none;
         border-radius: 20px;
+        margin-bottom: 25px;
     }
     .user_chat{
         display: flex;
