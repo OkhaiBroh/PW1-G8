@@ -103,27 +103,21 @@
 </template>
 
 <style scoped>
-html,
-body {
-  margin: 0px;
-  height: 100%;
-}
+  .background {
+    background-color: var(--gray_color);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
 
-.background {
-  background-color: var(--gray_color);
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-}
+  .general-container {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+  }
 
-.general-container {
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-}
-
-/*************************
+    /*************************
              SORTER
     **************************/
 
@@ -143,12 +137,14 @@ body {
   border-radius: 20px;
 
   background-color: white;
-  padding: 30px 30px 10px 30px;
+  padding: 35px;
 }
 
 .sort-by-text {
   font-weight: 900;
   font-size: 25px;
+
+  margin-bottom: 25px;
 }
 
 .name-sort-but,
@@ -157,24 +153,24 @@ body {
 .rating-sort-but {
   border: 2px solid var(--bg_button);
   font-weight: 700;
-  height: 40px;
   width: 150px;
   margin: 20px 0 0 0;
-}
 
-.name-sort-but,
-.date-sort-but,
-.location-sort-but {
   background-color: white;
   color: black;
 }
 
-.name-sort-but {
-  margin: 40px 0 0 0;
-}
+.name-sort-but:hover,
+.date-sort-but:hover,
+.location-sort-but:hover,
+.rating-sort-but:hover {
+  border: 2px solid var(--bg_button);
+  font-weight: 700;
+  width: 150px;
+  margin: 20px 0 0 0;
 
-.rating-sort-but {
-  margin: 20px 0 50px 0;
+  background-color: var(--bg_button);
+  color: white;
 }
 
 /*************************
@@ -183,7 +179,7 @@ body {
 
 .searcher-panel {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
 
@@ -203,7 +199,7 @@ body {
 .search-bar {
   display: flex;
   flex-direction: row;
-  height: fit-content;
+  align-items: center;
 
   border: 2px solid var(--bg_button);
   border-radius: 20px;
@@ -211,10 +207,8 @@ body {
 }
 
 .search-input {
-  height: 30px;
-  width: 542px;
+  width: 540px;
   vertical-align: center;
-  flex-grow: 2;
   border: none;
   margin: 2px 0px 2px 15px;
 }
@@ -226,7 +220,6 @@ body {
 .create-btn {
   border: 2px solid var(--bg_button);
   font-weight: 700;
-  height: 40px;
   width: 150px;
   margin: 0 0 0 20px;
 }
@@ -236,7 +229,8 @@ body {
   height: 20px;
   border-radius: 0px;
   background: url(../assets/icons/ico_search.svg) no-repeat;
-  margin: 6px 18px 2px 0;
+  padding: 0;
+  margin: 0 15px 0 0;
 }
 
 /*************************
@@ -245,7 +239,8 @@ body {
 
 .events-panel {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .event-container {
@@ -253,7 +248,6 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 25px;
   border-radius: 25px;
   padding: 20px;
 }
