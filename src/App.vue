@@ -19,14 +19,14 @@ import { RouterLink, RouterView } from "vue-router";
     <nav class="options">
       <div class="header-option">
         <RouterLink class="header-text" to="/messages">
-          <img class="ico" src="./assets/icons/ico_message.svg" />
+          <img class="ico-header" src="./assets/icons/ico_message.svg" />
           <p>Messages</p>
         </RouterLink>
       </div>
 
       <div class="header-option">
         <RouterLink class="header-text" to="/events">
-          <img class="ico" src="./assets/icons/ico_event.svg" />
+          <img class="ico-header" src="./assets/icons/ico_event.svg" />
           <p>Events</p>
         </RouterLink>
       </div>
