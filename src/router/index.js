@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: "/messages",
       name: "messages",
-    
+
       component: () => import("../views/MessagesView.vue"),
     },
     {
@@ -33,25 +33,25 @@ const router = createRouter({
     {
       path: "/events",
       name: "events",
-    
+
       component: () => import("../views/EventsView.vue"),
     },
     {
       path: "/friends",
       name: "friends",
-    
+
       component: () => import("../views/FriendsView.vue"),
     },
     {
       path: "/profile",
       name: "profile",
-    
+
       component: () => import("../views/ProfileView.vue"),
     },
     {
       path: "/other-profile",
       name: "other profile",
-    
+
       component: () => import("../views/OtherProfileView.vue"),
     },
   ],
