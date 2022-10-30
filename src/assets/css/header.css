@@ -1,17 +1,7 @@
-
-
-
 .options {
-
     text-align: center;
     padding: 25px;
-    display: flex ;
-    flex-direction: row;
-
-
-    
-
-    
+    display: flex;
 }
 
 .header-option {
@@ -21,49 +11,40 @@
     margin-right: 50px;
     align-content: center;
     text-decoration: none;
-    
-
 }
+
 .header-text {
     text-decoration: none;
-    
     color: black;
-
 }
 
-.content {
-    display:block;
-    align-items: center;
-    background-color: aqua;
-}
 .ico-header {
     width: 35px;
     height: 35px;
 }
+
 .ico_friends {
     width: 45px;
     height: 35px;
-    
-
 }
+
 .ico_user {
     width: 35px;
     height: 30px;
     
     margin-top: 5px;
 }
+
 .ico_logo {
-    
     width: 100px;
     height: 100px;
     margin-left: 40px;
-
-
 }
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    background-color: white;
 }
 

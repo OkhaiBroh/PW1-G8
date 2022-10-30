@@ -1,7 +1,7 @@
 <template>
-  <div class="row">
-    <div class="column center">
-      <p class="title">Open Events</p>
+  <div class="login-register-row">
+    <div class="login-register-column center">
+      <p class="login-register-title">Open Events</p>
       <div class="bar-container">
         <div class="line-container">
           <span class="circle-blue"></span>
@@ -13,9 +13,9 @@
           <p class="bar-text2">Security</p>
         </div>
       </div>
-      <div class="panel">
-        <div class="horizontal">
-          <img class="ico" src="../assets/icons/ico_pass.svg" />
+      <div class="login-register-panel register-panel-width">
+        <div class="horizontal-input">
+          <img class="ico-25px" src="../assets/icons/ico_pass.svg" />
           <div class="input-form">
             <input
               class="text-input"
@@ -27,8 +27,8 @@
             <label class="label-input" for="password"> Password* </label>
           </div>
         </div>
-        <div class="horizontal">
-          <img class="ico" src="../assets/icons/ico_pass.svg" />
+        <div class="horizontal-input">
+          <img class="ico-25px" src="../assets/icons/ico_pass.svg" />
           <div class="input-form">
             <input
               class="text-input"
@@ -46,12 +46,12 @@
           Register
         </RouterLink>
         <!--<button class="next"> Register </button>-->
-        <RouterLink class="login-text" to="/"> Registered? Log in </RouterLink>
+        <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
       </div>
     </div>
-    <div class="column">
+    <div class="login-register-column">
       <img
-        class="image"
+        class="login-register-image"
         src="https://grandluxorhotels.com/wp-content/uploads/2016/09/9323706488_7c288a9659_b.jpg"
       />
     </div>

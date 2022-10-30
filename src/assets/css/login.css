@@ -1,28 +1,37 @@
-.row {
+.login-register-row {
     display: flex;
 }
 
-.column {
+.login-register-column {
     flex: 50%;
 }
 
-.image {
+.login-register-image {
     width: 100%;
     min-height: 100vh;
     object-fit: cover;
 }
 
-.panel {
+.login-register-panel {
     text-align: center;
-    width: 200px;
     
     box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
 
+    background-color: white;
+
     padding: 50px 75px 50px 75px;
 }
 
-.title {
+.login-panel-width {
+    width: 200px;
+}
+
+.register-panel-width {
+    width: 250px;
+}
+
+.login-register-title {
     font-size: 45px;
     font-weight: 700;
     margin-bottom: 50px;
@@ -30,18 +39,33 @@
 
 .center {
     display: flex;
-    align-items: center; /* center horizontal */
-    justify-content: center; /* center vertical */
+    align-items: center;     /* center horizontal */
+    justify-content: center; /* center vertical   */
     flex-direction: column;
 }
 
-.ico {
+.ico-25px {
     width: 25px;
     height: 25px;
 }
 
-.horizontal {
+.horizontal-input {
     display: flex;
     align-items: center;
     margin-top: 20px;
 } 
+
+.link-text {
+    font-size: 15px;
+    color: var(--bg_button);
+
+    margin-top: 25px;
+
+    text-decoration: none;
+    display: block;
+}
+
+.link-text:hover {
+    color: var(--selected_button);
+    cursor: pointer;
+}

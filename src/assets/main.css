@@ -5,6 +5,10 @@
 @import "./css/register.css";
 
 
+/************************************
+              Main Things
+*************************************/
+
 :root {
     --font: 'Poppins';
     --bg_button: #0071F2;
@@ -25,13 +29,13 @@
     font-family: var(--font);
 }
 
+html {
+    background-color: var(--gray_color);
+}
+
 
 /************************************
-
-
                Buttons
-
-
 *************************************/
 
 .link-button {
@@ -68,11 +72,7 @@ button {
 }
 
 /*******************************
-
-
           Input Fields 
-
-
 ********************************/
 
 .input-form {
@@ -120,13 +120,3 @@ button {
     padding-left: 0px;
     color: black;
 }     
-
-.login-text {
-    font-size: 15px;
-    color: var(--bg_button);
-
-    margin-top: 25px;
-
-    text-decoration: none;
-    display: block;
-}
