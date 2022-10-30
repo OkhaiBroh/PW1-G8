@@ -1,3 +1,1 @@
-<template>
-    MessagesView
-</template>
+<template>MessagesView</template>

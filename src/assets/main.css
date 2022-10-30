@@ -5,12 +5,21 @@
 @import "./css/register.css";
 
 
+/************************************
+              Main Things
+*************************************/
+
 :root {
     --font: 'Poppins';
     --bg_button: #0071F2;
     --gray_color: #F5F5F7;
     --progress_color: #D9D9D9;
     --selected_button: #0058bd;
+    --orange_color: #FD9900;
+    --red_color: #E11601;
+    --selected_orange_color: #cc7a00;
+    --selected_red_color: #ad1201;
+    --statistics_blue_opacity: rgba(0, 113, 242, 0.3);
 }
 
 * {
@@ -20,13 +29,13 @@
     font-family: var(--font);
 }
 
+html {
+    background-color: var(--gray_color);
+}
+
 
 /************************************
-
-
                Buttons
-
-
 *************************************/
 
 .link-button {
@@ -63,11 +72,7 @@ button {
 }
 
 /*******************************
-
-
           Input Fields 
-
-
 ********************************/
 
 .input-form {
@@ -115,13 +120,3 @@ button {
     padding-left: 0px;
     color: black;
 }     
-
-.login-text {
-    font-size: 15px;
-    color: var(--bg_button);
-
-    margin-top: 25px;
-
-    text-decoration: none;
-    display: block;
-}
