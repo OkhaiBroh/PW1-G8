@@ -49,6 +49,30 @@ const router = createRouter({
       component: () => import("../views/ProfileView.vue"),
     },
     {
+      path: "/create-event-1",
+      name: "create event 1",
+    
+      component: () => import("../views/CreateEventViewStep1.vue"),
+    },
+    {
+      path: "/create-event-2",
+      name: "create event 2",
+    
+      component: () => import("../views/CreateEventViewStep2.vue"),
+    },
+    {
+      path: "/create-event-3",
+      name: "create event 3",
+    
+      component: () => import("../views/CreateEventViewStep3.vue"),
+    },      
+    {
+      path: "/create-event-4",
+      name: "create event 4",
+    
+      component: () => import("../views/CreateEventViewStep4.vue"),
+    },
+    {
       path: "/other-profile",
       name: "other profile",
 
