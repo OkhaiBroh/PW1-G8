@@ -18,7 +18,7 @@
     box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
 
-    background-color: white;
+    background-color: var(--white_color);
 
     padding: 50px 75px 50px 75px;
 }
@@ -57,7 +57,7 @@
 
 .link-text {
     font-size: 15px;
-    color: var(--bg_button);
+    color: var(--blue_color);
 
     margin-top: 25px;
 
@@ -66,6 +66,6 @@
 }
 
 .link-text:hover {
-    color: var(--selected_button);
+    color: var(--selected_blue_color);
     cursor: pointer;
 }

@@ -2,7 +2,7 @@
   <div class="background">
     <div class="general-container">
       <section class="sorter-pack">
-        <div class="sorter-panel">
+        <div class="sorter-panel box-shadow">
           <p class="sort-by-text">Sort By</p>
           <button class="name-sort-but">Name</button>
           <button class="date-sort-but">Date</button>
@@ -10,7 +10,7 @@
           <button class="rating-sort-but">Rating</button>
         </div>
       </section>
-      <section class="searcher-panel">
+      <section class="searcher-panel box-shadow">
         <div class="upper-searcher-section">
           <div class="search-bar">
             <input
@@ -104,7 +104,7 @@
 
 <style scoped>
   .background {
-    background-color: var(--gray_color);
+    background-color: var(--light_gray_color);
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -136,7 +136,7 @@
 
   border-radius: 20px;
 
-  background-color: white;
+  background-color: var(--white_color);
   padding: 35px;
 }
 
@@ -151,26 +151,26 @@
 .date-sort-but,
 .location-sort-but,
 .rating-sort-but {
-  border: 2px solid var(--bg_button);
+  border: 2px solid var(--blue_color);
   font-weight: 700;
   width: 150px;
   margin: 20px 0 0 0;
 
-  background-color: white;
-  color: black;
+  background-color: var(--white_color);
+  color: var(--black_color);
 }
 
 .name-sort-but:hover,
 .date-sort-but:hover,
 .location-sort-but:hover,
 .rating-sort-but:hover {
-  border: 2px solid var(--bg_button);
+  border: 2px solid var(--blue_color);
   font-weight: 700;
   width: 150px;
   margin: 20px 0 0 0;
 
-  background-color: var(--bg_button);
-  color: white;
+  background-color: var(--blue_color);
+  color: var(--white_color);
 }
 
 /*************************
@@ -201,7 +201,7 @@
   flex-direction: row;
   align-items: center;
 
-  border: 2px solid var(--bg_button);
+  border: 2px solid var(--blue_color);
   border-radius: 20px;
   margin-top: 2px;
 }
@@ -218,7 +218,7 @@
 }
 
 .create-btn {
-  border: 2px solid var(--bg_button);
+  border: 2px solid var(--blue_color);
   font-weight: 700;
   width: 150px;
   margin: 0 0 0 20px;

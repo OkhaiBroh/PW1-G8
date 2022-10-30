@@ -1,7 +1,7 @@
 .circle-gray {
     height: 15px;
     width: 15px;
-    border: 4px solid var(--progress_color);
+    border: 4px solid var(--dark_gray_color);
     border-radius: 50%;
     display: inline-block;
 }
@@ -9,8 +9,8 @@
 .circle-blue {
     height: 15px;
     width: 15px;
-    border: 4px solid var(--bg_button);
-    background-color: var(--bg_button);
+    border: 4px solid var(--blue_color);
+    background-color: var(--blue_color);
     border-radius: 50%;
     display: inline-block;
 }

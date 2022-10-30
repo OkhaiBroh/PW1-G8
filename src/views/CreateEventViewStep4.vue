@@ -45,7 +45,7 @@
     }
     
     .background {
-        background-color: var(--gray_color);
+        background-color: var(--light_gray_color);
         display: flex;
         justify-content: center;
         height: 100vh;
@@ -62,7 +62,7 @@
         border-radius: 20px;
 
         margin-top: 40px;
-        background-color: white;
+        background-color: var(--white_color);
         padding: 30px;
     }
 
@@ -111,11 +111,11 @@
     .circle-gray {
         height: 12px;
         width: 12px;
-        border-color: var(--bg_button);
+        border-color: var(--blue_color);
     }
 
     .line {
-        border: 2px solid var(--bg_button);
+        border: 2px solid var(--blue_color);
         height: fit-content;
         width: 70px;
         margin-top: 8px;
@@ -149,7 +149,7 @@
     }
 
     .mssg-line {
-        border: 2px solid black;
+        border: 2px solid var(--black_color);
         height: fit-content;
         width: 100%;
         margin-top: 8px; 

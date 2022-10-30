@@ -59,8 +59,8 @@
 </template>
 
 <style scoped>
-.line {
-  border: 2px solid var(--bg_button);
-  width: 100px;
-}
+  .line {
+    border: 2px solid var(--blue_color);
+    width: 100px;
+  }
 </style>

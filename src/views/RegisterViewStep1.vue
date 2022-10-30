@@ -80,7 +80,7 @@
 
 <style scoped>
   .line {
-    border: 2px solid var(--progress_color);
+    border: 2px solid var(--dark_gray_color);
     width: 100px;
   }
 
@@ -89,7 +89,7 @@
   }
 
   .label-file {
-      border: 1px solid #ccc;
+      border: 1px solid var(--dark_gray_color);
       border-radius: 25px;
 
       display: inline-block;
@@ -97,11 +97,11 @@
       cursor: pointer;
 
       font-size: 15px;
-      color: black;
+      color: var(--black_color);
   }
 
   .input-file:focus, .label-file:hover {
-      background-color: var(--gray_color);
+      background-color: var(--dark_gray_color);
       border-radius: 25px;
   }
 </style>

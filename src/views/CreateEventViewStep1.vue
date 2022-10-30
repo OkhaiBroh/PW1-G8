@@ -50,7 +50,7 @@
     }
     
     .background {
-        background-color: var(--gray_color);
+        background-color: var(--light_gray_color);
         display: flex;
         justify-content: center;
         height: 100vh;
@@ -67,7 +67,7 @@
         border-radius: 20px;
 
         margin-top: 40px;
-        background-color: white;
+        background-color: var(--white_color);
         padding: 30px;
     }
 
@@ -116,11 +116,11 @@
     .circle-gray {
         height: 12px;
         width: 12px;
-        border-color: var(--progress_color);
+        border-color: var(--dark_gray_color);
     }
 
     .line {
-        border: 2px solid var(--progress_color);
+        border: 2px solid var(--dark_gray_color);
         height: fit-content;
         width: 70px;
         margin-top: 8px;
@@ -156,7 +156,7 @@
 
     .input {
         width: 240px;
-        border: 2px solid black;
+        border: 2px solid var(--black_color);
         border-radius: 20px;
         padding: 5px 15px 5px 15px;
     }

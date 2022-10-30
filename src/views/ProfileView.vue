@@ -252,7 +252,7 @@
     ******************************************/
 
 .background-color {
-  background-color: var(--gray_color);
+  background-color: var(--light_gray_color);
   display: flex;
   justify-content: center;
 }
@@ -487,7 +487,7 @@
 
   fill: none;
 
-  stroke: var(--bg_button);
+  stroke: var(--blue_color);
   stroke-width: 20px;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
@@ -503,7 +503,7 @@
 
   fill: none;
 
-  stroke: var(--progress_color);
+  stroke: var(--dark_gray_color);
   stroke-width: 20px;
   stroke-dasharray: 472;
 }
@@ -548,7 +548,7 @@
 
   fill: none;
 
-  stroke: var(--bg_button);
+  stroke: var(--blue_color);
   stroke-width: 20px;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
