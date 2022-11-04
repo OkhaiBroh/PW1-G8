@@ -63,7 +63,7 @@ html {
 
 button {
     background-color: var(--blue_color);
-    color: white;
+    color: var(--white_color);
 
     width: 100%;
     
@@ -109,7 +109,6 @@ button {
     margin-bottom: 2px;
     cursor: text;
     transform-origin: left top;
-    /* TODO -> que es este color? */
     color: var(--input_gray_color);
     position: absolute; 
 }

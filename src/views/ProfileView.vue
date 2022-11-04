@@ -141,7 +141,7 @@
               <p class="timeline-title-text">La Fiestita</p>
               <div class="info-container">
                 <img
-                  class="ico"
+                  class="ico-25px"
                   src="../assets/icons/location_ico.svg"
                   alt="location ico"
                 />
@@ -149,7 +149,7 @@
               </div>
               <div class="info-container">
                 <img
-                  class="ico"
+                  class="ico-25px"
                   src="../assets/icons/calendar_ico.svg"
                   alt="calendar ico"
                 />
@@ -166,7 +166,7 @@
               <p class="timeline-title-text">La Fiestita</p>
               <div class="info-container">
                 <img
-                  class="ico"
+                  class="ico-25px"
                   src="../assets/icons/location_ico.svg"
                   alt="location ico"
                 />
@@ -174,7 +174,7 @@
               </div>
               <div class="info-container">
                 <img
-                  class="ico"
+                  class="ico-25px"
                   src="../assets/icons/calendar_ico.svg"
                   alt="calendar ico"
                 />
@@ -191,7 +191,7 @@
               <p class="timeline-title-text">La Fiestita</p>
               <div class="info-container">
                 <img
-                  class="ico"
+                  class="ico-25px"
                   src="../assets/icons/location_ico.svg"
                   alt="location ico"
                 />
@@ -199,7 +199,7 @@
               </div>
               <div class="info-container">
                 <img
-                  class="ico"
+                  class="ico-25px"
                   src="../assets/icons/calendar_ico.svg"
                   alt="calendar ico"
                 />
@@ -210,7 +210,7 @@
             <div class="round-button-arrow">
               <button class="rounded-button">
                 <img
-                  class="arrow-ico"
+                  class="ico-25px"
                   src="../assets/icons/ico_right_arrow.svg"
                 />
               </button>
@@ -223,10 +223,6 @@
 </template>
 
 <style scoped>
-.arrow-ico {
-  width: 25px;
-  height: 25px;
-}
 
 .round-button-arrow {
   display: flex;
@@ -578,9 +574,6 @@
 }
 
 .ico {
-  width: 25px;
-  height: 25px;
-
   margin-right: 10px;
 }
 

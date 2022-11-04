@@ -15,7 +15,7 @@
 
 .header-text {
     text-decoration: none;
-    color: black;
+    color: var(--black_color);
 }
 
 .ico-header {
@@ -45,6 +45,6 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: white;
+    background-color: var(--white_color);
 }
 
