@@ -48,12 +48,6 @@ const router = createRouter({
 
       component: () => import("../views/ProfileView.vue"),
     },
-    {
-      path: "/chat",
-      name: "chat",
-
-      component: () => import("../views/ChatView.vue"),
-    },
     { 
       path: "/create-event-1",
       name: "create event 1",
