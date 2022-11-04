@@ -2,17 +2,32 @@
 
 @import "./css/login.css";
 @import "./css/header.css";
-
-
 @import "./css/register.css";
 
 
+/************************************
+              Main Things
+*************************************/
+
 :root {
     --font: 'Poppins';
-    --bg_button: #0071F2;
-    --gray_color: #F5F5F7;
-    --message-gray-color: #A5A5A5;
-    --selected_button: #0058bd;
+
+    /* Gray Colors */
+    --light_gray_color: #F5F5F7;
+    --dark_gray_color: #D9D9D9;
+    --input_gray_color: #757575;
+    
+    /* Normal Colors */
+    --blue_color: #0071F2;
+    --orange_color: #FD9900;
+    --red_color: #E11601;
+    --black_color: black;
+    --white_color: white;
+
+    /* Selected / Hover Colors */
+    --selected_blue_color: #0058bd;
+    --selected_orange_color: #cc7a00;
+    --selected_red_color: #ad1201;
 }
 
 * {
@@ -22,27 +37,17 @@
     font-family: var(--font);
 }
 
-html, body, #app {
-    height: 100%;
+html {
+    background-color: var(--gray_color);
 }
-
-#app {
-    display: flex;
-    flex-direction: column;
-}
-
 
 /************************************
-
-
                Buttons
-
-
 *************************************/
 
 .link-button {
-    background-color: var(--bg_button);
-    color: white;
+    background-color: var(--blue_color);
+    color: var(--white_color);
 
     display: flex;
     justify-content: center;
@@ -56,7 +61,7 @@ html, body, #app {
 }
 
 button {
-    background-color: var(--bg_button);
+    background-color: var(--blue_color);
     color: white;
 
     width: 100%;
@@ -70,15 +75,11 @@ button {
 
 .link-button:hover, button:hover {
     cursor: pointer;
-    background-color: var(--selected_button);
+    background-color: var(--selected_blue_color);
 }
 
 /*******************************
-
-
           Input Fields 
-
-
 ********************************/
 
 .input-form {
@@ -92,7 +93,7 @@ button {
     display: block;
     font-weight: 400;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--black_color);
     margin: 10px 0 10px 0;
     outline: none;
 }
@@ -107,7 +108,8 @@ button {
     margin-bottom: 2px;
     cursor: text;
     transform-origin: left top;
-    color: #757575;
+    /* TODO -> que es este color? */
+    color: var(--input_gray_color);
     position: absolute; 
 }
 
@@ -117,22 +119,12 @@ button {
 
 .text-input:focus,
 .text-input:not(:placeholder-shown) {
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid var(--black_color);
 }
 
 .text-input:not(:placeholder-shown) ~ .label-input, 
 .text-input:focus ~ .label-input {
     transform: translate(0px, -35px) scale(0.8);
     padding-left: 0px;
-    color: black;
+    color: var(--black_color);
 }     
-
-.login-text {
-    font-size: 15px;
-    color: var(--bg_button);
-
-    margin-top: 25px;
-
-    text-decoration: none;
-    display: block;
-}
