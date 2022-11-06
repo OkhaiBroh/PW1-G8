@@ -40,9 +40,14 @@
 }
 
 html, body {
-    height: 100vh;
-    height: var(--doc-height);
-    background-color: var(--gray_color);
+    height: 100%;
+    background-color: var(--light_gray_color);
+}
+
+#app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
    
 

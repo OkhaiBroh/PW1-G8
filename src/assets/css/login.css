@@ -1,14 +1,16 @@
 .login-register-row {
     display: flex;
+    height: 100%;
 }
 
 .login-register-column {
+    display: flex;
     flex: 50%;
+    flex-grow: 1;
 }
 
 .login-register-image {
     width: 100%;
-    min-height: 100vh;
     object-fit: cover;
 }
 
