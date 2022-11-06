@@ -41,3 +41,9 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+  #prueba {
+    visibility: hidden;
+  }
+</style>

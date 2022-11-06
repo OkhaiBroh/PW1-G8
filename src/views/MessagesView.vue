@@ -69,7 +69,7 @@
         justify-content: center;
         align-content: center;
         padding: 10vh;
-        background-color: var(--gray_color);
+        background-color: var(--light_gray_color);
     }
 
     /****************************************
@@ -99,7 +99,7 @@
     *****************************************/
 
     .line {
-        border: 2px solid black;
+        border: 2px solid var(--black_color);
         margin-bottom: 25px;
     }
 
@@ -125,19 +125,19 @@
 
     .my-message-background {
         float: right;
-        background-color: var(--bg_button);
+        background-color: var(--blue_color);
     }
 
     .other-message-background {
         float: left;
-        background-color: var(--message-gray-color);
+        background-color: var(--dark_gray_color);
     }
 
     .message-text {
         display: inline-block;
         font-size: 13px;
         padding: 10px;
-        color: white;
+        color: var(--white_color);
     }
 
     .message_container {
@@ -193,12 +193,13 @@
     .input_search{
         width: 100%;
         border: none;
-        background-color: var(--gray_color);
+        background-color: var(--light_gray_color);
         padding: 20px 0 20px 0px;
         outline: none;
         border-radius: 20px;
         margin-bottom: 25px;
     }
+    
     .user_chat{
         display: flex;
         align-items: center;
@@ -206,20 +207,22 @@
         height: 50px;
         padding-top: 10px;
     }
+    
     .p_style {
         font-size: 20px;
         color: #000;
         padding-left: 20px;
     }
+
     .ico {
-        width: 30px;
+        width: 35px;
         height: 30px;
     }
 
     .button_chat{
-        background-color: var(--gray_color);
+        background-color: var(--light_gray_color);
         display: flex;
-        border: 1px solid white;
+        border: 1px solid var(--white_color);
         align-items: center;
         cursor: pointer;
         flex-direction: row;
@@ -237,7 +240,7 @@
     .write {
         margin-top: 5px;
         border-radius: 20px;
-        background-color:var(--gray_color);
+        background-color:var(--light_gray_color);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -246,7 +249,7 @@
     }
 
     .button_ico {
-        background-color: var(--gray_color);
+        background-color: var(--light_gray_color);
         background-image: url(../assets/icons/ico_send_message.svg);
         background-size: 35px 30px;
         cursor: pointer;
@@ -256,7 +259,7 @@
     }
 
     .message-input {
-        background-color: var(--gray_color);
+        background-color: var(--light_gray_color);
         border-radius: 20px;
         padding-left: 10px;
         border: none;

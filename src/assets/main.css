@@ -28,6 +28,8 @@
     --selected_blue_color: #0058bd;
     --selected_orange_color: #cc7a00;
     --selected_red_color: #ad1201;
+
+    --doc-height: 100%;
 }
 
 * {
@@ -37,9 +39,12 @@
     font-family: var(--font);
 }
 
-html {
+html, body {
+    height: 100vh;
+    height: var(--doc-height);
     background-color: var(--gray_color);
 }
+   
 
 /************************************
                Buttons
