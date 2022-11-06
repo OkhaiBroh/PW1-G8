@@ -73,8 +73,6 @@ html, body {
 button {
     background-color: var(--blue_color);
     color: var(--white_color);
-
-    width: 100%;
     
     border: none;
     border-radius: 25px;
