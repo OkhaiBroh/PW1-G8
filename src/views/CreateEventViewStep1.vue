@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <div class="general-container">
         <div class="main-panel">
             <div class="title-and-bar">
                 <p class="create-event-title"> Create Event </p>
@@ -43,147 +43,146 @@
 
 <style scoped>
 
-    html,
-    body {
-        margin: 0px;
-        height: 100%;
-    }
-    
-    .background {
-        background-color: var(--light_gray_color);
-        display: flex;
-        justify-content: center;
-        height: 100vh;
-    }
+.general-container {
+  height: 100%;
+  display: flex;
 
-    .main-panel {
-        width: 50vw;
-        height: 55vh;
+  flex-direction: row;
+  justify-content: center;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  padding: 80px;
+}
 
-        border-radius: 20px;
+.main-panel {
+    height: 75%;
+    width: 55%;
+    display: flex;
 
-        margin-top: 40px;
-        background-color: var(--white_color);
-        padding: 30px;
-    }
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-    /**********************
-     PROGRESS BAR & TITLE
-    **********************/
+    border-radius: 20px;
+    background-color: var(--white_color);
 
-    .title-and-bar {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 10px;
-        margin-bottom: 40px;
-    }
+    padding: 40px 60px 40px 60px;
+}
 
-    .create-event-title {
-        font-weight: bold;
-        font-size: 25px;
-    }
+/**********************
+    PROGRESS BAR & TITLE
+**********************/
 
-    .progress-bar {
-        display: flex;
-        flex-direction: column;
-        margin-right: 30px;
-    }
+.title-and-bar {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 
-    .progress, .progress-titles {
-        display: flex;
-        flex-direction: row;
-    }
+.create-event-title {
+    font-weight: bold;
+    font-size: 25px;
+}
 
-    .progress {
-        margin-bottom: 5px;
-        margin-left: 8px;
-    }
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
 
-    .circle-name {
-        font-size: 12px;
-    }
+.progress, .progress-titles {
+    display: flex;
+    flex-direction: row;
+}
 
-    .step {
-        margin-left: 60px;
-    }
+.progress {
+    margin-bottom: 5px;
+    margin-left: 8px;
+}
 
-    .circle-gray {
-        height: 12px;
-        width: 12px;
-        border-color: var(--dark_gray_color);
-    }
+.circle-name {
+    font-size: 12px;
+}
 
-    .line {
-        border: 2px solid var(--dark_gray_color);
-        height: fit-content;
-        width: 70px;
-        margin-top: 8px;
-    }
+.step {
+    margin-left: 60px;
+}
 
-    /**********************
-          DATA INPUT
-    **********************/
+.circle-gray {
+    height: 12px;
+    width: 12px;
+    border-color: var(--dark_gray_color);
+}
 
-    .data-input {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+.line {
+    border: 2px solid var(--dark_gray_color);
+    height: fit-content;
+    width: 70px;
+    margin-top: 8px;
+}
 
-    .name-description-camps {
-        display: flex;
-        flex-direction: column;
-    }
+/**********************
+        DATA INPUT
+**********************/
 
-    .event-description-input {
-        margin-right: 30px;
-        display: flex;
-        flex-direction: column;
-    }
+.data-input {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-    .camp-title {
-        font-weight: bold;
-        margin-bottom: 6px;
-        margin-left: 15px;
-    }
+    margin-top: 40px;
+}
 
-    .input {
-        width: 240px;
-        border: 2px solid var(--black_color);
-        border-radius: 20px;
-        padding: 5px 15px 5px 15px;
-    }
+.name-description-camps {
+    display: flex;
+    flex-direction: column;
+}
 
-    .event-name-input {
-        margin-top: 2px;
-        margin-bottom: 10px;
-    }
+.event-description-input {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
 
-    .description-input {
-        height: 96px;
-    }
+.camp-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-left: 15px;
+}
 
-    /**********************
-          BUTTON
-    **********************/
+.input {
+    width: 340px;
+    border: 2px solid var(--black_color);
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+}
 
-    .button-panel {
-        width: 86%;
-        display: flex;
-        justify-content: right;
-    }
+.event-name-input {
+    margin-top: 2px;
+    margin-bottom: 50px;
+}
 
-    .next-btn {
-        width: 180px;
-        font-weight: bold;
-        font-size: 14px;
-    }
+.description-input {
+    height: 136px;
+}
+
+/**********************
+        BUTTON
+**********************/
+
+.button-panel {
+    width: 86%;
+    display: flex;
+    justify-content: right;
+}
+
+.next-btn {
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
     
 </style>
