@@ -72,6 +72,16 @@
     cursor: pointer;
 }
 
+@media (min-width: 1000px) {
+    button {
+        width: 100%;
+    }
+
+    .panel-padding {
+        padding: 75px;
+    }
+}
+
 @media (max-width: 1000px) {
     .login-register-row {
         flex-direction: column-reverse;
@@ -91,13 +101,13 @@
         width: 200px;
     }
 
-    .login-panel-width {
+    .login-panel-width, .register-panel-width {
         width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        padding: 50px 0 50px 0;
+        /*padding: 50px 0 50px 0;*/
     }
 
     button {
@@ -105,6 +115,39 @@
     }
 
     .login-register-panel {
-        border-radius: 20px 20px 0 0;
+      padding: 35px 0 35px 0;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .link-button {
+      width: 180px;
+    }
+
+    .bar-text1, .bar-text2 {
+      color: var(--white_color);
+    }
+
+    .bar-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--black_color);
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .line-container {
+      margin: 0;
+    }
+
+    .text-container {
+      background-color: var(--black_color);
+      border-radius: 20px;
+      padding: 15px;
+    }
+
+    .panel-padding {
+        padding: 50px 0 50px 0;
     }
 }

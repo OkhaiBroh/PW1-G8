@@ -2,8 +2,7 @@
   <div class="login-register-row">
     <div class="login-register-column center">
       <p class="login-register-title">Open Events</p>
-      <div class="container-opacity"> 
-        <div class="bar-container">
+      <div class="bar-container">
           <div class="line-container">
             <span class="circle-gray"></span>
             <hr class="line" />
@@ -13,7 +12,6 @@
             <p class="bar-text1">Account</p>
             <p class="bar-text2">Security</p>
           </div>
-        </div>
       </div>
 
       <div class="login-register-panel register-panel-width">
@@ -112,7 +110,7 @@
   .opacity-black {
       visibility: hidden;
   }
-
+/*
 @media (max-width: 1000px) {
     .login-register-row {
         flex-direction: column-reverse;
@@ -165,6 +163,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      background-color: var(--black_color);
+      border-radius: 20px;
+      padding: 15px;
     }
 
     .line-container {
@@ -176,5 +177,5 @@
       border-radius: 20px;
       padding: 15px;
     }
-}
+}*/
 </style>
