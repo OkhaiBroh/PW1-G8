@@ -13,18 +13,22 @@ import { RouterLink, RouterView } from "vue-router";
       ].includes($route.name)
     "
   > <!-- Here we include the names where we don't want to display the header-->
-    
-    <img class="ico_logo" src="./assets/icons/ico_logo.svg" />
+
+    <div class="minimalist">
+      <img class="ico_logo" src="./assets/icons/ico_logo.svg" />
+      <div class="container dropbtn" onclick="openMenuForMobile()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </div>    
 
     <nav class="options">
-      
         <RouterLink class="header-option" to="/messages">
           <img class="ico-header" src="./assets/icons/ico_message.svg" />
           <p class="header-text">Messages</p>
         </RouterLink>
       
-
-     
         <RouterLink class="header-option" to="/events">
           <img class="ico-header" src="./assets/icons/ico_event.svg" />
           <p class="header-text">Events</p>
@@ -36,12 +40,10 @@ import { RouterLink, RouterView } from "vue-router";
           <p class="header-text">Friends</p>
         </RouterLink>
 
-
-        <RouterLink class="header-option" to="/profile">
+        <RouterLink class="header-option last-option" to="/profile">
           <img class="ico_user" src="./assets/icons/ico_user.svg" />
           <p class="header-text">Profile</p>
         </RouterLink>
-      
     </nav>
   </header>
   <RouterView />
@@ -62,8 +64,6 @@ import { RouterLink, RouterView } from "vue-router";
     text-decoration: none;
     color: var(--black_color);
 }
-
-
 
 .ico-header {
     width: 35px;
@@ -98,5 +98,102 @@ header {
     background-color: var(--white_color);
 }
 
+@media (max-width: 1000px) {
+  header {
+    flex-direction: column;
+  }
+
+  .options {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header-option {
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 20px;
+    border-top: 5px solid var(--black_color);
+    margin: 0;
+  }
+
+  .header-text {
+    margin: 0;
+    margin-right: 25px;
+  }
+
+  .last-option {
+    border-bottom: 5px solid var(--black_color);
+  }
+
+  /*************************
+    NAV MENU FOR PHONE ICO
+  **************************/
+
+  .container {
+      /*display: none;*/
+      cursor: pointer;
+  }
+    
+  .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+  }
+    
+  .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+  }
+    
+  .change .bar2 {opacity: 0;}
+    
+  .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  .minimalist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 35px;
+  }
+
+  .options {
+    display: none;
+  }
+}
 
 </style>
+
+<script>
+export default {
+  methods: ({
+      openMenuForMobile: () => {
+        alert("here");
+        document.getElementsByClassName("options").style.visibility = "visible";
+      },
+
+      /*myFunction (x) {
+        x.classList.toggle("change");
+      },*/
+      
+      // Close the dropdown if the user clicks outside of it
+      /*onClick: function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      },*/
+  }),
+};
+</script>
