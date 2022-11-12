@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  
     <div class="bg2">
       <section class="panel">
         
@@ -79,22 +79,12 @@
         </section>
       </section>
     </div>
-  </div>
+  
 </template>
 
 
 <style scoped>
-  html {
-    height: 100%;
-}
-body {
-    height: 100%;
-}
-
-#app {
-    height: 100%;
-    
-}
+ 
 
 
 .background {
@@ -221,9 +211,15 @@ body {
 }
 
 .bg2 {
-    display:flex;
-    flex-direction: row;
-    padding: 40px;
+
+  height: 100%;
+  display:flex;     
+  justify-content: center;
+  align-content: center;
+  
+    
+    padding: 9vh;
+    
 }
 .friend_text {
     margin-top: 50px;
