@@ -1,3 +1,1 @@
-<template>
-    FriendsView
-</template>
+<template>FriendsView</template>

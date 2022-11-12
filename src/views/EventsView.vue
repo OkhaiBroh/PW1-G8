@@ -1,248 +1,346 @@
 <template>
-    <div class="background">
-        <div class="general-container">
-            <section class="sorter-pack">
-                <div class="sorter-panel">
-                    <p class="sort-by-text"> Sort By </p>
-                    <button class="name-sort-but"> Name </button>
-                    <button class="date-sort-but"> Date </button>
-                    <button class="location-sort-but"> Location </button>
-                    <button class="rating-sort-but"> Rating </button>
-                </div>
-            </section>
-            <section class="searcher-panel">
-                <div class="upper-searcher-section">
-                    <div class="search-bar">
-                        <input class="search-input" name="search-query" placeholder="Search..." type="text">
-                        <button class="search-btn"> </button>
-                    </div>
-                    <button class="create-btn"> Create </button>
-                </div>
-                <div class="events-panel">
-                    <article class="event-container box-shadow">
-                        <img class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
-                        <p class="timeline-title-text"> La Fiestita </p>
-                        <div class="info-container">
-                            <img class="ico" src="../assets/icons/ico_location.svg" alt="location ico">
-                            <p class="timeline-info-text"> Barcelona </p>
-                        </div>
-                        <div class="info-container">
-                            <img class="ico" src="../assets/icons/ico_calendar.svg" alt="calendar ico">
-                            <p class="timeline-info-text"> 01/10/2022 - 05/10/2022 </p>
-                        </div>
-                    </article>
-                    <article class="event-container box-shadow">
-                        <img class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
-                        <p class="timeline-title-text"> La Fiestita </p>
-                        <div class="info-container">
-                            <img class="ico" src="../assets/icons/ico_location.svg" alt="location ico">
-                            <p class="timeline-info-text"> Barcelona </p>
-                        </div>
-                        <div class="info-container">
-                            <img class="ico" src="../assets/icons/ico_calendar.svg" alt="calendar ico">
-                            <p class="timeline-info-text"> 01/10/2022 - 05/10/2022 </p>
-                        </div>
-                    </article>
-                    <article class="event-container box-shadow">
-                        <img class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
-                        <p class="timeline-title-text"> La Fiestita </p>
-                        <div class="info-container">
-                            <img class="ico" src="../assets/icons/ico_location.svg" alt="location ico">
-                            <p class="timeline-info-text"> Barcelona </p>
-                        </div>
-                        <div class="info-container">
-                            <img class="ico" src="../assets/icons/ico_calendar.svg" alt="calendar ico">
-                            <p class="timeline-info-text"> 01/10/2022 - 05/10/2022 </p>
-                        </div>
-                    </article>
-                </div>
-            </section>
+  <div class="general-container">
+    <section class="sorter-section panel">
+        <p class="sort-by-text title">Sort By</p>
+        <div class="buttons-selecter">
+          <button class="name-sort opt-but">Name</button>
+          <button class="date-sort opt-but">Date</button>
+          <button class="location-sort opt-but">Location</button>
+          <button class="rating-sort opt-but">Rating</button>
         </div>
-    </div>
+    </section>
+    <section class="searcher-section panel">
+      <div class="upper-searcher-section">
+        <div class="search-bar">
+          <input
+            class="search-input"
+            name="search-query"
+            placeholder="Search..."
+            type="text"
+          />
+          <button class="search-btn"></button>
+        </div>
+        <button class="create-btn">Create</button>
+      </div>
+      <div class="events-panel">
+        <article class="event-container box-shadow">
+          <img
+            class="event-image"
+            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+            alt=""
+          />
+          <p class="timeline-title-text">La Fiestita</p>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_location.svg"
+              alt="location ico"
+            />
+            <p class="timeline-info-text">Barcelona</p>
+          </div>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_calendar.svg"
+              alt="calendar ico"
+            />
+            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+          </div>
+        </article>
+        <article class="event-container box-shadow">
+          <img
+            class="event-image"
+            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+            alt=""
+          />
+          <p class="timeline-title-text">La Fiestita</p>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_location.svg"
+              alt="location ico"
+            />
+            <p class="timeline-info-text">Barcelona</p>
+          </div>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_calendar.svg"
+              alt="calendar ico"
+            />
+            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+          </div>
+        </article>
+        <article class="event-container box-shadow">
+          <img
+            class="event-image"
+            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+            alt=""
+          />
+          <p class="timeline-title-text">La Fiestita</p>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_location.svg"
+              alt="location ico"
+            />
+            <p class="timeline-info-text">Barcelona</p>
+          </div>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_calendar.svg"
+              alt="calendar ico"
+            />
+            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+          </div>
+        </article>
+      </div>
+      <div class="events-panel">
+        <article class="event-container box-shadow">
+          <img
+            class="event-image"
+            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+            alt=""
+          />
+          <p class="timeline-title-text">La Fiestita</p>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_location.svg"
+              alt="location ico"
+            />
+            <p class="timeline-info-text">Barcelona</p>
+          </div>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_calendar.svg"
+              alt="calendar ico"
+            />
+            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+          </div>
+        </article>
+        <article class="event-container box-shadow">
+          <img
+            class="event-image"
+            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+            alt=""
+          />
+          <p class="timeline-title-text">La Fiestita</p>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_location.svg"
+              alt="location ico"
+            />
+            <p class="timeline-info-text">Barcelona</p>
+          </div>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_calendar.svg"
+              alt="calendar ico"
+            />
+            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+          </div>
+        </article>
+        <article class="event-container box-shadow">
+          <img
+            class="event-image"
+            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+            alt=""
+          />
+          <p class="timeline-title-text">La Fiestita</p>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_location.svg"
+              alt="location ico"
+            />
+            <p class="timeline-info-text">Barcelona</p>
+          </div>
+          <div class="info-container">
+            <img
+              class="ico"
+              src="../assets/icons/ico_calendar.svg"
+              alt="calendar ico"
+            />
+            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style scoped>
 
-    html,
-    body {
-        margin: 0px;
-        height: 100%;
-    }
+.general-container {
+  height: 100%;
+  display: flex;
 
-    .background {
-        background-color: var(--gray_color);
-        display: flex;
-        justify-content: center;
-        height: 100vh;
-    }
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
 
-    .general-container {
-        width: fit-content;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-    }
+  padding: 80px;
+}
 
-    /*************************
-             SORTER
-    **************************/
+.panel {
+  height: 85%;
+  display: flex;
 
-    .sorter-pack {
-        display: flex;
-        justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 
-        margin-top: 40px;
-        margin-right: 30px;
-    }
+  border-radius: 20px;
+  background-color: var(--white_color);
 
-    .sorter-panel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  padding: 40px 60px 40px 60px;
+}
 
-        border-radius: 20px;
+.title {
+  font-weight: 900;
+  font-size: 25px;
 
-        background-color: white;
-        padding: 30px 30px 10px 30px;
-    }
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
 
-    .sort-by-text {
-        font-weight: 900;
-        font-size: 25px;
-    }
+/*************************
+          SORTER
+**************************/
 
-    .name-sort-but, .date-sort-but, .location-sort-but, .rating-sort-but {
-        border: 2px solid var(--bg_button); 
-        font-weight: 700;
-        height: 40px;
-        width: 150px;
-        margin: 20px 0 0 0;
-    }
+.opt-but {
+  margin: 0; /* CSS ISSUE */
+  border: 2px solid var(--blue_color);
+  font-weight: 700;
+  width: 150px;
 
-    .name-sort-but, .date-sort-but, .location-sort-but {
-        background-color: white;
-        color: black;
-    }
+  background-color: var(--white_color);
+  color: var(--black_color);
+}
 
-    .name-sort-but {
-        margin: 40px 0 0 0;
-    }
+.opt-but:hover {
+  border: 2px solid var(--blue_color);
+  font-weight: 700;
+  width: 150px;
 
-    .rating-sort-but {
-        margin: 20px 0 50px 0;
-    }
+  background-color: var(--blue_color);
+  color: var(--white_color);
+}
 
-    /*************************
-        SEARCHER + CREATE
-    **************************/
+.buttons-selecter {
+  display: flex;
+  height: 60%;
 
-    .searcher-panel {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-        background-color: white;
-        padding: 30px 40px 20px 40px;
+.sorter-section {
+  margin-right: 80px;
+}
 
-        border-radius: 20px;
-        margin-top: 40px;
-    }
+/*************************
+      SEARCHER + CREATE
+**************************/
 
-    .upper-searcher-section {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+.upper-searcher-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-    .search-bar {
-        display: flex;
-        flex-direction: row;
-        height: fit-content;
+  padding: 10px 20px 0px 20px;
+}
 
-        border: 2px solid var(--bg_button);
-        border-radius: 20px;
-        margin-top: 2px;
-    }
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-    .search-input {
-        height: 30px;
-        width: 542px;
-        vertical-align: center;
-        flex-grow: 2;
-        border: none;
-        margin: 2px 0px 2px 15px;
-    }
+  border: 2px solid var(--blue_color);
+  border-radius: 20px;
+}
 
-    .search-input:focus {
-        outline: none;
-    }
+.search-input {
+  width: 540px;
+  vertical-align: center;
+  border: none;
+  margin: 2px 0px 2px 15px;
+}
 
-    .create-btn {
-        border: 2px solid var(--bg_button); 
-        font-weight: 700;
-        height: 40px;
-        width: 150px;
-        margin: 0 0 0 20px;
-    }
+.search-input:focus {
+  outline: none;
+}
 
-    .search-btn {
-        width: 20px;
-        height: 20px;
-        border-radius: 0px;
-        background: url(../assets/icons/ico_search.svg) no-repeat;
-        margin: 6px 18px 2px 0;
-    }
+.create-btn {
+  border: 2px solid var(--blue_color);
+  font-weight: 700;
+  width: 150px;
+  margin: 0 0 0 40px;
+}
 
-    /*************************
-            EVENTS
-    **************************/
+.search-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 0px;
+  background: url(../assets/icons/ico_search.svg) no-repeat;
+  padding: 0;
+  margin: 0 15px 0 0;
+}
 
-    .events-panel {
-        display: flex;
-        justify-content: space-evenly;
-    }
+/*************************
+        EVENTS
+**************************/
 
-    .event-container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        margin: 25px;
-        border-radius: 25px;
-        padding: 20px;
-    }
+.events-panel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
-    .box-shadow {
-        box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
-    }
+  margin-top: 20px;
+}
 
-     .event-image {
-        max-width: 145px;
-        border-radius: 15px;
-    }
+.event-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+  padding: 20px;
+}
 
-    .timeline-title-text {
-        font-weight: 700;
-        font-size: 16px;
-        margin-top: 10px;
-    }
+.box-shadow {
+  box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .timeline-info-text {
-        font-size: 12px;
-    }
+.event-image {
+  max-width: 145px;
+  border-radius: 15px;
+}
 
-    .ico {
-        width: 15px;
-        height: 15px;
-        margin-right: 10px;
-    }
+.timeline-title-text {
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 10px;
+}
 
-    .info-container {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        margin-top: 10px;
-    }
-    
+.timeline-info-text {
+  font-size: 12px;
+}
+
+.ico {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 10px;
+}
 </style>

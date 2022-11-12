@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: "/messages",
       name: "messages",
-    
+
       component: () => import("../views/MessagesView.vue"),
     },
     {
@@ -33,7 +33,7 @@ const router = createRouter({
     {
       path: "/events",
       name: "events",
-    
+
       component: () => import("../views/EventsView.vue"),
     },
     {
@@ -45,14 +45,44 @@ const router = createRouter({
     {
       path: "/friends",
       name: "friends",
-    
+
       component: () => import("../views/FriendsView.vue"),
     },
     {
       path: "/profile",
       name: "profile",
-    
+
       component: () => import("../views/ProfileView.vue"),
+    },
+    { 
+      path: "/create-event-1",
+      name: "create event 1",
+    
+      component: () => import("../views/CreateEventViewStep1.vue"),
+    },
+    {
+      path: "/create-event-2",
+      name: "create event 2",
+    
+      component: () => import("../views/CreateEventViewStep2.vue"),
+    },
+    {
+      path: "/create-event-3",
+      name: "create event 3",
+    
+      component: () => import("../views/CreateEventViewStep3.vue"),
+    },      
+    {
+      path: "/create-event-4",
+      name: "create event 4",
+    
+      component: () => import("../views/CreateEventViewStep4.vue"),
+    },
+    {
+      path: "/other-profile",
+      name: "other profile",
+
+      component: () => import("../views/OtherProfileView.vue"),
     },
   ],
 });
