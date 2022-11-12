@@ -49,10 +49,6 @@
   font-size: 18px;
 }
 
-.panel-padding {
-  padding: 75px;
-}
-
 .button-margin {
   margin-top: 75px;
 }
