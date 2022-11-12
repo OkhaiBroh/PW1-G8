@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <div class="general-container">
         <div class="main-panel">
             <div class="title-and-bar">
                 <p class="create-event-title"> Create Event </p>
@@ -37,33 +37,30 @@
 </template>
 
 <style scoped>
-
-    html,
-    body {
-        margin: 0px;
-        height: 100%;
-    }
     
-    .background {
-        background-color: var(--light_gray_color);
+    .general-container {
+        height: 100%;
         display: flex;
+
+        flex-direction: row;
         justify-content: center;
-        height: 100vh;
+
+        padding: 80px;
     }
 
     .main-panel {
-        width: 50vw;
-        height: 55vh;
-
+        height: 75%;
+        width: 55%;
         display: flex;
+
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
 
         border-radius: 20px;
-
-        margin-top: 40px;
         background-color: var(--white_color);
-        padding: 30px;
+
+        padding: 40px 60px 40px 60px;
     }
 
     /**********************
@@ -75,8 +72,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: 10px;
-        margin-bottom: 40px;
+        margin-top: 20px;
     }
 
     .create-event-title {
@@ -87,7 +83,7 @@
     .progress-bar {
         display: flex;
         flex-direction: column;
-        margin-right: 30px;
+        margin-right: 40px;
     }
 
     .progress, .progress-titles {
@@ -134,6 +130,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        margin-top: 30px;
     }
 
     .event-participants-input, .event-type-input {
@@ -147,8 +145,8 @@
     }
 
     .input {
-        width: 240px;
-        height: 96px;
+        width: 340px;
+        height: 136px;
         border: 2px solid var(--black_color);
         border-radius: 20px;
         padding: 5px 15px 5px 15px;
@@ -168,6 +166,7 @@
         width: 180px;
         font-weight: bold;
         font-size: 14px;
+        margin-bottom: 30px;
     }
     
     .create-btn {
