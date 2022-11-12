@@ -41,7 +41,7 @@
                 <img  class="ico-event" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
                 <div class="join-button">
                     <b>Join the event</b>
-                    <img class="share-ico" src="../assets/icons/ico_star_full.svg">
+                    <img class="share-ico" src="../assets/icons/ico_plus.svg">
                 </div>
 
                 </div>
