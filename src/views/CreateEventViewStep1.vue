@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <div class="general-container">
         <div class="main-panel">
             <div class="title-and-bar">
                 <p class="create-event-title"> Create Event </p>
@@ -43,147 +43,47 @@
 
 <style scoped>
 
-    html,
-    body {
-        margin: 0px;
-        height: 100%;
-    }
-    
-    .background {
-        background-color: var(--light_gray_color);
-        display: flex;
-        justify-content: center;
-        height: 100vh;
-    }
+@import '../assets/css/create-event.css';
 
-    .main-panel {
-        width: 50vw;
-        height: 55vh;
+/**********************
+        DATA INPUT
+**********************/
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+.name-description-camps {
+    display: flex;
+    flex-direction: column;
+}
 
-        border-radius: 20px;
+.event-description-input {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
 
-        margin-top: 40px;
-        background-color: var(--white_color);
-        padding: 30px;
-    }
+.camp-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-left: 15px;
+}
 
-    /**********************
-     PROGRESS BAR & TITLE
-    **********************/
+.event-name-input {
+    margin-top: 2px;
+    margin-bottom: 50px;
+}
 
-    .title-and-bar {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 10px;
-        margin-bottom: 40px;
-    }
+.description-input {
+    height: 136px;
+}
 
-    .create-event-title {
-        font-weight: bold;
-        font-size: 25px;
-    }
+/**********************
+        BUTTON
+**********************/
 
-    .progress-bar {
-        display: flex;
-        flex-direction: column;
-        margin-right: 30px;
-    }
-
-    .progress, .progress-titles {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .progress {
-        margin-bottom: 5px;
-        margin-left: 8px;
-    }
-
-    .circle-name {
-        font-size: 12px;
-    }
-
-    .step {
-        margin-left: 60px;
-    }
-
-    .circle-gray {
-        height: 12px;
-        width: 12px;
-        border-color: var(--dark_gray_color);
-    }
-
-    .line {
-        border: 2px solid var(--dark_gray_color);
-        height: fit-content;
-        width: 70px;
-        margin-top: 8px;
-    }
-
-    /**********************
-          DATA INPUT
-    **********************/
-
-    .data-input {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .name-description-camps {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .event-description-input {
-        margin-right: 30px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .camp-title {
-        font-weight: bold;
-        margin-bottom: 6px;
-        margin-left: 15px;
-    }
-
-    .input {
-        width: 240px;
-        border: 2px solid var(--black_color);
-        border-radius: 20px;
-        padding: 5px 15px 5px 15px;
-    }
-
-    .event-name-input {
-        margin-top: 2px;
-        margin-bottom: 10px;
-    }
-
-    .description-input {
-        height: 96px;
-    }
-
-    /**********************
-          BUTTON
-    **********************/
-
-    .button-panel {
-        width: 86%;
-        display: flex;
-        justify-content: right;
-    }
-
-    .next-btn {
-        width: 180px;
-        font-weight: bold;
-        font-size: 14px;
-    }
+.next-btn {
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
     
 </style>
