@@ -174,12 +174,12 @@
         align-items: center;
         flex-direction: column;
         background-color: white;
-        width: 300px;
+
         border-radius: 20px;
 
         box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
 
-        padding: 50px 25px 50px 25px;
+        padding: 20px;
     }
 
     /****************************************
@@ -191,10 +191,10 @@
     }
 
     .input_search{
-        width: 100%;
+        width: 250px;
         border: none;
         background-color: var(--light_gray_color);
-        padding: 20px 0 20px 0px;
+        padding: 20px;
         outline: none;
         border-radius: 20px;
         margin-bottom: 25px;

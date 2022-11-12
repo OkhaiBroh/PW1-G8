@@ -23,152 +23,154 @@
         <button class="create-btn">Create</button>
       </div>
       <div class="events-panel">
-        <RouterLink class="event-container box-shadow" to="/event-details">
-          <img
-            class="event-image"
-            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-            alt=""
-          />
-          <p class="timeline-title-text">La Fiestita</p>
-          <div class="info-container">
+        <div class="events-row">
+          <RouterLink class="event-container box-shadow" to="event-details">
             <img
-              class="ico"
-              src="../assets/icons/ico_location.svg"
-              alt="location ico"
+              class="event-image"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
             />
-            <p class="timeline-info-text">Barcelona</p>
-          </div>
-          <div class="info-container">
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_location.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_calendar.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </RouterLink>
+          <article class="event-container box-shadow">
             <img
-              class="ico"
-              src="../assets/icons/ico_calendar.svg"
-              alt="calendar ico"
+              class="event-image"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
             />
-            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-          </div>
-        </RouterLink>
-        <article class="event-container box-shadow">
-          <img
-            class="event-image"
-            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-            alt=""
-          />
-          <p class="timeline-title-text">La Fiestita</p>
-          <div class="info-container">
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_location.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_calendar.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </article>
+          <article class="event-container box-shadow">
             <img
-              class="ico"
-              src="../assets/icons/ico_location.svg"
-              alt="location ico"
+              class="event-image"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
             />
-            <p class="timeline-info-text">Barcelona</p>
-          </div>
-          <div class="info-container">
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_location.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_calendar.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </article>
+        </div>
+        <div class="events-row">
+          <article class="event-container box-shadow">
             <img
-              class="ico"
-              src="../assets/icons/ico_calendar.svg"
-              alt="calendar ico"
+              class="event-image"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
             />
-            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-          </div>
-        </article>
-        <article class="event-container box-shadow">
-          <img
-            class="event-image"
-            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-            alt=""
-          />
-          <p class="timeline-title-text">La Fiestita</p>
-          <div class="info-container">
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_location.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_calendar.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </article>
+          <article class="event-container box-shadow">
             <img
-              class="ico"
-              src="../assets/icons/ico_location.svg"
-              alt="location ico"
+              class="event-image"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
             />
-            <p class="timeline-info-text">Barcelona</p>
-          </div>
-          <div class="info-container">
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_location.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_calendar.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </article>
+          <article class="event-container box-shadow">
             <img
-              class="ico"
-              src="../assets/icons/ico_calendar.svg"
-              alt="calendar ico"
+              class="event-image"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
             />
-            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-          </div>
-        </article>
-      </div>
-      <div class="events-panel">
-        <article class="event-container box-shadow">
-          <img
-            class="event-image"
-            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-            alt=""
-          />
-          <p class="timeline-title-text">La Fiestita</p>
-          <div class="info-container">
-            <img
-              class="ico"
-              src="../assets/icons/ico_location.svg"
-              alt="location ico"
-            />
-            <p class="timeline-info-text">Barcelona</p>
-          </div>
-          <div class="info-container">
-            <img
-              class="ico"
-              src="../assets/icons/ico_calendar.svg"
-              alt="calendar ico"
-            />
-            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-          </div>
-        </article>
-        <article class="event-container box-shadow">
-          <img
-            class="event-image"
-            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-            alt=""
-          />
-          <p class="timeline-title-text">La Fiestita</p>
-          <div class="info-container">
-            <img
-              class="ico"
-              src="../assets/icons/ico_location.svg"
-              alt="location ico"
-            />
-            <p class="timeline-info-text">Barcelona</p>
-          </div>
-          <div class="info-container">
-            <img
-              class="ico"
-              src="../assets/icons/ico_calendar.svg"
-              alt="calendar ico"
-            />
-            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-          </div>
-        </article>
-        <article class="event-container box-shadow">
-          <img
-            class="event-image"
-            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-            alt=""
-          />
-          <p class="timeline-title-text">La Fiestita</p>
-          <div class="info-container">
-            <img
-              class="ico"
-              src="../assets/icons/ico_location.svg"
-              alt="location ico"
-            />
-            <p class="timeline-info-text">Barcelona</p>
-          </div>
-          <div class="info-container">
-            <img
-              class="ico"
-              src="../assets/icons/ico_calendar.svg"
-              alt="calendar ico"
-            />
-            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-          </div>
-        </article>
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_location.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico"
+                src="../assets/icons/ico_calendar.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </div>
@@ -296,6 +298,10 @@
 **************************/
 
 .events-panel {
+  width: 100%;
+}
+
+.events-row {
   display: flex;
   justify-content: space-between;
   width: 100%;

@@ -141,7 +141,7 @@
               <p class="timeline-title-text">La Fiestita</p>
               <div class="info-container">
                 <img
-                  class="ico-25px"
+                  class="ico-25px margin-right"
                   src="../assets/icons/location_ico.svg"
                   alt="location ico"
                 />
@@ -149,7 +149,32 @@
               </div>
               <div class="info-container">
                 <img
-                  class="ico-25px"
+                  class="ico-25px margin-right"
+                  src="../assets/icons/calendar_ico.svg"
+                  alt="calendar ico"
+                />
+                <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+              </div>
+            </div>
+
+            <div class="event-container box-shadow">
+              <img
+                class="event-image margin-right"
+                src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+                alt=""
+              />
+              <p class="timeline-title-text">La Fiestita</p>
+              <div class="info-container">
+                <img
+                  class="ico-25px margin-right"
+                  src="../assets/icons/location_ico.svg"
+                  alt="location ico"
+                />
+                <p class="timeline-info-text">Barcelona</p>
+              </div>
+              <div class="info-container">
+                <img
+                  class="ico-25px margin-right"
                   src="../assets/icons/calendar_ico.svg"
                   alt="calendar ico"
                 />
@@ -166,7 +191,7 @@
               <p class="timeline-title-text">La Fiestita</p>
               <div class="info-container">
                 <img
-                  class="ico-25px"
+                  class="ico-25px margin-right"
                   src="../assets/icons/location_ico.svg"
                   alt="location ico"
                 />
@@ -174,32 +199,7 @@
               </div>
               <div class="info-container">
                 <img
-                  class="ico-25px"
-                  src="../assets/icons/calendar_ico.svg"
-                  alt="calendar ico"
-                />
-                <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-              </div>
-            </div>
-
-            <div class="event-container box-shadow">
-              <img
-                class="event-image"
-                src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-                alt=""
-              />
-              <p class="timeline-title-text">La Fiestita</p>
-              <div class="info-container">
-                <img
-                  class="ico-25px"
-                  src="../assets/icons/location_ico.svg"
-                  alt="location ico"
-                />
-                <p class="timeline-info-text">Barcelona</p>
-              </div>
-              <div class="info-container">
-                <img
-                  class="ico-25px"
+                  class="ico-25px margin-right"
                   src="../assets/icons/calendar_ico.svg"
                   alt="calendar ico"
                 />
@@ -210,7 +210,7 @@
             <div class="round-button-arrow">
               <button class="rounded-button">
                 <img
-                  class="ico-25px"
+                  class="ico-25px margin-right"
                   src="../assets/icons/ico_right_arrow.svg"
                 />
               </button>
@@ -223,6 +223,14 @@
 </template>
 
 <style scoped>
+
+.margin-right {
+  margin-right: 10px;
+}
+
+button {
+  width: 100%;
+}
 
 .round-button-arrow {
   display: flex;

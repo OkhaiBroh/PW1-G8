@@ -42,6 +42,12 @@
   </div>
 </template>
 
+<style scoped>
+button {
+  width: 100%;
+}
+</style>
+
 <script>
 export default {
   methods: {
