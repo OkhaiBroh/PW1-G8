@@ -35,7 +35,7 @@
                 </div>
             </section>
             <div class="button-panel">
-                <button class="next-btn"> Next </button>
+                <RouterLink class="next-btn" to="/create-event-2"> Next </RouterLink>
             </div>
         </div>
     </div>
@@ -80,6 +80,13 @@
 **********************/
 
 .next-btn {
+    background-color: var(--blue_color);
+    color: var(--white_color);
+    border-radius: 25px;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+
     width: 180px;
     font-weight: bold;
     font-size: 14px;

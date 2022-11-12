@@ -30,7 +30,7 @@
                 </div>
             </section>
             <div class="button-panel">
-                <button class="done-btn"> Done </button>
+                <RouterLink class="done-btn" to="/events"> Done </RouterLink>
             </div>
         </div>
     </div>
@@ -104,6 +104,13 @@
     }
 
     .done-btn {
+        background-color: var(--blue_color);
+        color: var(--white_color);
+        border-radius: 25px;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+
         width: 180px;
         font-weight: bold;
         font-size: 14px;

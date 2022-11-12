@@ -35,8 +35,8 @@
                 </div>
             </section>
             <div class="button-panel">
-                <button class="back-btn"> Back </button>
-                <button class="next-btn"> Next </button>
+                <RouterLink class="back-btn" to="/create-event-1"> Back </RouterLink>
+                <RouterLink class="next-btn" to="/create-event-3"> Next </RouterLink>
             </div>
         </div>
     </div>
@@ -93,6 +93,13 @@
     **********************/
 
     .next-btn, .back-btn {
+        background-color: var(--blue_color);
+        color: var(--white_color);
+        border-radius: 25px;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+
         width: 180px;
         font-weight: bold;
         font-size: 14px;

@@ -29,8 +29,8 @@
                 </div>
             </section>
             <div class="button-panel">
-                <button class="back-btn"> Back </button>
-                <button class="create-btn"> Create </button>
+                <RouterLink class="back-btn" to="/create-event-2"> Back </RouterLink>
+                <RouterLink class="create-btn" to="/create-event-4"> Create </RouterLink>
             </div>
         </div>
     </div>
@@ -84,6 +84,13 @@
     **********************/
 
     .create-btn, .back-btn {
+        background-color: var(--blue_color);
+        color: var(--white_color);
+        border-radius: 25px;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+
         width: 180px;
         font-weight: bold;
         font-size: 14px;

@@ -20,7 +20,8 @@
           />
           <button class="search-btn"></button>
         </div>
-        <button class="create-btn">Create</button>
+        <RouterLink class="create-btn" to="/create-event-1"> Create </RouterLink>
+        <!--<button class="create-btn">Create</button>-->
       </div>
       <div class="events-panel">
         <div class="events-row">
@@ -278,6 +279,13 @@
 }
 
 .create-btn {
+  background-color: var(--blue_color);
+  color: var(--white_color);
+  border-radius: 25px;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+
   border: 2px solid var(--blue_color);
   font-weight: 700;
   width: 150px;
