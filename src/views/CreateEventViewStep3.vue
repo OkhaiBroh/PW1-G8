@@ -37,72 +37,12 @@
 </template>
 
 <style scoped>
-    
-    .general-container {
-        height: 100%;
-        display: flex;
 
-        flex-direction: row;
-        justify-content: center;
-
-        padding: 80px;
-    }
-
-    .main-panel {
-        height: 75%;
-        width: 55%;
-        display: flex;
-
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-
-        border-radius: 20px;
-        background-color: var(--white_color);
-
-        padding: 40px 60px 40px 60px;
-    }
+@import '../assets/css/create-event.css';
 
     /**********************
      PROGRESS BAR & TITLE
     **********************/
-
-    .title-and-bar {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-
-    .create-event-title {
-        font-weight: bold;
-        font-size: 25px;
-    }
-
-    .progress-bar {
-        display: flex;
-        flex-direction: column;
-        margin-right: 40px;
-    }
-
-    .progress, .progress-titles {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .progress {
-        margin-bottom: 5px;
-        margin-left: 8px;
-    }
-
-    .circle-name {
-        font-size: 12px;
-    }
-
-    .step {
-        margin-left: 60px;
-    }
 
     .circle-gray {
         height: 12px;
@@ -125,15 +65,6 @@
           DATA INPUT
     **********************/
 
-    .data-input {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        margin-top: 30px;
-    }
-
     .event-participants-input, .event-type-input {
         margin-right: 30px;
     }
@@ -145,22 +76,12 @@
     }
 
     .input {
-        width: 340px;
         height: 136px;
-        border: 2px solid var(--black_color);
-        border-radius: 20px;
-        padding: 5px 15px 5px 15px;
     }
 
     /**********************
           BUTTON
     **********************/
-
-    .button-panel {
-        width: 96%;
-        display: flex;
-        justify-content: space-between;
-    }
 
     .create-btn, .back-btn {
         width: 180px;

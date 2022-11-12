@@ -38,71 +38,14 @@
 
 <style scoped>
     
-    .general-container {
-        height: 100%;
-        display: flex;
-
-        flex-direction: row;
-        justify-content: center;
-
-        padding: 80px;
-    }
-
-    .main-panel {
-        height: 75%;
-        width: 55%;
-        display: flex;
-
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-
-        border-radius: 20px;
-        background-color: var(--white_color);
-
-        padding: 40px 60px 40px 60px;
-    }
+@import '../assets/css/create-event.css';
 
     /**********************
      PROGRESS BAR & TITLE
     **********************/
 
     .title-and-bar {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 20px;
         margin-bottom: 40px;
-    }
-
-    .create-event-title {
-        font-weight: bold;
-        font-size: 25px;
-    }
-
-    .progress-bar {
-        display: flex;
-        flex-direction: column;
-        margin-right: 30px;
-    }
-
-    .progress, .progress-titles {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .progress {
-        margin-bottom: 5px;
-        margin-left: 8px;
-    }
-
-    .circle-name {
-        font-size: 12px;
-    }
-
-    .step {
-        margin-left: 60px;
     }
 
     .circle-gray {
@@ -157,8 +100,7 @@
     **********************/
 
     .button-panel {
-        width: 86%;
-        text-align: center;
+        justify-content: center;
     }
 
     .done-btn {

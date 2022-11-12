@@ -44,85 +44,11 @@
 
 <style scoped>
 
-   
-    .general-container {
-        height: 100%;
-        display: flex;
-
-        flex-direction: row;
-        justify-content: center;
-
-        padding: 80px;
-    }
-
-    .main-panel {
-        height: 75%;
-        width: 55%;
-        display: flex;
-
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-
-        border-radius: 20px;
-        background-color: var(--white_color);
-
-        padding: 40px 60px 40px 60px;
-    }
+@import '../assets/css/create-event.css';  
 
     /**********************
      PROGRESS BAR & TITLE
     **********************/
-
-    .title-and-bar {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-
-    .create-event-title {
-        font-weight: bold;
-        font-size: 25px;
-    }
-
-    .progress-bar {
-        display: flex;
-        flex-direction: column;
-        margin-right: 40px;
-    }
-
-    .progress, .progress-titles {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .progress {
-        margin-bottom: 5px;
-        margin-left: 8px;
-    }
-
-    .circle-name {
-        font-size: 12px;
-    }
-
-    .step {
-        margin-left: 60px;
-    }
-
-    .circle-gray {
-        height: 12px;
-        width: 12px;
-        border-color: var(--dark_gray_color);
-    }
-
-    .line {
-        border: 2px solid var(--dark_gray_color);
-        height: fit-content;
-        width: 70px;
-        margin-top: 8px;
-    }
 
     .circle1, .line1 {
         border-color: var(--blue_color);
@@ -132,15 +58,6 @@
     /**********************
           DATA INPUT
     **********************/
-
-    .data-input {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        margin-top: 30px;
-    }
 
     .dates-camps {
         display: flex;
@@ -159,13 +76,6 @@
         margin-left: 15px;
     }
 
-    .input {
-        width: 340px;
-        border: 2px solid var(--black_color);
-        border-radius: 20px;
-        padding: 5px 15px 5px 15px;
-    }
-
     .event-start-date-input {
         margin-top: 2px;
         margin-bottom: 50px;
@@ -181,12 +91,6 @@
     /**********************
           BUTTON
     **********************/
-
-    .button-panel {
-        width: 96%;
-        display: flex;
-        justify-content: space-between;
-    }
 
     .next-btn, .back-btn {
         width: 180px;
