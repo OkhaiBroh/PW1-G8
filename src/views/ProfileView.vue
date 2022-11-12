@@ -251,6 +251,7 @@
   background-color: var(--light_gray_color);
   display: flex;
   justify-content: center;
+  
 }
 
 .div-container {

@@ -23,7 +23,7 @@
         <button class="create-btn">Create</button>
       </div>
       <div class="events-panel">
-        <article class="event-container box-shadow">
+        <RouterLink class="event-container box-shadow" to="/event-details">
           <img
             class="event-image"
             src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
@@ -46,7 +46,7 @@
             />
             <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
           </div>
-        </article>
+        </RouterLink>
         <article class="event-container box-shadow">
           <img
             class="event-image"
@@ -310,6 +310,8 @@
   align-items: center;
   border-radius: 25px;
   padding: 20px;
+  text-decoration: none;
+  color: var(--black_color);
 }
 
 .box-shadow {

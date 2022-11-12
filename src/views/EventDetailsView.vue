@@ -1,8 +1,6 @@
 <template>
     <div class="background">
-
-        <section class="container">
-            <article class="panel">
+        <section class="panel">
                 <div class="event-details">
                     <div class="name-container">
                         <b class="event-name">La Fiestita</b>
@@ -47,12 +45,11 @@
                 </div>
 
                 
-             </article>
+             
 
         </section>
 
-        <section id="rating" class="container">
-            <div class="rating-panel">
+        <section id="rating" class="panel rating-panel">
                 <div class="rating">
                     <b>Rating</b>
                 </div>
@@ -63,18 +60,13 @@
                     <img class="ico-star" src="../assets/icons/ico_star_empty.svg" >
                     <img class="ico-star" src="../assets/icons/ico_star_empty.svg">
                     <img class="ico-star" src="../assets/icons/ico_star_empty.svg">
-                </div>
-                    
-
-            </div>
+                </div>            
         </section>
 
-        <section id="comments" class="container">
-            <div class="comment-panel">
+        <section id="comments" class="panel comment-panel">
                 <div class="comments">
                     <b>Comments</b>
                 </div>
-
                 <!-- Comment-->
                 <article class="comment-article">
                     <img class="ico-user" src="../assets/icons/ico_profile_default.svg" >
@@ -100,12 +92,12 @@
                     </div>
                 </article>
 
-                <div class="comment-bar">
+                <form method="" class="comment-bar">
                         <input class="comment-input" name="message-query" placeholder="Message..." type="text">
-                        <img class="send_button" src="../assets/icons/ico_send_message.svg" >
-
-                </div>
-            </div>
+                        <button class="send_button"></button>
+                            
+                </form>
+            
         </section>
 
     </div>
@@ -115,34 +107,35 @@
 <style scoped>
    
    .background {
-        background-color: var(--gray_color);
         display: flex;
         flex-direction: column;
         padding: 200px;
-        padding-top: 100px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
     .container {
         display: flex;
         flex-direction: row;
-        background-color: white;
         border-radius: 20px ;
         margin-top:20px;
         margin-bottom: 60px;
 
     }
     .panel {
-        flex: 100%;
+        background-color: var(--white_color);
+
         display: flex;
         flex-direction: row;
         padding: 80px;
         align-content: center;
+        border-radius: 20px ;
+        margin-top:20px;
+        margin-bottom: 60px;
     }
     .rating-panel, .comment-panel {
-        flex: 100%;
         display: flex;
         flex-direction: column;
-        padding: 80px;
-        align-content: center;
+        
     }
     .rating-div {
         display: flex;
@@ -196,17 +189,20 @@
 
         display:flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         margin-top: 40px;
     }
 
     .comment-button, .rate-us-button, .share-button {
-        background-color: var(--bg_button);
+        height:40px;
+        width: 110px;
+        background-color: var(--blue_color);
+        justify-content: center;
         padding: 20px;
         border-radius: 20px;
         display: flex;
         flex-direction: row;
-        color:white;
+        color: var(--white_color);
         text-decoration: none;
         align-items: center;
 
@@ -255,6 +251,7 @@
         border-radius: 20px;
         background-color: #13A65F;
         justify-content: space-between;
+        height:40px;
         padding: 20px;
         color:white;
         padding-left: 50px;
@@ -272,20 +269,23 @@
     .comment-bar {
         display: flex;
         flex-direction: row;
+        
+        justify-content: center;
         background-color: #F3F3F5;
-
         border-radius:20px;
-        justify-content: space-between;
+        padding:20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        
     }
     .comment-input {
         display: flex;
-        background-color: #F3F3F5;
+        background-color: var(--grey_color);
         border: none;
-        padding: 30px;
         width: 100%;
         border-radius: 20px;
-        font-size: 15px;
-        padding-left: 60px;
+        font-size: 17px;
+
         
         
     }
@@ -293,9 +293,12 @@
         outline: none;
     }
     .send_button {
-        padding: 30px;
+        margin:0;
         width: 40px;
         height: 40px;
+        background-image: url('../assets/icons/ico_send_message.svg');
+        border-radius: 0px;
+        background-color: var(--grey_color)
     }
    
     

@@ -1,6 +1,6 @@
 <template>
   
-    <div class="bg2">
+    <div class="background">
       <section class="panel">
         
         <p class="friends">Friends</p>
@@ -18,7 +18,7 @@
 
       <!-- List of friends-->
       <section class="list_panel">
-        <section class="friend_row">
+        <div class="friend_row">
           <!-- Example of a friend -->
           <article class="friend_div">
             <img src="../assets/icons/ico_profile_default.svg" class="friend_ico" />
@@ -41,14 +41,13 @@
             </div>
           </article>
 
-        </section>
+        </div>
 
-        <section class="friend_row">
-          <!-- Example of a friend -->
+        <div class="friend_row">
           <article class="friend_div">
             <img src="../assets/icons/ico_profile_default.svg" class="friend_ico" />
             <div class="friend_text">
-              <b>Tomas Uzcudun Es un boludo</b>
+              <b>Tomas Uzcudun Tomas Uzcudun</b>
             </div>
           </article>
           <article class="friend_div">
@@ -75,8 +74,7 @@
               </div>
             </div>
           </article>
-
-        </section>
+        </div>
       </section>
     </div>
   
@@ -88,13 +86,13 @@
 
 
 .background {
-    height: 100%;    
-    background: #D9D9D9;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
 
+  height: 100%;
+  display:flex;     
+  justify-content: center;
+  align-content: center;
+  padding: 9vh;
+    
 }
 .panel {
     display: flex;
@@ -122,14 +120,13 @@
     flex-direction: column;
     align-items:  center;
     border-radius: 20px;
-    border: 4px solid #0071F2;
-    
-    
-
+    border: 4px solid var(--blue_color);
     margin-top: 70px;
     width: 80%;
     padding: 30px;
-
+}
+.option:active {
+    background-color: var(--blue_color);
 }
 .option_text {
     margin-bottom: 15px;
@@ -137,10 +134,6 @@
 
 }
 
-
-.option:active {
-    background-color: #0071F2;
-}
 .list_panel {
     display:flex;
     flex-direction: column;
@@ -149,9 +142,8 @@
     align-items: center;
   
     margin: 50px;
-    background: #FFFFFF;
-    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
-
+    background: var(--white_color);
+    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.05);
     padding: 30px; 
     margin-top: 0px;
     margin-bottom: 0px;
@@ -169,7 +161,7 @@
 
 .friend_div {
     
-    background-color: white;
+    background-color: var(--white_color);
     padding: 10px;
     padding-top: 20px;
     padding-bottom: 60px;
@@ -185,12 +177,12 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: #FFFFFF;
-    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
+    
+    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.08);
 }
 
 .accept-button, .reject-button{
-  background-color: green;
+  background-color: var(--green_color);
   border-radius: 40px;
   padding: 5px;
   margin: 10px;
@@ -201,7 +193,7 @@
   
 }
 .reject-button {
-  background-color: red;
+  background-color: var(--red_color);
 }
 
 .friend_row {
@@ -210,17 +202,6 @@
     flex: 50%; 
 }
 
-.bg2 {
-
-  height: 100%;
-  display:flex;     
-  justify-content: center;
-  align-content: center;
-  
-    
-    padding: 9vh;
-    
-}
 .friend_text {
     margin-top: 50px;
     font-size: 20px;
