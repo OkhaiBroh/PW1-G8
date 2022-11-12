@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-@import "./css/header.css";
 @import "./css/login.css";
 @import "./css/register.css";
 
@@ -25,6 +24,7 @@
     --red_color: #E11601;
     --black_color: black;
     --white_color: white;
+    --green_color: #13A65F;
 
     /* Selected / Hover Colors */
     --selected_blue_color: #0058bd;
