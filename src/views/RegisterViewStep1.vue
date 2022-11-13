@@ -1,5 +1,5 @@
 <template>
-  <div class="login-register-row">
+  <main class="login-register-row">
     <div class="login-register-column center">
       <p class="login-register-title">Open Events</p>
       <div class="bar-container">
@@ -14,7 +14,7 @@
           </div>
       </div>
 
-      <div class="login-register-panel register-panel-width">
+      <form action="/register-security" class="login-register-panel register-panel-width">
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
@@ -68,7 +68,7 @@
           Next
         </RouterLink>
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
-      </div>
+      </form>
     </div>
     <div class="login-register-column">
       <div class="opacity-black"> </div>
@@ -77,7 +77,7 @@
         src="https://grandluxorhotels.com/wp-content/uploads/2016/09/9323706488_7c288a9659_b.jpg"
       />
     </div>
-  </div>
+  </main>
 </template>
 
 <style scoped>

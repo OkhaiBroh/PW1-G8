@@ -1,5 +1,5 @@
 <template>
-    <div class="general-container">
+    <main class="general-container">
         <div class="main-panel">
             <div class="title-and-bar">
                 <p class="create-event-title"> Create Event </p>
@@ -19,11 +19,11 @@
                 </div>
             </div>
             <section class="data-input">
-                <div class="event-participants-input">
+                <div class="event-participants-input camp">
                     <p class="camp-title participants"> Participants </p>
                     <input class="input participants-input" name="event-participants" type="text">
                 </div>
-                <div class="event-type-input">
+                <div class="event-type-input camp">
                     <p class="camp-title type"> Type </p>
                     <input class="input type-input" name="event-type" type="text">
                 </div>
@@ -33,7 +33,7 @@
                 <RouterLink class="create-btn" to="/create-event-4"> Create </RouterLink>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped>
@@ -99,6 +99,18 @@
     
     .create-btn {
         margin-right: 30px;
+    }
+
+    @media (max-width: 1000px) {
+        .camp {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .back-btn, .create-btn {
+            margin: 10px 0 20px 0;
+            width: 90px;
+        }
     }
     
 </style>

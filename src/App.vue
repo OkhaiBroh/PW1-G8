@@ -16,14 +16,14 @@ import { RouterLink, RouterView } from "vue-router";
 
     <div class="minimalist">
       <img class="ico_logo" src="./assets/icons/ico_logo.svg" />
-      <div class="container dropbtn" onclick="openMenuForMobile()">
+      <div id="dropbtn" class="container dropbtn" @click="openMenuForMobile (); myFunction (this);">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
-    </div>    
+    </div>
 
-    <nav class="options">
+    <nav id="options" class="options">
         <RouterLink class="header-option" to="/messages">
           <img class="ico-header" src="./assets/icons/ico_message.svg" />
           <p class="header-text">Messages</p>
@@ -34,7 +34,6 @@ import { RouterLink, RouterView } from "vue-router";
           <p class="header-text">Events</p>
         </RouterLink>
       
-
         <RouterLink class="header-option" to="/friends">
           <img class="ico_friends" src="./assets/icons/ico_friends.svg" />
           <p class="header-text">Friends</p>
@@ -87,6 +86,7 @@ import { RouterLink, RouterView } from "vue-router";
     height: 100px;
     margin-left: 40px;
 }
+
 .header-text {
   margin-top: 10px;
 }
@@ -137,7 +137,7 @@ header {
   .bar1, .bar2, .bar3 {
       width: 35px;
       height: 5px;
-      background-color: #333;
+      background-color: var(--black_color);
       margin: 6px 0;
       transition: 0.4s;
   }
@@ -170,30 +170,24 @@ header {
 </style>
 
 <script>
+let check = true;
+
 export default {
   methods: ({
-      openMenuForMobile: () => {
-        alert("here");
-        document.getElementsByClassName("options").style.visibility = "visible";
-      },
-
-      /*myFunction (x) {
-        x.classList.toggle("change");
-      },*/
-      
-      // Close the dropdown if the user clicks outside of it
-      /*onClick: function(event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      },*/
+    openMenuForMobile: () => {
+      if (check) {
+        document.getElementById("options").style.display = "block";
+        check = false;
+      } else {
+        document.getElementById("options").style.display = "none";
+        check = true;
+      }
+    },
+    
+    myFunction () {
+      var x = document.getElementById("dropbtn");
+      x.classList.toggle("change");
+    }
   }),
 };
 </script>

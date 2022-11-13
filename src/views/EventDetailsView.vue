@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <main class="background">
         <section class="panel">
                 <div class="event-details">
                     <div class="name-container">
@@ -70,8 +70,8 @@
                 <!-- Comment-->
                 <article class="comment-article">
                     <img class="ico-user" src="../assets/icons/ico_profile_default.svg" >
-                    <div>
-                        <div>
+                    <div class="comment-info">
+                        <div class="comment-user-name">
                             <b>Tomas Uzucudn</b>
                         </div>
                         <div class="comment-text">
@@ -82,8 +82,8 @@
 
                 <article class="comment-article">
                     <img class="ico-user" src="../assets/icons/ico_profile_default.svg" >
-                    <div>
-                        <div>
+                    <div class="comment-info">
+                        <div class="comment-user-name">
                             <b>Arnau Ros</b>
                         </div>
                         <div class="comment-text">
@@ -100,8 +100,7 @@
             
         </section>
 
-    </div>
-
+    </main>
 </template>
 
 <style scoped>
@@ -113,14 +112,7 @@
         padding-top: 50px;
         padding-bottom: 50px;
     }
-    .container {
-        display: flex;
-        flex-direction: row;
-        border-radius: 20px ;
-        margin-top:20px;
-        margin-bottom: 60px;
-
-    }
+    
     .panel {
         background-color: var(--white_color);
 
@@ -299,6 +291,117 @@
         background-image: url('../assets/icons/ico_send_message.svg');
         border-radius: 0px;
         background-color: var(--grey_color)
+    }
+
+    @media (max-width: 1000px) {
+        .background {
+            margin: 0;
+            padding: 20px;
+
+        }
+        .panel {
+            padding:20px;
+            margin:0;
+            flex-direction: column;
+            align-content: unset;
+            margin-bottom:30px;
+        }
+        .event-details {
+            margin:0;
+        }
+        .name-container {
+            margin:0;
+            margin-top:30px;
+            display:flex;
+            justify-content: center;
+            padding:0;  
+        }
+        .extra-info {
+        align-self: flex-end;
+        display: flex;
+        
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 30px;
+        }
+        .location-info, .date-info {
+
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top:10px;
+        }
+        .buttons {
+
+        display:flex;
+        flex-direction: column;
+        margin-top: 20px;
+        }
+        .comment-button, .rate-us-button, .share-button {
+        height:40px;
+        width:310px;
+       
+        
+
+        padding:0;
+        padding-top:20px;
+        padding-bottom:20px;
+        margin:0;
+        margin-top:20px;
+
+        }
+       
+        .ico-event {
+        width: 310px;
+        height: 200px;
+        border-radius: 20px;
+        margin-top: 20px;
+        }
+        .join-button{
+            margin-top:20px;
+        }
+        .ico-star {
+        width:40px;
+        height: 40px;
+        }
+        .rating {
+            margin:20px;
+            margin-top:10px;
+            display:flex;
+            justify-content: center;
+        }
+        .rating-div {
+            margin:0;
+            margin-bottom:10px;
+        }
+        
+        .comments{
+            display: flex;
+            justify-content: center;
+            margin-bottom:20px;
+        }
+        .comment-article {
+        
+        flex-direction: column;
+        }
+        .ico-user {
+            display:block;
+
+            margin:auto;
+        }
+        .comment-info {
+            margin-top: 20px;
+        }
+        .comment-user-name {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .comment-bar {
+            padding:15px;
+        }
+
     }
    
     
