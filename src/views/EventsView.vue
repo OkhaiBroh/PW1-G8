@@ -424,12 +424,11 @@
 
   .search-input {
     height: 30px;
-    width: fit-content;
+    width: 220px;
   }
-
+  
   .search-bar {
     margin-bottom: 20px;
-    border-radius: 100px;
   }
 
   .create-btn {
