@@ -273,7 +273,7 @@
       padding:10px;
       display:flex;
       flex-direction: column;
-      padding-bottom:30px;
+      padding-bottom:20px;
       
     }
     .friend_row {
