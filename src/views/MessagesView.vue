@@ -203,8 +203,10 @@
     *             Chat users                *
     *****************************************/
     .list_chats{
-        list-style: none;
+        list-style-type: none;
         height: auto;
+        margin-top: 0;
+        margin-block-end: 0;
     }
 
     .input_search{
