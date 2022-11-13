@@ -2,7 +2,11 @@
   <main class="login-register-row">
     <div class="login-register-column center">
       <p class="login-register-title">Open Events</p>
-      <form action="/events" method="" class="login-register-panel login-panel-width">
+      <form
+        action="/events"
+        method=""
+        class="login-register-panel login-panel-width"
+      >
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
@@ -27,7 +31,7 @@
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <button @click="goToHome ()"> Login </button>
+        <button @click="goToHome()">Login</button>
         <RouterLink class="link-text" to="/register-account">
           Not registered? Register
         </RouterLink>
@@ -46,8 +50,8 @@
 export default {
   methods: {
     goToHome() {
-      this.$router.push('/events'); 
-    }
-  } 
-}
+      this.$router.push("/events");
+    },
+  },
+};
 </script>

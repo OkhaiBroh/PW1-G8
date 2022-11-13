@@ -1,17 +1,17 @@
 <template>
   <main class="general-container">
     <section class="sorter-section panel">
-        <p class="sort-by-text title">Sort By</p>
-        <div class="buttons-selecter">
-          <div class="top-buttons">
-            <button class="name-sort opt-but">Name</button>
-            <button class="date-sort opt-but">Date</button>
-          </div>
-          <div class="bottom-buttons">
-            <button class="location-sort opt-but">Location</button>
-            <button class="rating-sort opt-but">Rating</button>
-          </div>
+      <p class="sort-by-text title">Sort By</p>
+      <div class="buttons-selecter">
+        <div class="top-buttons">
+          <button class="name-sort opt-but">Name</button>
+          <button class="date-sort opt-but">Date</button>
         </div>
+        <div class="bottom-buttons">
+          <button class="location-sort opt-but">Location</button>
+          <button class="rating-sort opt-but">Rating</button>
+        </div>
+      </div>
     </section>
     <section class="searcher-section panel">
       <div class="upper-searcher-section">
@@ -24,7 +24,9 @@
           />
           <button class="search-btn"></button>
         </div>
-        <RouterLink class="create-btn" to="/create-event-1"> Create </RouterLink>
+        <RouterLink class="create-btn" to="/create-event-1">
+          Create
+        </RouterLink>
       </div>
       <div class="events-panel">
         <div class="events-row">
@@ -181,7 +183,6 @@
 </template>
 
 <style scoped>
-
 .general-container {
   height: 100%;
   display: flex;
@@ -241,7 +242,8 @@
   justify-content: center;
 }
 
-.top-buttons, .bottom-buttons {
+.top-buttons,
+.bottom-buttons {
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -413,7 +415,8 @@
     justify-content: space-around;
   }
 
-  .top-buttons, .bottom-buttons {
+  .top-buttons,
+  .bottom-buttons {
     height: 100%;
     align-items: center;
   }
@@ -426,7 +429,7 @@
     height: 30px;
     width: 220px;
   }
-  
+
   .search-bar {
     margin-bottom: 20px;
   }
@@ -454,5 +457,4 @@
     margin-bottom: 20px;
   }
 }
-
 </style>

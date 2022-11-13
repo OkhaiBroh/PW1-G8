@@ -1,227 +1,217 @@
 <template>
   <main class="div-container">
-      <section class="profile-data">
-        <div class="profile box-shadow">
-          <p class="title-text center-text">Profile</p>
-          <img class="profile-image" src="../assets/icons/ico_user.svg" />
-          <button class="log-out-button">Log Out</button>
-          <button class="del-acc-button">Delete Account</button>
+    <section class="profile-data">
+      <div class="profile box-shadow">
+        <p class="title-text center-text">Profile</p>
+        <img class="profile-image" src="../assets/icons/ico_user.svg" />
+        <button class="log-out-button">Log Out</button>
+        <button class="del-acc-button">Delete Account</button>
+      </div>
+      <form class="personal-data box-shadow">
+        <p class="title-text center-text">Personal Data</p>
+        <div class="name-lastname-container">
+          <div class="container">
+            <label class="input-text" for="name"> Name </label>
+            <input
+              class="input input-margin"
+              type="text"
+              name="name"
+              id="name"
+            />
+          </div>
+          <div class="container">
+            <label class="input-text" for="lastname"> Lastname </label>
+            <input class="input" type="text" name="lastname" id="lastneme" />
+          </div>
         </div>
-        <form class="personal-data box-shadow">
-          <p class="title-text center-text">Personal Data</p>
-          <div class="name-lastname-container">
-            <div class="container">
-              <label class="input-text" for="name"> Name </label>
-              <input
-                class="input input-margin"
-                type="text"
-                name="name"
-                id="name"
-              />
-            </div>
-            <div class="container">
-              <label class="input-text" for="lastname"> Lastname </label>
-              <input class="input" type="text" name="lastname" id="lastneme" />
-            </div>
-          </div>
-          <div class="email-container">
-            <label class="input-text" for="email"> Email </label>
-            <input class="email-input" type="text" name="email" id="email" />
-          </div>
-          <div class="save-changes-container">
-            <button class="save-changes">Save Changes</button>
-          </div>
-        </form>
-      </section>
+        <div class="email-container">
+          <label class="input-text" for="email"> Email </label>
+          <input class="email-input" type="text" name="email" id="email" />
+        </div>
+        <div class="save-changes-container">
+          <button class="save-changes">Save Changes</button>
+        </div>
+      </form>
+    </section>
 
-      <section class="security">
-        <form class="security-container box-shadow">
-          <p class="title-text">Security</p>
-          <div class="inputs-container">
-            <div class="container">
-              <label class="input-text" for="lastname">
-                Current Password
-              </label>
-              <input class="input" type="text" name="lastname" id="lastneme" />
-            </div>
-            <div class="container">
-              <label class="input-text" for="lastname"> New Password </label>
-              <input class="input" type="text" name="lastname" id="lastneme" />
-            </div>
-            <div class="container">
-              <label class="input-text" for="lastname">
-                Confirm Password
-              </label>
-              <input class="input" type="text" name="lastname" id="lastneme" />
+    <section class="security">
+      <form class="security-container box-shadow">
+        <p class="title-text">Security</p>
+        <div class="inputs-container">
+          <div class="container">
+            <label class="input-text" for="lastname"> Current Password </label>
+            <input class="input" type="text" name="lastname" id="lastneme" />
+          </div>
+          <div class="container">
+            <label class="input-text" for="lastname"> New Password </label>
+            <input class="input" type="text" name="lastname" id="lastneme" />
+          </div>
+          <div class="container">
+            <label class="input-text" for="lastname"> Confirm Password </label>
+            <input class="input" type="text" name="lastname" id="lastneme" />
+          </div>
+        </div>
+        <div class="save-changes-container">
+          <button class="save-changes margin-btn-password">
+            Change Password
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="statistics">
+      <div class="statistics-container box-shadow">
+        <p class="title-text center-text">Statistics</p>
+        <div class="graphs">
+          <div class="event-container box-shadow statistics-block">
+            <p class="statistics-text">Average Event Score</p>
+            <div class="progress-container">
+              <svg class="bg-circle">
+                <circle
+                  cx="70"
+                  cy="70"
+                  r="60"
+                  stroke-linecap="round"
+                  pathLength="100"
+                ></circle>
+              </svg>
+              <svg class="aes-progress-circle">
+                <circle
+                  cx="70"
+                  cy="70"
+                  r="60"
+                  stroke-linecap="round"
+                  pathLength="100"
+                ></circle>
+              </svg>
+              <p class="progress-text">6,5</p>
             </div>
           </div>
-          <div class="save-changes-container">
-            <button class="save-changes margin-btn-password">
-              Change Password
+          <div class="event-container box-shadow statistics-block">
+            <p class="statistics-text">Number of Comments</p>
+            <div>
+              <p class="num-comm-text">53</p>
+            </div>
+          </div>
+          <div class="event-container box-shadow statistics-block">
+            <p class="statistics-text">% Users with lower number of comments</p>
+            <div class="progress-container">
+              <svg class="bg-circle">
+                <circle
+                  cx="70"
+                  cy="70"
+                  r="60"
+                  stroke-linecap="round"
+                  pathLength="100"
+                ></circle>
+              </svg>
+              <svg class="ulnc-progress-circle">
+                <circle
+                  cx="70"
+                  cy="70"
+                  r="60"
+                  stroke-linecap="round"
+                  pathLength="100"
+                ></circle>
+              </svg>
+              <p class="progress-text">45 %</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <div class="timeline-container box-shadow">
+        <p class="title-text center-text">Timeline</p>
+        <div class="events-container">
+          <div class="event-container box-shadow">
+            <img
+              class="event-image"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
+            />
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico-25px margin-right"
+                src="../assets/icons/location_ico.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico-25px margin-right"
+                src="../assets/icons/calendar_ico.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </div>
+
+          <div class="event-container box-shadow">
+            <img
+              class="event-image margin-right"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
+            />
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico-25px margin-right"
+                src="../assets/icons/location_ico.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico-25px margin-right"
+                src="../assets/icons/calendar_ico.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </div>
+
+          <div class="event-container box-shadow">
+            <img
+              class="event-image"
+              src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+              alt=""
+            />
+            <p class="timeline-title-text">La Fiestita</p>
+            <div class="info-container">
+              <img
+                class="ico-25px margin-right"
+                src="../assets/icons/location_ico.svg"
+                alt="location ico"
+              />
+              <p class="timeline-info-text">Barcelona</p>
+            </div>
+            <div class="info-container">
+              <img
+                class="ico-25px margin-right"
+                src="../assets/icons/calendar_ico.svg"
+                alt="calendar ico"
+              />
+              <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            </div>
+          </div>
+
+          <div class="round-button-arrow">
+            <button class="rounded-button">
+              <img class="ico-25px" src="../assets/icons/ico_right_arrow.svg" />
             </button>
           </div>
-        </form>
-      </section>
-
-      <section class="statistics">
-        <div class="statistics-container box-shadow">
-          <p class="title-text center-text">Statistics</p>
-          <div class="graphs">
-            <div class="event-container box-shadow statistics-block">
-              <p class="statistics-text">Average Event Score</p>
-              <div class="progress-container">
-                <svg class="bg-circle">
-                  <circle
-                    cx="70"
-                    cy="70"
-                    r="60"
-                    stroke-linecap="round"
-                    pathLength="100"
-                  ></circle>
-                </svg>
-                <svg class="aes-progress-circle">
-                  <circle
-                    cx="70"
-                    cy="70"
-                    r="60"
-                    stroke-linecap="round"
-                    pathLength="100"
-                  ></circle>
-                </svg>
-                <p class="progress-text">6,5</p>
-              </div>
-            </div>
-            <div class="event-container box-shadow statistics-block">
-              <p class="statistics-text">Number of Comments</p>
-              <div>
-                <p class="num-comm-text">53</p>
-              </div>
-            </div>
-            <div class="event-container box-shadow statistics-block">
-              <p class="statistics-text">
-                % Users with lower number of comments
-              </p>
-              <div class="progress-container">
-                <svg class="bg-circle">
-                  <circle
-                    cx="70"
-                    cy="70"
-                    r="60"
-                    stroke-linecap="round"
-                    pathLength="100"
-                  ></circle>
-                </svg>
-                <svg class="ulnc-progress-circle">
-                  <circle
-                    cx="70"
-                    cy="70"
-                    r="60"
-                    stroke-linecap="round"
-                    pathLength="100"
-                  ></circle>
-                </svg>
-                <p class="progress-text">45 %</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-
-      <section class="timeline">
-        <div class="timeline-container box-shadow">
-          <p class="title-text center-text">Timeline</p>
-          <div class="events-container">
-            <div class="event-container box-shadow">
-              <img
-                class="event-image"
-                src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-                alt=""
-              />
-              <p class="timeline-title-text">La Fiestita</p>
-              <div class="info-container">
-                <img
-                  class="ico-25px margin-right"
-                  src="../assets/icons/location_ico.svg"
-                  alt="location ico"
-                />
-                <p class="timeline-info-text">Barcelona</p>
-              </div>
-              <div class="info-container">
-                <img
-                  class="ico-25px margin-right"
-                  src="../assets/icons/calendar_ico.svg"
-                  alt="calendar ico"
-                />
-                <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-              </div>
-            </div>
-
-            <div class="event-container box-shadow">
-              <img
-                class="event-image margin-right"
-                src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-                alt=""
-              />
-              <p class="timeline-title-text">La Fiestita</p>
-              <div class="info-container">
-                <img
-                  class="ico-25px margin-right"
-                  src="../assets/icons/location_ico.svg"
-                  alt="location ico"
-                />
-                <p class="timeline-info-text">Barcelona</p>
-              </div>
-              <div class="info-container">
-                <img
-                  class="ico-25px margin-right"
-                  src="../assets/icons/calendar_ico.svg"
-                  alt="calendar ico"
-                />
-                <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-              </div>
-            </div>
-
-            <div class="event-container box-shadow">
-              <img
-                class="event-image"
-                src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-                alt=""
-              />
-              <p class="timeline-title-text">La Fiestita</p>
-              <div class="info-container">
-                <img
-                  class="ico-25px margin-right"
-                  src="../assets/icons/location_ico.svg"
-                  alt="location ico"
-                />
-                <p class="timeline-info-text">Barcelona</p>
-              </div>
-              <div class="info-container">
-                <img
-                  class="ico-25px margin-right"
-                  src="../assets/icons/calendar_ico.svg"
-                  alt="calendar ico"
-                />
-                <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
-              </div>
-            </div>
-
-            <div class="round-button-arrow">
-              <button class="rounded-button">
-                <img
-                  class="ico-25px"
-                  src="../assets/icons/ico_right_arrow.svg"
-                />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
   </main>
 </template>
 
 <style scoped>
-
 .margin-right {
   margin-right: 10px;
 }
@@ -609,18 +599,24 @@ button {
 }
 
 @media (max-width: 1750px) {
-.div-container {
-  padding: 50px 100px 50px 100px;
-}
+  .div-container {
+    padding: 50px 100px 50px 100px;
+  }
 }
 
 @media (max-width: 1200px) {
-  .profile, .personal-data, .security, .statistics, .timeline {
+  .profile,
+  .personal-data,
+  .security,
+  .statistics,
+  .timeline {
     flex-direction: column;
     margin: 20px;
   }
 
-  .profile-data, .name-lastname-container, .round-button-arrow {
+  .profile-data,
+  .name-lastname-container,
+  .round-button-arrow {
     flex-direction: column;
     justify-content: center;
   }
@@ -651,7 +647,10 @@ button {
     width: 100%;
   }
 
-  .inputs-container, .security-container, .graphs, .events-container {
+  .inputs-container,
+  .security-container,
+  .graphs,
+  .events-container {
     margin: 0;
     flex-direction: column;
   }
@@ -664,5 +663,4 @@ button {
     padding: 25px;
   }
 }
-
 </style>

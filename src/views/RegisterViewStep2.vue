@@ -13,7 +13,10 @@
           <p class="bar-text2">Security</p>
         </div>
       </div>
-      <form action="/register-successful" class="login-register-panel register-panel-width">
+      <form
+        action="/register-successful"
+        class="login-register-panel register-panel-width"
+      >
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_pass.svg" />
           <div class="input-form">
@@ -59,8 +62,8 @@
 </template>
 
 <style scoped>
-  .line {
-    border: 2px solid var(--blue_color);
-    width: 100px;
-  }
+.line {
+  border: 2px solid var(--blue_color);
+  width: 100px;
+}
 </style>

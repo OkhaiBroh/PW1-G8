@@ -3,18 +3,21 @@
     <div class="login-register-column center">
       <p class="login-register-title">Open Events</p>
       <div class="bar-container">
-          <div class="line-container">
-            <span class="circle-gray"></span>
-            <hr class="line" />
-            <span class="circle-gray"></span>
-          </div>
-          <div class="text-container">
-            <p class="bar-text1">Account</p>
-            <p class="bar-text2">Security</p>
-          </div>
+        <div class="line-container">
+          <span class="circle-gray"></span>
+          <hr class="line" />
+          <span class="circle-gray"></span>
+        </div>
+        <div class="text-container">
+          <p class="bar-text1">Account</p>
+          <p class="bar-text2">Security</p>
+        </div>
       </div>
 
-      <form action="/register-security" class="login-register-panel register-panel-width">
+      <form
+        action="/register-security"
+        class="login-register-panel register-panel-width"
+      >
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
@@ -71,7 +74,7 @@
       </form>
     </div>
     <div class="login-register-column">
-      <div class="opacity-black"> </div>
+      <div class="opacity-black"></div>
       <img
         class="login-register-image"
         src="https://grandluxorhotels.com/wp-content/uploads/2016/09/9323706488_7c288a9659_b.jpg"
@@ -81,35 +84,36 @@
 </template>
 
 <style scoped>
-  .line {
-    border: 2px solid var(--dark_gray_color);
-    width: 100px;
-  }
+.line {
+  border: 2px solid var(--dark_gray_color);
+  width: 100px;
+}
 
-  .input-file {
-      display: none;
-  }
+.input-file {
+  display: none;
+}
 
-  .label-file {
-      border: 1px solid var(--dark_gray_color);
-      border-radius: 25px;
+.label-file {
+  border: 1px solid var(--dark_gray_color);
+  border-radius: 25px;
 
-      display: inline-block;
-      padding: 6px 12px;
-      cursor: pointer;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
 
-      font-size: 15px;
-      color: var(--black_color);
-  }
+  font-size: 15px;
+  color: var(--black_color);
+}
 
-  .input-file:focus, .label-file:hover {
-      background-color: var(--dark_gray_color);
-      border-radius: 25px;
-  }
+.input-file:focus,
+.label-file:hover {
+  background-color: var(--dark_gray_color);
+  border-radius: 25px;
+}
 
-  .opacity-black {
-      visibility: hidden;
-  }
+.opacity-black {
+  visibility: hidden;
+}
 /*
 @media (max-width: 1000px) {
     .login-register-row {
