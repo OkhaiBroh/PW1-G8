@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <main class="background">
         <div class="left">
             <input class="input_search" type="text" placeholder="search"/>
             <ul class="list_chats">
@@ -54,7 +54,7 @@
                 <button class="button_ico"></button>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped>

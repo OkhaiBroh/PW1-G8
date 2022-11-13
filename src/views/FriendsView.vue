@@ -1,6 +1,5 @@
-<template>
-  
-    <div class="background">
+<template> 
+    <main class="background">
       <section class="panel">
         
         <p class="friends">Friends</p>
@@ -77,8 +76,7 @@
           </article>
         </div>
       </section>
-    </div>
-  
+    </main>
 </template>
 
 

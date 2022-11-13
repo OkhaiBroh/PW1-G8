@@ -1,5 +1,5 @@
 <template>
-    <div class="general-container">
+    <main class="general-container">
         <div class="main-panel">
             <div class="title-and-bar">
                 <p class="create-event-title"> Create Event </p>
@@ -33,7 +33,7 @@
                 <RouterLink class="create-btn" to="/create-event-4"> Create </RouterLink>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped>

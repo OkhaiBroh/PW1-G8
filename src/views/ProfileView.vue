@@ -1,5 +1,5 @@
 <template>
-  <div class="div-container">
+  <main class="div-container">
       <section class="profile-data">
         <div class="profile box-shadow">
           <p class="title-text center-text">Profile</p>
@@ -217,7 +217,7 @@
           </div>
         </div>
       </section>
-  </div>
+  </main>
 </template>
 
 <style scoped>

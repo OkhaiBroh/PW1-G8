@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <main class="background">
         <section class="panel">
                 <div class="event-details">
                     <div class="name-container">
@@ -100,8 +100,7 @@
             
         </section>
 
-    </div>
-
+    </main>
 </template>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div class="general-container">
+  <main class="general-container">
     <section class="sorter-section panel">
         <p class="sort-by-text title">Sort By</p>
         <div class="buttons-selecter">
@@ -177,7 +177,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 
 <style scoped>

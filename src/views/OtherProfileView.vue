@@ -1,5 +1,5 @@
 <template>
-  <div class="general-container">
+  <main class="general-container">
     <section class="profile-section panel">
       <p class="profile-title title">Profile</p>
       <img
@@ -29,7 +29,7 @@
       </div>
       <button class="send-message-btn">Send Message</button>
     </section>
-  </div>
+  </main>
 </template>
 
 <style scoped>
