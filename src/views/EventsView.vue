@@ -220,7 +220,7 @@
 
 .opt-but {
   margin: 0; /* CSS ISSUE */
-  border: 2px solid var(--blue_color);
+  border: 4px solid var(--blue_color);
   font-weight: 700;
   width: 150px;
 
@@ -229,10 +229,6 @@
 }
 
 .opt-but:hover {
-  border: 2px solid var(--blue_color);
-  font-weight: 700;
-  width: 150px;
-
   background-color: var(--blue_color);
   color: var(--white_color);
 }
@@ -273,8 +269,9 @@
   flex-direction: row;
   align-items: center;
 
-  border: 2px solid var(--blue_color);
-  border-radius: 20px;
+  border: 4px solid var(--blue_color);
+  border-radius: 100px;
+  padding: 10px;
 }
 
 .search-input {
@@ -300,6 +297,10 @@
   font-weight: 700;
   width: 150px;
   margin: 0 0 0 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-btn {
@@ -384,14 +385,15 @@
     width: 90%;
     height: fit-content;
     margin: 0 0 20px 0;
-    padding: 20px 20px 0 20px;
+    padding: 20px;
     align-items: center;
   }
 
   .title {
-    font-size: 16px;
+    font-size: 25px;
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .buttons-selecter {
@@ -400,14 +402,9 @@
   }
 
   .opt-but {
-    height: 40px;
-    width: 120px;
+    /*height: 40px;
+    width: 120px;*/
     margin-bottom: 20px;
-  }
-
-  .opt-but:hover {
-    height: 40px;
-    width: 120px;
   }
 
   .buttons-selecter {
@@ -427,18 +424,19 @@
 
   .search-input {
     height: 30px;
-    width: 220px;
+    width: fit-content;
   }
 
   .search-bar {
     margin-bottom: 20px;
+    border-radius: 100px;
   }
 
   .create-btn {
-    height: 16px;
-    line-height: 16px;
-    width: 250px;
+    height: 30px;
+    width: auto;
     margin: 0 0 20px 0;
+    padding: 10px;
   }
 
   .events-panel {

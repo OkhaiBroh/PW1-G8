@@ -34,7 +34,6 @@ import { RouterLink, RouterView } from "vue-router";
           <p class="header-text">Events</p>
         </RouterLink>
       
-
         <RouterLink class="header-option" to="/friends">
           <img class="ico_friends" src="./assets/icons/ico_friends.svg" />
           <p class="header-text">Friends</p>
@@ -87,6 +86,7 @@ import { RouterLink, RouterView } from "vue-router";
     height: 100px;
     margin-left: 40px;
 }
+
 .header-text {
   margin-top: 10px;
 }
