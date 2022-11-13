@@ -109,7 +109,7 @@
 
     .next-btn {
         width: 90px;
-        margin-bottom: 20px;
+        margin: 10px 0 20px 0;
     }
 }
     
