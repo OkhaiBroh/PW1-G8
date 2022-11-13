@@ -4,15 +4,16 @@
       <section class="panel">
         
         <p class="friends">Friends</p>
+        <div class="friends_options">
+          <div class="option">
+            <b class="option_text">Requests</b>
+            <img src="../assets/icons/ico_user.svg" class="ico" />
+          </div>
 
-        <div class="option">
-          <b class="option_text">Requests</b>
-          <img src="../assets/icons/ico_user.svg" class="ico" />
-        </div>
-
-        <div class="option">
-          <b class="option_text">List</b>
-          <img src="../assets/icons/ico_user.svg" class="ico" />
+          <div class="option">
+            <b class="option_text">List</b>
+            <img src="../assets/icons/ico_user.svg" class="ico" />
+          </div>
         </div>
       </section>
 
@@ -228,6 +229,64 @@
   height: 20px;
 }
 
+@media (max-width: 1000px) {
+    .background{
 
+      flex-direction: column;
+      
+      justify-content: center;
+      width:100%;
+      align-content: unset;
+      justify-content: unset;
+      padding:0;
+      
+      
+    }
+    .panel {
+
+      margin:20px;
+      padding:0px;
+      padding-top: 20px;
+      margin-top:40px;
+      padding-bottom:10px;
+    }
+    .friends {
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+    .friends_options {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    .option {
+      width:110px;
+      margin:0;
+
+      margin-top:10px;
+      margin-left:10px;
+      margin-right:10px;
+      padding:10px;
+    }
+    .list_panel {
+      margin:20px;
+      padding:10px;
+      display:flex;
+      flex-direction: column;
+      padding-bottom:20px;
+      
+    }
+    .friend_row {
+      display: flex;
+      flex-direction: column;
+    }
+    .friend_div {
+      margin:0;
+      margin-top:30px;
+      margin-bottom:30px;
+      
+    }
+
+}
 </style>
 
