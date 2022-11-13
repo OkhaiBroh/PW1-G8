@@ -1,3 +1,18 @@
+<!--
+We are not really convinced this will be the definitive version
+of Messages View. In general, we believe that learning JS will
+improve our design in this View considerably so we just made
+a provisional version. 
+
+The PC idea is fine, but we have realized
+that in mobile phone we need to superimpose some divs to others
+or making two different views instead and then combining them
+in one at Desktop version.
+
+For the next deliverable we will try to make a definitive
+mobile version for this functionality.
+-->
+
 <template>
     <div class="general-container">
         <div class="chat_box">
