@@ -1,5 +1,5 @@
 <template>
-    <div class="background">
+    <div class="general-container">
         <div class="main-panel">
             <div class="title-and-bar">
                 <p class="create-event-title"> Create Event </p>
@@ -30,82 +30,22 @@
                 </div>
             </section>
             <div class="button-panel">
-                <button class="done-btn"> Done </button>
+                <RouterLink class="done-btn" to="/events"> Done </RouterLink>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-
-    html,
-    body {
-        margin: 0px;
-        height: 100%;
-    }
     
-    .background {
-        background-color: var(--light_gray_color);
-        display: flex;
-        justify-content: center;
-        height: 100vh;
-    }
-
-    .main-panel {
-        width: 50vw;
-        height: 55vh;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        border-radius: 20px;
-
-        margin-top: 40px;
-        background-color: var(--white_color);
-        padding: 30px;
-    }
+@import '../assets/css/create-event.css';
 
     /**********************
      PROGRESS BAR & TITLE
     **********************/
 
     .title-and-bar {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 10px;
         margin-bottom: 40px;
-    }
-
-    .create-event-title {
-        font-weight: bold;
-        font-size: 25px;
-    }
-
-    .progress-bar {
-        display: flex;
-        flex-direction: column;
-        margin-right: 30px;
-    }
-
-    .progress, .progress-titles {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .progress {
-        margin-bottom: 5px;
-        margin-left: 8px;
-    }
-
-    .circle-name {
-        font-size: 12px;
-    }
-
-    .step {
-        margin-left: 60px;
     }
 
     .circle-gray {
@@ -127,7 +67,7 @@
 
     .successful-creation-message {
         width: 35%;
-        height: 40vh;
+        height: 250px;
         display: flex;
         flex-direction: column;
 
@@ -160,14 +100,21 @@
     **********************/
 
     .button-panel {
-        width: 86%;
-        text-align: center;
+        justify-content: center;
     }
 
     .done-btn {
+        background-color: var(--blue_color);
+        color: var(--white_color);
+        border-radius: 25px;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+
         width: 180px;
         font-weight: bold;
         font-size: 14px;
+        margin-bottom: 30px;
     }
     
 </style>
