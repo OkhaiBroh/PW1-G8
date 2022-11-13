@@ -1,6 +1,6 @@
 <template>
     <main class="general-container">
-        <div class="main-panel">
+        <form class="main-panel">
             <div class="title-and-bar">
                 <p class="create-event-title"> Create Event </p>
                 <div class="progress-bar">
@@ -38,7 +38,7 @@
                 <RouterLink class="back-btn" to="/create-event-1"> Back </RouterLink>
                 <RouterLink class="next-btn" to="/create-event-3"> Next </RouterLink>
             </div>
-        </div>
+        </form>
     </main>
 </template>
 
