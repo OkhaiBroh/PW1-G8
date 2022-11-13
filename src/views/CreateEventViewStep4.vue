@@ -136,7 +136,7 @@
         }
 
         .done-btn {
-            margin: 10px 0 20px 0;
+            margin: 10px 0 50px 0;
             width: 80%;
         }
     }
