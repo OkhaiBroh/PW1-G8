@@ -1,6 +1,5 @@
 <template>
-  <div class="background-color">
-    <div class="div-container">
+  <div class="div-container">
       <section class="profile-data">
         <div class="profile box-shadow">
           <p class="title-text center-text">Profile</p>
@@ -210,7 +209,7 @@
             <div class="round-button-arrow">
               <button class="rounded-button">
                 <img
-                  class="ico-25px margin-right"
+                  class="ico-25px"
                   src="../assets/icons/ico_right_arrow.svg"
                 />
               </button>
@@ -218,7 +217,6 @@
           </div>
         </div>
       </section>
-    </div>
   </div>
 </template>
 
@@ -255,15 +253,8 @@ button {
     *               Background               *
     ******************************************/
 
-.background-color {
-  background-color: var(--light_gray_color);
-  display: flex;
-  justify-content: center;
-  
-}
-
 .div-container {
-  width: fit-content;
+  padding: 50px 300px 50px 300px;
 }
 
 /*****************************************
@@ -616,4 +607,62 @@ button {
 
   border-radius: 25px;
 }
+
+@media (max-width: 1750px) {
+.div-container {
+  padding: 50px 100px 50px 100px;
+}
+}
+
+@media (max-width: 1200px) {
+  .profile, .personal-data, .security, .statistics, .timeline {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .profile-data, .name-lastname-container, .round-button-arrow {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .div-container {
+    padding: 0;
+  }
+
+  .input {
+    width: auto;
+    margin-right: 0;
+  }
+
+  .title-text {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .container {
+    margin-bottom: 25px;
+  }
+
+  .email-container {
+    margin-bottom: 50px;
+  }
+
+  .save-changes {
+    width: 100%;
+  }
+
+  .inputs-container, .security-container, .graphs, .events-container {
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .margin-btn-password {
+    margin-top: 25px;
+  }
+
+  .timeline-container {
+    padding: 25px;
+  }
+}
+
 </style>
