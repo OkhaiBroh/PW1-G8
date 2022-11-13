@@ -116,5 +116,29 @@
         font-size: 14px;
         margin-bottom: 30px;
     }
+
+    @media (max-width: 1000px) {
+        .successful-creation-message {
+            height: fit-content;
+            width: 80%;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .success-mssg {
+            height: fit-content;
+            width: 80%;
+            margin: 10px 0 60px 0;
+        }
+
+        .creation-mssg {
+            margin: 30px 0 30px 0;
+        }
+
+        .done-btn {
+            margin: 10px 0 50px 0;
+            width: 80%;
+        }
+    }
     
 </style>

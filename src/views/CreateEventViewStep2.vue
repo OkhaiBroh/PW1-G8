@@ -20,16 +20,16 @@
             </div>
             <section class="data-input">
                 <div class="dates-camps">
-                    <div class="event-start-date-input">
+                    <div class="event-start-date-input camp">
                         <p class="camp-title start-date"> Start Date </p>
                         <input class="input start-date-input" name="event-start-date" type="text">
                     </div>
-                    <div class="event-end-date-input">
+                    <div class="event-end-date-input camp">
                         <p class="camp-title end-date"> End Date </p>
                         <input class="input end-date-input" name="event-end-date" type="text">
                     </div>
                 </div>
-                <div class="event-image-input">
+                <div class="event-image-input camp">
                     <p class="camp-title photo"> Image </p>
                     <img class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt="">
                 </div>
@@ -109,6 +109,27 @@
 
     .next-btn {
         margin-right: 30px;
+    }
+
+    @media (max-width: 1000px) {
+        .event-start-date-input {
+            margin-bottom: 0;
+        }
+
+        .camp {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .event-image {
+            height: 146px;
+            width: 280px;
+        }
+
+        .back-btn, .next-btn {
+            margin: 10px 0 20px 0;
+            width: 90px;
+        }
     }
     
 </style>

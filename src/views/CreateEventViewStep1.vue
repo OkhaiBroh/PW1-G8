@@ -20,16 +20,16 @@
             </div>
             <section class="data-input">
                 <div class="name-description-camps">
-                    <div class="event-name-input">
+                    <div class="event-name-input camp">
                         <p class="camp-title name"> Name </p>
                         <input class="input name-input" name="event-name" type="text">
                     </div>
-                    <div class="event-location-input">
+                    <div class="event-location-input camp">
                         <p class="camp-title location"> Location </p>
                         <input class="input location-input" name="event-location" type="text">
                     </div>
                 </div>
-                <div class="event-description-input">
+                <div class="event-description-input camp">
                     <p class="camp-title description"> Description </p>
                     <input class="input description-input" name="event-description" type="text">
                 </div>
@@ -91,6 +91,26 @@
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 30px;
+}
+
+@media (max-width: 1000px) {
+    .event-name-input {
+        margin-bottom: 0;
+    }
+
+    .camp {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .button-panel {
+        justify-content: right;
+    }
+
+    .next-btn {
+        width: 90px;
+        margin: 10px 0 20px 0;
+    }
 }
     
 </style>
