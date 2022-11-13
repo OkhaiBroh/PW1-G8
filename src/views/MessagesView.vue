@@ -1,8 +1,8 @@
 <template>
-    <div class="background">
+    <div class="general-container">
         <div class="chat_box">
             <div class="left">
-                <input class="input_search" type="text" placeholder="search"/>
+                <input class="input_search" type="text" placeholder="Search"/>
                 <ul class="list_chats">
                     <li>
                         <div class="user_chat">
@@ -61,30 +61,21 @@
 
 <style scoped>
 
-    /****************************************
-    *          Setting the Background       *
-    *****************************************/
-
-    .background {
+    .general-container {
         height: 100%;
         display: flex;
         justify-content: center;
         align-content: center;
-        padding: 5vh;
-        background-color: var(--light_gray_color);
+        padding: 20px;
     }
 
     .chat_box{
         height: auto;
         flex: 1 1 auto;
-        flex-wrap: wrap;
-        min-height: 0;
-        min-width: 0;
         justify-content: center;
         flex-direction: row;
-        align-items: stretch;
-        align-content: stretch;
         display: flex;
+        border-radius: 20px;
     }
 
     /****************************************
@@ -93,11 +84,8 @@
 
     .right {
         padding: 5px 50px 25px 50px;
-        border-radius: 0px;
-        margin-left: 2vw;
-        margin-top: 2vw;
-        margin-right: 2vw;
-        margin-bottom: 2vw;
+        border-radius: 20px;
+        margin: 20px;
         background-color: white;
         display: flex;
         flex-direction: column;
@@ -111,16 +99,13 @@
 
     .left {
         display: flex;
-        margin-left: 2vw;
-        margin-top: 2vw;
-        margin-right: 2vw;
-        margin-bottom: 2vw;
+        margin: 20px;
         align-items: center;
         flex-direction: column;
         align-items: stretch;
         align-content: stretch;
         background-color: white;
-        border-radius: 0px;
+        border-radius: 20px;
         box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -204,18 +189,17 @@
     *****************************************/
     .list_chats{
         list-style-type: none;
-        height: auto;
-        margin-top: 0;
-        margin-block-end: 0;
+        height: fit-content;
     }
 
     .input_search{
         border: none;
         background-color: var(--light_gray_color);
-        height: 50px;
+        height: 40px;
         outline: none;
-        border-radius: 0px;
-        padding: 0px 0px 0px 5px;
+        border-radius: 20px;
+        padding: 0px 0px 0px 15px;
+        margin: 15px 10px 0 10px;
         border: 1px solid var(--white_color);
     }
     
