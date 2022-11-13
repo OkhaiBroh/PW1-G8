@@ -19,11 +19,11 @@
                 </div>
             </div>
             <section class="data-input">
-                <div class="event-participants-input">
+                <div class="event-participants-input camp">
                     <p class="camp-title participants"> Participants </p>
                     <input class="input participants-input" name="event-participants" type="text">
                 </div>
-                <div class="event-type-input">
+                <div class="event-type-input camp">
                     <p class="camp-title type"> Type </p>
                     <input class="input type-input" name="event-type" type="text">
                 </div>
@@ -99,6 +99,22 @@
     
     .create-btn {
         margin-right: 30px;
+    }
+
+    @media (max-width: 1000px) {
+        .event-start-date-input {
+            margin-bottom: 0;
+        }
+
+        .camp {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .back-btn, .create-btn {
+            margin: 10px 0 20px 0;
+            width: 90px;
+        }
     }
     
 </style>
