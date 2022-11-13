@@ -14,7 +14,7 @@
           </div>
       </div>
 
-      <div class="login-register-panel register-panel-width">
+      <form action="/register-security" class="login-register-panel register-panel-width">
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
@@ -68,7 +68,7 @@
           Next
         </RouterLink>
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
-      </div>
+      </form>
     </div>
     <div class="login-register-column">
       <div class="opacity-black"> </div>

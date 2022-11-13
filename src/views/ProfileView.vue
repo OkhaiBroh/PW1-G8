@@ -7,7 +7,7 @@
           <button class="log-out-button">Log Out</button>
           <button class="del-acc-button">Delete Account</button>
         </div>
-        <div class="personal-data box-shadow">
+        <form class="personal-data box-shadow">
           <p class="title-text center-text">Personal Data</p>
           <div class="name-lastname-container">
             <div class="container">
@@ -31,11 +31,11 @@
           <div class="save-changes-container">
             <button class="save-changes">Save Changes</button>
           </div>
-        </div>
+        </form>
       </section>
 
       <section class="security">
-        <div class="security-container box-shadow">
+        <form class="security-container box-shadow">
           <p class="title-text">Security</p>
           <div class="inputs-container">
             <div class="container">
@@ -60,7 +60,7 @@
               Change Password
             </button>
           </div>
-        </div>
+        </form>
       </section>
 
       <section class="statistics">

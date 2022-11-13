@@ -21,7 +21,6 @@
           Log In
         </RouterLink>
         <!--<button class="next"> Log In </button>-->
-        <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
       </div>
     </div>
     <div class="login-register-column">

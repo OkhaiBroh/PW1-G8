@@ -13,7 +13,7 @@
           <p class="bar-text2">Security</p>
         </div>
       </div>
-      <div class="login-register-panel register-panel-width">
+      <form action="/register-successful" class="login-register-panel register-panel-width">
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_pass.svg" />
           <div class="input-form">
@@ -47,7 +47,7 @@
         </RouterLink>
         <!--<button class="next"> Register </button>-->
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
-      </div>
+      </form>
     </div>
     <div class="login-register-column">
       <img
