@@ -102,10 +102,6 @@
     }
 
     @media (max-width: 1000px) {
-        .event-start-date-input {
-            margin-bottom: 0;
-        }
-
         .camp {
             width: 100%;
             margin-bottom: 20px;
