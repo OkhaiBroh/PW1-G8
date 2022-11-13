@@ -13,20 +13,18 @@
       <p class="personal-data-title title">Personal Data</p>
       <div class="user-data">
         <div class="user-name-lastname">
-          <div class="user-name-input">
+          <div class="user-name input">
             <p class="camp-title-text">Name</p>
-            <p class="camp-content-text">Tomas</p>
+            <input class="camp-content-text" type="text" value="Tomas" readonly="readonly">
           </div>
-          <div class="user-lastname-input">
+          <div class="user-lastname input">
             <p class="camp-title-text">Lastname</p>
-            <p class="camp-content-text">Uzcudun</p>
+            <input class="camp-content-text" type="text" value="Uzcudun" readonly="readonly">
           </div>
         </div>
-        <div class="user-email-input">
+        <div class="user-email input">
           <p class="camp-title-text">Email</p>
-          <p class="email-camp camp-content-text">
-            tomas.uzcudun@students.salle.url.edu
-          </p>
+          <input class="email-camp camp-content-text" type="text" value="tomas.uzcudun@students.salle.url.edu" readonly="readonly">
         </div>
       </div>
       <button class="send-message-btn">Send Message</button>
@@ -122,8 +120,76 @@
   margin-bottom: 20px;
 }
 
+.camp-content-text:focus {
+  outline: none;
+  border-color: var(--blue_color)
+}
+
 .email-camp {
   width: 490px;
   margin-bottom: 0px;
 }
+
+@media (max-width: 1000px) {
+  .general-container {
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: center;
+
+    padding: 20px;
+  }
+
+  .profile-section {
+    margin: 0;
+  }
+
+  .panel {
+    width: 90%;
+    height: fit-content;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+  }
+
+  .ppic {
+    height: 130px;
+    width: 130px;
+  }
+
+  .send-request-btn, .send-message-btn {
+    margin: 25px 0 25px 0;
+    width: 130px;
+  }
+
+  .user-name-lastname {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .user-data {
+    width: 90%;
+    justify-content: left;
+  }
+
+  .camp-title-text, .camp-content-text {
+    font-size: 14px;
+  }
+
+  .camp-content-text {
+    width: 88%;
+    text-overflow: ellipsis;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+}
+
 </style>
