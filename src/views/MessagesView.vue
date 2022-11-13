@@ -265,4 +265,24 @@
         width: 100%;
         padding-right: 10px;
     }
+
+    @media (max-width: 1000px) {
+        .general-container {
+            justify-content: start;
+        }
+
+        .chat_box {
+            justify-content: start;
+            flex-direction: column;
+        }
+
+        .left, .right {
+            align-items: center;
+            height: fit-content;
+        }
+
+        .left {
+            padding-bottom: 40px;
+        }
+    }
 </style>
