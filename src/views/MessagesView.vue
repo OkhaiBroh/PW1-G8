@@ -204,7 +204,6 @@
     *****************************************/
     .list_chats{
         list-style: none;
-        display: flex;
         height: auto;
     }
 
@@ -215,6 +214,7 @@
         outline: none;
         border-radius: 0px;
         padding: 0px 0px 0px 5px;
+        border: 1px solid var(--white_color);
     }
     
     .user_chat{
