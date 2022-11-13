@@ -3,10 +3,14 @@
     <section class="sorter-section panel">
         <p class="sort-by-text title">Sort By</p>
         <div class="buttons-selecter">
-          <button class="name-sort opt-but">Name</button>
-          <button class="date-sort opt-but">Date</button>
-          <button class="location-sort opt-but">Location</button>
-          <button class="rating-sort opt-but">Rating</button>
+          <div class="top-buttons">
+            <button class="name-sort opt-but">Name</button>
+            <button class="date-sort opt-but">Date</button>
+          </div>
+          <div class="bottom-buttons">
+            <button class="location-sort opt-but">Location</button>
+            <button class="rating-sort opt-but">Rating</button>
+          </div>
         </div>
     </section>
     <section class="searcher-section panel">
@@ -21,7 +25,6 @@
           <button class="search-btn"></button>
         </div>
         <RouterLink class="create-btn" to="/create-event-1"> Create </RouterLink>
-        <!--<button class="create-btn">Create</button>-->
       </div>
       <div class="events-panel">
         <div class="events-row">
@@ -204,7 +207,7 @@
 }
 
 .title {
-  font-weight: 900;
+  font-weight: bold;
   font-size: 25px;
 
   margin-top: 20px;
@@ -235,11 +238,18 @@
 }
 
 .buttons-selecter {
-  display: flex;
   height: 60%;
 
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.top-buttons, .bottom-buttons {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .sorter-section {
@@ -359,4 +369,93 @@
   flex-direction: row;
   margin-top: 10px;
 }
+
+@media (max-width: 1000px) {
+  .general-container {
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: center;
+
+    padding: 20px;
+  }
+
+  .panel {
+    width: 90%;
+    height: fit-content;
+    margin: 0 0 20px 0;
+    padding: 20px 20px 0 20px;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+
+  .buttons-selecter {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .opt-but {
+    height: 40px;
+    width: 120px;
+    margin-bottom: 20px;
+  }
+
+  .opt-but:hover {
+    height: 40px;
+    width: 120px;
+  }
+
+  .buttons-selecter {
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .top-buttons, .bottom-buttons {
+    height: 100%;
+    align-items: center;
+  }
+
+  .upper-searcher-section {
+    flex-direction: column;
+  }
+
+  .search-input {
+    height: 30px;
+    width: 220px;
+  }
+
+  .search-bar {
+    margin-bottom: 20px;
+  }
+
+  .create-btn {
+    height: 16px;
+    line-height: 16px;
+    width: 250px;
+    margin: 0 0 20px 0;
+  }
+
+  .events-panel {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .events-row {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-container {
+    margin-bottom: 20px;
+  }
+}
+
 </style>
