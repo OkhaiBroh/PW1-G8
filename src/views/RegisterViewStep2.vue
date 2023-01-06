@@ -48,7 +48,7 @@
         <RouterLink class="link-button" to="/register-successful">
           Register
         </RouterLink>
-        <!--<button class="next"> Register </button>-->
+        <!--<button class="next" v-on:click="addPass()"> Register </button>-->
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
       </form>
     </div>
@@ -67,3 +67,5 @@
   width: 100px;
 }
 </style>
+
+<script src="../assets/js/register.js"></script>
