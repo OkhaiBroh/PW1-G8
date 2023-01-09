@@ -61,17 +61,21 @@
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_image.svg" />
           <div class="input-form">
-            <label class="label-file" for="file-upload">
-              Select profile picture...
-            </label>
-            <input class="input-file" id="file-upload" type="file" />
+            <input
+              class="text-input"
+              name="image"
+              placeholder="Image URL"
+              type="text"
+              v-model="image"
+              required
+            />
+            <label class="label-input" for="email"> Image URL </label>
           </div>
         </div>
 
-        <RouterLink v-on:click="addUser" class="link-button" to="/register-security">
+        <RouterLink v-on:click.prevent="addUser" class="link-button" to="/register-security">
           Next
         </RouterLink>
-
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
       </form>
     </div>
@@ -187,5 +191,11 @@
 }*/
 </style>
 
-<script src="../assets/js/register.js"></script>
+<script>
+import register from '../assets/js/register.js'
+
+export default {
+  extends: register
+}
+</script>
 

@@ -1,9 +1,9 @@
 let data = {
     name: '',
-    lastname: '',
+    last_name: '',
     email: '',
-    userimage: '',
-    password: ''
+    password: '',
+    image: ''
 }
 
 export default {
@@ -12,52 +12,45 @@ export default {
             name: '',
             lastname: '',
             email: '',
-            userimage: '',
-            password: ''
+            image: '',
+            password: '',
+            conf_password: ''
         }
     },
     methods: {
-        /*async addUser() {
-          let url = "http://puigmal.salle.url.edu/api/v2/users";
-          
-          let data = {
-            name: this.name,
-            lastname: this.lastname,
-            email: this.email,
-            password: this.password,
-            userimage: this.userimage
-          };
-  
-          let post = {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-              "Content-Type" : "application/json",
-            }
-          };
-    
-          fetch(url, post).then((response) => response.json());
-        }*/
-
         addUser() {
-            console.log("DATA1");
-
             data.name = this.name;
-            data.lastname = this.lastname;
+            data.last_name = this.lastname;
             data.email = this.email;
-            data.userimage = this.userimage;
-
-            console.log(data);
+            data.image = this.image;
         },
 
         registerAccount() {
-            console.log('Registered!');
-            
-            data.password = this.password;
-            console.log(data);
+            let url = "http://puigmal.salle.url.edu/api/v2/users";
 
             if (this.password === this.conf_password) {
-                console.log("Password Validated.");
+              if (this.password.length >= 8) {
+                data.password = this.password;
+                
+                fetch(url, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error))
+              } else {
+                alert('The Password must be greater than 7!');
+                this.$router.push("/register-security");
+                data.password = '';
+              }
+            } else {
+              alert('The Passwords are not the same!');
+              this.$router.push("/register-security");
+              data.password = '';
             }
         }
     }
