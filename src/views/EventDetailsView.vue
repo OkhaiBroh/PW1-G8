@@ -1,3 +1,72 @@
+<script>
+
+import Comment from './Comment.vue'
+
+export default {
+  data() {
+    return {
+      comments: [
+        { id: 1, username: 'David', text: 'FJAL' },
+        { id: 2, username: 'Tomas', text: 'fajdfafa' },
+        { id: 3, username: 'Arnau', text: 'baojdafouia' },
+      ],
+    }
+  },
+  components: {
+    Comment
+  },
+  mounted: function () {
+    let name, fecha;
+    let evento;
+    let id = 1295;
+    let token = "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MjM4NSwibmFtZSI6Ik9raGFpQnJvaCIsImxhc3RfbmFtZSI6Ik5vbmUiLCJlbWFpbCI6ImFybmF1QGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxNS8xMC8wNS8yMi8zNy9ibGFuay1wcm9maWxlLXBpY3R1cmUtOTczNDYwXzk2MF83MjAucG5nIn0.f47aywurpTVpWb6QmpLJoWY3UsLyZy0T-c3OqMO7FTQ";
+    const headers = new Headers();
+    headers.append("Authorization", "Bearer " + token);
+    fetch('http://puigmal.salle.url.edu/api/v2/events/', { headers })
+    .then(response => response.json()) 
+    .then(data => data.forEach(event =>{
+        evento = event;
+        // aqui haces algo con la data
+        //let event = ;
+        
+
+       
+    }))
+    .catch(error => console.error(error))
+
+  // Assistances
+
+  let assitances = [];
+  let comment;
+  fetch('http://puigmal.salle.url.edu/api/v2/events/' +id + "/assistances", { headers })
+    .then(response => response.json()) 
+    .then(data  =>{
+        console.log(data);
+        data.forEach(assistance =>{
+        if (assistance.comentary != null) {
+            comment = {
+              id : assistance.id,
+              username: assistance.name + " " + assistance.last_name,
+              text: assistance.comentary
+            }
+            this.comments.push(comment);
+        } 
+        })
+       
+    })
+
+    .catch(error => console.error(error))
+
+  }, 
+  methods: {
+    rateEvent(rating) {
+      console.log(rating);
+    }
+  }
+}
+</script>
+
+
 <template>
   <main class="background">
     <section class="panel">
@@ -73,11 +142,11 @@
       </div>
 
       <div class="rating-div">
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
+        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(1)" />
+        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(2)" />
+        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(3)" />
+        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(4)" />
+        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(5)" />
       </div>
     </section>
 
@@ -86,35 +155,12 @@
         <b>Comments</b>
       </div>
       <!-- Comment-->
-      <article class="comment-article">
-        <img class="ico-user" src="../assets/icons/ico_profile_default.svg" />
-        <div class="comment-info">
-          <div class="comment-user-name">
-            <b>Tomas Uzucudn</b>
-          </div>
-          <div class="comment-text">
-            mucho pero mucho texto :) mucho pero mucho texto :) mucho pero mucho
-            texto :) mucho pero mucho texto :) mucho pero mucho texto :) mucho
-            pero mucho texto :) mucho pero mucho texto :) mucho pero mucho texto
-            :)
-          </div>
-        </div>
-      </article>
+      
+      <ul>
+        <Comment v-for="comment in comments" :key="comment.id" :username="comment.username" :text="comment.text" />
+      </ul>
+      
 
-      <article class="comment-article">
-        <img class="ico-user" src="../assets/icons/ico_profile_default.svg" />
-        <div class="comment-info">
-          <div class="comment-user-name">
-            <b>Arnau Ros</b>
-          </div>
-          <div class="comment-text">
-            mucho pero mucho texto :) mucho pero mucho texto :) mucho pero mucho
-            texto :) mucho pero mucho texto :) mucho pero mucho texto :) mucho
-            pero mucho texto :) mucho pero mucho texto :) mucho pero mucho texto
-            :)
-          </div>
-        </div>
-      </article>
 
       <form method="" class="comment-bar">
         <input
@@ -419,3 +465,6 @@
   }
 }
 </style>
+
+
+
