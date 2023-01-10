@@ -1,0 +1,39 @@
+.circle-gray {
+    height: 15px;
+    width: 15px;
+    border: 4px solid var(--dark_gray_color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle-blue {
+    height: 15px;
+    width: 15px;
+    border: 4px solid var(--blue_color);
+    background-color: var(--blue_color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-container {
+    display: flex;
+    margin-top: 15px;
+}
+
+.bar-text1 {
+    margin-right: 25px;
+}
+
+.bar-text2 {
+    margin-left: 25px;
+}
+
+.bar-container {
+    margin: 25px 0 50px 0px;
+}

@@ -28,4 +28,6 @@ coverage
 *.sw?
 
 build/*
+
 !build/build.xml
+

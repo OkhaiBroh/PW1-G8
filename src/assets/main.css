@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@import "./css/login.css";
+@import "./css/register.css";
+
+
+/************************************
+              Main Things
+*************************************/
+
+
+:root {
+    --font: 'Poppins';
+
+    /* Gray Colors */
+    --light_gray_color: #F5F5F7;
+    --dark_gray_color: #D9D9D9;
+    --input_gray_color: #757575;
+    
+    /* Normal Colors */
+    --blue_color: #0071F2;
+    --orange_color: #FD9900;
+    --red_color: #E11601;
+    --black_color: black;
+    --white_color: white;
+    --green_color: #13A65F;
+
+    /* Selected / Hover Colors */
+    --selected_blue_color: #0058bd;
+    --selected_orange_color: #cc7a00;
+    --selected_red_color: #ad1201;
+
+    --doc-height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--font);
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--light_gray_color);
+}
+
+#app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+   
+
+/************************************
+               Buttons
+*************************************/
+
+.link-button {
+    background-color: var(--blue_color);
+    color: var(--white_color);
+
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    
+    border: none;
+    border-radius: 25px;
+
+    padding: 10px;
+    margin-top: 35px;
+}
+
+button {
+    background-color: var(--blue_color);
+    color: var(--white_color);
+    
+    border: none;
+    border-radius: 25px;
+
+    padding: 10px;
+    margin-top: 35px;
+}
+
+.link-button:hover, button:hover {
+    cursor: pointer;
+    background-color: var(--selected_blue_color);
+}
+
+/*******************************
+          Input Fields 
+********************************/
+
+.input-form {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 10px;
+    min-width: 100px;
+}
+
+.text-input {
+    display: block;
+    font-weight: 400;
+    border: none;
+    border-bottom: 2px solid var(--black_color);
+    margin: 10px 0 10px 0;
+    outline: none;
+}
+
+.text-input, .label-input {
+    transition: 0.4s ease;
+    font-size: 15px;
+}
+
+.label-input {
+    transform: translate(4px, -14px) scale(1.02);
+    margin-bottom: 2px;
+    cursor: text;
+    transform-origin: left top;
+    color: var(--input_gray_color);
+    position: absolute; 
+}
+
+.text-input::placeholder {
+    opacity: 0;
+}
+
+.text-input:focus,
+.text-input:not(:placeholder-shown) {
+    border-bottom: 2px solid var(--black_color);
+}
+
+.text-input:not(:placeholder-shown) ~ .label-input, 
+.text-input:focus ~ .label-input {
+    transform: translate(0px, -35px) scale(0.8);
+    padding-left: 0px;
+    color: var(--black_color);
+}     

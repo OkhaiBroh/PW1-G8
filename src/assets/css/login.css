@@ -1,0 +1,153 @@
+.login-register-row {
+    display: flex;
+    height: 100%;
+}
+
+.login-register-column {
+    display: flex;
+    flex: 50%;
+    flex-grow: 1;
+}
+
+.login-register-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.login-register-panel {
+    text-align: center;
+    
+    box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+
+    background-color: var(--white_color);
+
+    padding: 50px 75px 50px 75px;
+}
+
+.login-panel-width {
+    width: 200px;
+}
+
+.register-panel-width {
+    width: 250px;
+}
+
+.login-register-title {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.center {
+    display: flex;
+    align-items: center;     /* center horizontal */
+    justify-content: center; /* center vertical   */
+    flex-direction: column;
+}
+
+.ico-25px {
+    width: 25px;
+    height: 25px;
+}
+
+.horizontal-input {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+} 
+
+.link-text {
+    font-size: 15px;
+    color: var(--blue_color);
+
+    margin-top: 25px;
+
+    text-decoration: none;
+    display: block;
+}
+
+.link-text:hover {
+    color: var(--selected_blue_color);
+    cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+    button {
+        width: 100%;
+    }
+
+    .panel-padding {
+        padding: 75px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .login-register-row {
+        flex-direction: column-reverse;
+    }
+
+    .center {
+        position: absolute;
+        width: 100%;
+    }
+
+    .login-register-title {
+        color: var(--white_color);
+    }
+
+    .horizontal-input {
+        justify-content: center;
+        width: 200px;
+    }
+
+    .login-panel-width, .register-panel-width {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        /*padding: 50px 0 50px 0;*/
+    }
+
+    button {
+        width: 200px;
+    }
+
+    .login-register-panel {
+      padding: 35px 0 35px 0;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .link-button {
+      width: 180px;
+    }
+
+    .bar-text1, .bar-text2 {
+      color: var(--white_color);
+    }
+
+    .bar-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--black_color);
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .line-container {
+      margin: 0;
+    }
+
+    .text-container {
+      background-color: var(--black_color);
+      border-radius: 20px;
+      padding: 15px;
+    }
+
+    .panel-padding {
+        padding: 50px 0 50px 0;
+    }
+}
