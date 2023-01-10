@@ -8,4 +8,5 @@ const app = createApp(App);
 
 app.use(router);
 
+Vue.prototype.$authService = new AuthService();
 app.mount("#app");
