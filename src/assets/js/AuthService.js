@@ -1,1 +1,7 @@
-let token = '';
+export default {
+    methods: {
+        Login() {
+            console.log("Hola");
+        }
+    }
+}
