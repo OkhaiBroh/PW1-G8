@@ -12,11 +12,11 @@
           <div class="input-form">
             <input
               class="text-input"
-              name="username"
-              placeholder="Username"
+              name="email"
+              placeholder="Email"
               type="text"
             />
-            <label class="label-input" for="username"> Username </label>
+            <label class="label-input" for="email"> Email </label>
           </div>
         </div>
         <div class="horizontal-input">
