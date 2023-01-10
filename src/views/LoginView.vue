@@ -2,11 +2,7 @@
   <main class="login-register-row">
     <div class="login-register-column center">
       <p class="login-register-title">Open Events</p>
-      <form
-        action="/events"
-        method=""
-        class="login-register-panel login-panel-width"
-      >
+      <div class="login-register-panel login-panel-width">
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
@@ -15,6 +11,7 @@
               name="username"
               placeholder="Username"
               type="text"
+              v-model="username"
             />
             <label class="label-input" for="username"> Username </label>
           </div>
@@ -27,15 +24,16 @@
               name="password"
               placeholder="Password"
               type="password"
+              v-model="password"
             />
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <button @click="goToHome()">Login</button>
+        <button v-on:click="addUser()">Login</button>
         <RouterLink class="link-text" to="/register-account">
           Not registered? Register
         </RouterLink>
-      </form>
+      </div>
     </div>
     <div class="login-register-column">
       <img
@@ -47,11 +45,27 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+
   methods: {
     goToHome() {
       this.$router.push("/events");
     },
+
+    addUser() {
+      console.warn("Function Called!", this.username, this.password);
+    },
   },
 };
+
+async function getUser (username) {
+  const response = await fetch('http://puigmal.salle.url.edu/api/v2/users?');
+}
 </script>
