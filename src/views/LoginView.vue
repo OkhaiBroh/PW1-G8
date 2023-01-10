@@ -2,11 +2,7 @@
   <main class="login-register-row">
     <div class="login-register-column center">
       <p class="login-register-title">Open Events</p>
-      <form
-        action="/events"
-        method=""
-        class="login-register-panel login-panel-width"
-      >
+      <div class="login-register-panel login-panel-width">
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
@@ -15,6 +11,7 @@
               name="email"
               placeholder="Email"
               type="text"
+              v-model="email"
             />
             <label class="label-input" for="email"> Email </label>
           </div>
@@ -27,15 +24,16 @@
               name="password"
               placeholder="Password"
               type="password"
+              v-model="password"
             />
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <button @click="goToHome()">Login</button>
+        <button v-on:click.prevent="Login()">Login</button>
         <RouterLink class="link-text" to="/register-account">
           Not registered? Register
         </RouterLink>
-      </form>
+      </div>
     </div>
     <div class="login-register-column">
       <img
@@ -47,11 +45,38 @@
 </template>
 
 <script>
+
+let token = '';
+
 export default {
-  methods: {
-    goToHome() {
-      this.$router.push("/events");
+    data() {
+        return {
+          email: '',
+          password: ''
+        }
     },
-  },
-};
+    methods: {
+        Login() {
+            let url = "http://puigmal.salle.url.edu/api/v2/users/login";
+            
+            let data = {
+              email: this.email,
+              password: this.password
+            };
+
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+                },
+              body: JSON.stringify(data)
+              })
+              .then(response => token = response.json())
+              .then(data => console.log(data))
+              .catch(error => console.error(error))
+
+            console.log("TOKEN: " + token);
+        }
+    }
+}
 </script>
