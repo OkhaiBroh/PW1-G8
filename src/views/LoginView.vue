@@ -8,12 +8,12 @@
           <div class="input-form">
             <input
               class="text-input"
-              name="username"
-              placeholder="Username"
+              name="email"
+              placeholder="Email"
               type="text"
-              v-model="username"
+              v-model="email"
             />
-            <label class="label-input" for="username"> Username </label>
+            <label class="label-input" for="email"> Email </label>
           </div>
         </div>
         <div class="horizontal-input">
@@ -29,7 +29,7 @@
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <button v-on:click="addUser()">Login</button>
+        <button v-on:click.prevent="Login()">Login</button>
         <RouterLink class="link-text" to="/register-account">
           Not registered? Register
         </RouterLink>
@@ -45,27 +45,38 @@
 </template>
 
 <script>
-import axios from 'axios';
+
+let token = '';
+
 export default {
-  data() {
-    return {
-      username: "",
-      password: "",
-    };
-  },
-
-  methods: {
-    goToHome() {
-      this.$router.push("/events");
+    data() {
+        return {
+          email: '',
+          password: ''
+        }
     },
+    methods: {
+        Login() {
+            let url = "http://puigmal.salle.url.edu/api/v2/users/login";
+            
+            let data = {
+              email: this.email,
+              password: this.password
+            };
 
-    addUser() {
-      console.warn("Function Called!", this.username, this.password);
-    },
-  },
-};
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+                },
+              body: JSON.stringify(data)
+              })
+              .then(response => token = response.json()[0])
+              .then(data => console.log(data))
+              .catch(error => console.error(error))
 
-async function getUser (username) {
-  const response = await fetch('http://puigmal.salle.url.edu/api/v2/users?');
+            console.log("TOKEN: " + token);
+        }
+    }
 }
 </script>
