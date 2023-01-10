@@ -53,12 +53,8 @@ mobile version for this functionality.
           <p class="p_style_user">Arnau Ros Sánchez</p>
         </div>
         <hr class="line" />
-        <div class="chat">
-          <div class="message_cotainer">
-            <div class="message-background my-message-background">
-              <p class="message-text">Un Mensaje</p>
-            </div>
-          </div>
+        <div class="chat" id="chatmsgs">
+          
           <div class="message_cotainer">
             <div class="message-background other-message-background">
               <p class="message-text">Otro Mensaje</p>
@@ -67,17 +63,44 @@ mobile version for this functionality.
         </div>
         <div class="write">
           <input
+            id="msg-input"
             class="message-input"
+            name="message"
+            v-model="message"
             type="text"
             autocomplete="on"
             placeholder="Message..."
           />
-          <button class="button_ico"></button>
+          <button class="button_ico" @click="showInput()"></button>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+    methods:{
+        showInput(){
+            let msg = document.getElementById("msg-input").value;
+            if (msg != "") {
+                let firstDiv = document.createElement("div");
+                firstDiv.style.cssText = 'position: relative; display: inline-block; width: 100%; margin: 0 0 10px 0; padding: 0;';
+                let secondDiv = document.createElement("div");
+                secondDiv.style.cssText = 'display: flex; width: fit-content; border-radius: 10px; margin: 0 0 5px 0; float: right; background-color: var(--blue_color);';
+                let pElement = document.createElement("p");
+                pElement.style.cssText = 'display: inline-block; font-size: 13px; padding: 10px; color: var(--white_color);';
+                pElement.id = "mi-mensage";
+                pElement.innerText = msg;
+                secondDiv.appendChild(pElement);
+                firstDiv.appendChild(secondDiv);
+                document.getElementById("chatmsgs").appendChild(firstDiv);
+                document.getElementById("msg-input").value = "";
+            }
+        }
+    }
+}
+</script>
 
 <style scoped>
 .general-container {
