@@ -16,8 +16,7 @@
 
       <form
         action="/register-security"
-        class="login-register-panel register-panel-width"
-      >
+        class="login-register-panel register-panel-width">
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
@@ -26,6 +25,7 @@
               name="name"
               placeholder="Name"
               type="text"
+              v-model="name"
               required
             />
             <label class="label-input" for="name"> Name* </label>
@@ -39,8 +39,8 @@
               name="lastname"
               placeholder="Lastname"
               type="text"
-              required
-            />
+              v-model="lastname"
+              required/>
             <label class="label-input" for="lastname"> Lastname* </label>
           </div>
         </div>
@@ -52,6 +52,7 @@
               name="email"
               placeholder="Email"
               type="email"
+              v-model="email"
               required
             />
             <label class="label-input" for="email"> Email* </label>
@@ -60,14 +61,19 @@
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_image.svg" />
           <div class="input-form">
-            <label class="label-file" for="file-upload">
-              Select profile picture...
-            </label>
-            <input class="input-file" id="file-upload" type="file" />
+            <input
+              class="text-input"
+              name="image"
+              placeholder="Image URL"
+              type="text"
+              v-model="image"
+              required
+            />
+            <label class="label-input" for="email"> Image URL </label>
           </div>
         </div>
 
-        <RouterLink class="link-button" to="/register-security">
+        <RouterLink v-on:click.prevent="addUser" class="link-button" to="/register-security">
           Next
         </RouterLink>
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
@@ -84,6 +90,7 @@
 </template>
 
 <style scoped>
+
 .line {
   border: 2px solid var(--dark_gray_color);
   width: 100px;
@@ -183,3 +190,12 @@
     }
 }*/
 </style>
+
+<script>
+import register from '../assets/js/register.js'
+
+export default {
+  extends: register
+}
+</script>
+

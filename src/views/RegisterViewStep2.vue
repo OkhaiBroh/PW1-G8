@@ -25,6 +25,7 @@
               name="password"
               placeholder="Password"
               type="password"
+              v-model="password"
               required
             />
             <label class="label-input" for="password"> Password* </label>
@@ -38,6 +39,7 @@
               name="confirm-password"
               placeholder="Confirm Password"
               type="password"
+              v-model="conf_password"
               required
             />
             <label class="label-input" for="confirm-password">
@@ -45,10 +47,9 @@
             </label>
           </div>
         </div>
-        <RouterLink class="link-button" to="/register-successful">
+        <RouterLink v-on:click.prevent="registerAccount" class="link-button" to="/register-successful">
           Register
         </RouterLink>
-        <!--<button class="next"> Register </button>-->
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
       </form>
     </div>
@@ -67,3 +68,11 @@
   width: 100px;
 }
 </style>
+
+<script>
+import register from '../assets/js/register.js'
+
+export default {
+  extends: register
+}
+</script>
