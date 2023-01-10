@@ -1,17 +1,22 @@
 <template>
   <main class="general-container">
     <section class="sorter-section panel">
-      <p class="sort-by-text title">Sort By</p>
-      <div class="buttons-selecter">
-        <div class="top-buttons">
-          <button class="name-sort opt-but">Name</button>
-          <button class="date-sort opt-but">Date</button>
+      <p class="sort-by-text title">Search By</p>
+      <div class="input-group">
+        <div class="input-pack">
+          <label class="input-label" for="name-query"> Name </label>
+          <input class="name-input input" name="name-query" type="text" v-model="name" />
         </div>
-        <div class="bottom-buttons">
-          <button class="location-sort opt-but">Location</button>
-          <button class="rating-sort opt-but">Rating</button>
+        <div class="input-pack">
+          <label class="input-label" for="location-query"> Location </label>
+          <input class="location-input input" name="location-query" type="text" v-model="location" />
+        </div>
+        <div class="input-pack">
+          <label class="input-label" for="name-query"> Start Date </label>
+          <input class="date-input input" name="date-query" type="date" v-model="date" />
         </div>
       </div>
+      <button class="search-btn" v-on:click.prevent="search"> Search </button>
     </section>
     <section class="searcher-section panel">
       <div class="upper-searcher-section">
@@ -21,8 +26,8 @@
             name="search-query"
             placeholder="Search..."
             type="text"
-          />
-          <button class="search-btn"></button>
+          /> <!-- v-model is the assignment to JS reference -->
+          
         </div>
         <RouterLink class="create-btn" to="/create-event-1">
           Create
@@ -182,6 +187,15 @@
   </main>
 </template>
 
+<script>
+import search from '../assets/js/search.js'
+
+export default {
+  extends: search
+}
+</script>
+
+
 <style scoped>
 .general-container {
   height: 100%;
@@ -212,46 +226,44 @@
   font-size: 25px;
 
   margin-top: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 /*************************
-          SORTER
+          SEARCHER
 **************************/
 
-.opt-but {
-  margin: 0; /* CSS ISSUE */
-  border: 4px solid var(--blue_color);
-  font-weight: 700;
-  width: 150px;
-
-  background-color: var(--white_color);
-  color: var(--black_color);
-}
-
-.opt-but:hover {
-  background-color: var(--blue_color);
-  color: var(--white_color);
-}
-
-.buttons-selecter {
-  height: 60%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.top-buttons,
-.bottom-buttons {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.input-label {
+  font-size: 18px;
 }
 
 .sorter-section {
   margin-right: 80px;
+}
+
+.input-group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.input-pack {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.input {
+  border: 2px solid var(--blue_color);
+  border-radius: 100px;
+  padding: 5px 20px 5px 20px;
+}
+
+.input-label {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 /*************************
@@ -287,7 +299,7 @@
   outline: none;
 }
 
-.create-btn {
+.create-btn, .search-btn {
   background-color: var(--blue_color);
   color: var(--white_color);
   border-radius: 25px;
@@ -306,12 +318,9 @@
 }
 
 .search-btn {
-  width: 20px;
-  height: 20px;
-  border-radius: 0px;
-  background: url(../assets/icons/ico_search.svg) no-repeat;
-  padding: 0;
-  margin: 0 15px 0 0;
+  margin: 0px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 /*************************

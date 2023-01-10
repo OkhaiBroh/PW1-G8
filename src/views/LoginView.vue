@@ -70,8 +70,8 @@ export default {
                 'Content-Type': 'application/json'
                 },
               body: JSON.stringify(data)
-              })
-              .then(response => token = response.json()[0])
+              }) 
+              .then(response => token = response.json())
               .then(data => console.log(data))
               .catch(error => console.error(error))
 
