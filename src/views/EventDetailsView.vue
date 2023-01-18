@@ -10,6 +10,9 @@ export default {
         { id: 2, username: 'Tomas', text: 'fajdfafa' },
         { id: 3, username: 'Arnau', text: 'baojdafouia' },
       ],
+      description: "Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga. descripcion muy larga.Una descripcion muy larga.",
+      location:"Unknown",
+      date: "Unknown"
     }
   },
   components: {
@@ -22,12 +25,16 @@ export default {
     let token = "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MjM4NSwibmFtZSI6Ik9raGFpQnJvaCIsImxhc3RfbmFtZSI6Ik5vbmUiLCJlbWFpbCI6ImFybmF1QGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxNS8xMC8wNS8yMi8zNy9ibGFuay1wcm9maWxlLXBpY3R1cmUtOTczNDYwXzk2MF83MjAucG5nIn0.f47aywurpTVpWb6QmpLJoWY3UsLyZy0T-c3OqMO7FTQ";
     const headers = new Headers();
     headers.append("Authorization", "Bearer " + token);
-    fetch('http://puigmal.salle.url.edu/api/v2/events/', { headers })
+    fetch('http://puigmal.salle.url.edu/api/v2/events/' + id, { headers })
     .then(response => response.json()) 
     .then(data => data.forEach(event =>{
         evento = event;
-        // aqui haces algo con la data
-        //let event = ;
+        console.log(evento);
+        this.description = evento.description;
+        this.location = evento.location;
+        // Format date
+        this.date = evento.eventStart_date.substring(0, evento.eventStart_date.indexOf('T')).replaceAll("-", "/");
+        this.date += " - " + evento.eventEnd_date.substring(0, evento.eventEnd_date.indexOf('T')).replaceAll("-", "/");
         
 
        
@@ -38,7 +45,7 @@ export default {
 
   let assitances = [];
   let comment;
-  fetch('http://puigmal.salle.url.edu/api/v2/events/' +id + "/assistances", { headers })
+  fetch('http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances", { headers })
     .then(response => response.json()) 
     .then(data  =>{
         console.log(data);
@@ -60,7 +67,28 @@ export default {
   }, 
   methods: {
     rateEvent(rating) {
-      console.log(rating);
+      let s; 
+      // Update rating stars
+  /*
+    const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+    }).then();
+*/
+      for (let i = 1; i <= 5; i++) {
+        s = "star_" + i;
+
+        if ( i <= rating) 
+        document.getElementById(s).src = "/src/assets/icons/ico_star_full.svg"; 
+        else
+        document.getElementById(s).src = "/src/assets/icons/ico_star_empty.svg";
+      }
     }
   }
 }
@@ -75,11 +103,7 @@ export default {
           <b class="event-name">La Fiestita</b>
         </div>
         <div class="event-description">
-          Una descripcion muy larga.Una descripcion muy larga.Una descripcion
-          muy larga.Una descripcion muy larga.Una descripcion muy larga.Una
-          descripcion muy larga.Una descripcion muy larga.Una descripcion muy
-          larga.Una descripcion muy larga.Una descripcion muy larga. descripcion
-          muy larga.Una descripcion muy larga.
+          <p> {{description}} </p>
         </div>
         <div class="extra-info">
           <div class="location-info">
@@ -88,7 +112,7 @@ export default {
               src="../assets/icons/ico_location.svg"
               alt=""
             />
-            <p>Barcelona</p>
+            <p> {{location}} </p>
           </div>
           <div class="date-info">
             <img
@@ -96,7 +120,7 @@ export default {
               src="../assets/icons/ico_calendar.svg"
               alt=""
             />
-            <p>1/10/2022 - 5/10/2022</p>
+            <p> {{date}} </p>
           </div>
         </div>
 
@@ -142,11 +166,11 @@ export default {
       </div>
 
       <div class="rating-div">
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(1)" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(2)" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(3)" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(4)" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(5)" />
+        <img id="star_1" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(1)" />
+        <img id="star_2" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(2)" />
+        <img id="star_3" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(3)" />
+        <img id="star_4" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(4)" />
+        <img id="star_5" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(5)" />
       </div>
     </section>
 
@@ -226,6 +250,9 @@ export default {
 
 .event-details {
   margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .event-description {
   text-align: justify;
@@ -233,10 +260,10 @@ export default {
 }
 
 .extra-info {
-  align-self: flex-end;
+  
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 30px;
 }
 
@@ -320,6 +347,7 @@ export default {
   padding-left: 50px;
   padding-right: 50px;
   align-items: center;
+  margin-top: 20px;
 }
 .right-container {
   height: 100%;
