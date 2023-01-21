@@ -2,21 +2,18 @@
   <main class="login-register-row">
     <div class="login-register-column center">
       <p class="login-register-title">Open Events</p>
-      <form
-        action="/events"
-        method=""
-        class="login-register-panel login-panel-width"
-      >
+      <div class="login-register-panel login-panel-width">
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
             <input
               class="text-input"
-              name="username"
-              placeholder="Username"
+              name="email"
+              placeholder="Email"
               type="text"
+              v-model="email"
             />
-            <label class="label-input" for="username"> Username </label>
+            <label class="label-input" for="email"> Email </label>
           </div>
         </div>
         <div class="horizontal-input">
@@ -27,15 +24,16 @@
               name="password"
               placeholder="Password"
               type="password"
+              v-model="password"
             />
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <button @click="goToHome()">Login</button>
+        <button v-on:click.prevent="Login()">Login</button>
         <RouterLink class="link-text" to="/register-account">
           Not registered? Register
         </RouterLink>
-      </form>
+      </div>
     </div>
     <div class="login-register-column">
       <img
@@ -47,11 +45,66 @@
 </template>
 
 <script>
+
+import AuthService from '/src/assets/js/AuthService.js'
+
 export default {
-  methods: {
-    goToHome() {
-      this.$router.push("/events");
-    },
+  data() {
+      return {
+        email: '',
+        password: ''
+      }
   },
-};
+  methods: {
+      GetUserID(getIdURL) {
+        console.log(getIdURL);
+          fetch(getIdURL, {
+            method: 'GET',
+            headers: {
+              "Authorization": "Bearer " + AuthService.getToken(),
+              'Content-Type': 'application/json'
+              },
+          })
+          .then(response => response.json())
+          .catch(error => console.error(error))
+          .then(result => {
+            result.forEach(element => {
+              let elemento = element;
+              AuthService.setID(elemento.id);
+            });
+
+            let prueba = AuthService.getID();
+            console.log('ID:' + prueba);
+          })
+      },
+
+      Login() {
+          let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
+          
+          let data = {
+            email: this.email,
+            password: this.password
+          };
+
+          fetch(loginURL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(data)
+          })
+          .then(response => response.json())
+          .catch(error => console.error(error))
+          .then(result => {
+            AuthService.setToken(result.accessToken);
+
+            let prueba = AuthService.getToken();
+            console.log(prueba);
+
+            let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
+            this.GetUserID(getIdURL);
+          })
+      }
+  }
+}
 </script>
