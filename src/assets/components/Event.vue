@@ -1,40 +1,44 @@
 <script>
 
 export default{
-    props: ["name", "location", "date"]
+    props: ["id", "name", "location", "date"]
 }
 </script>
 
 <template>
-    <RouterLink class="event-container box-shadow">
+    <div class="event-container box-shadow">
         <img
             class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt=""/>
-        <p class="timeline-title-text">La Fiestita</p>
+        <p class="timeline-title-text"> {{ name }} </p>
         <div class="info-container">
-            <img class="ico" src="../assets/icons/ico_location.svg" alt="location ico"/>
-            <p class="timeline-info-text">Barcelona</p>
+            <img class="ico" src="../icons/ico_location.svg" alt="location ico"/>
+            <p class="timeline-info-text"> {{ location }} </p>
         </div>
         <div class="info-container">
-            <img class="ico" src="../assets/icons/ico_calendar.svg" alt="calendar ico"/>
-            <p class="timeline-info-text">01/10/2022 - 05/10/2022</p>
+            <img class="ico" src="../icons/ico_calendar.svg" alt="calendar ico"/>
+            <p class="timeline-info-text"> {{ date }} </p>
         </div>
-    </RouterLink>   
+    </div>   
 </template>
 
 <style scoped>
     .event-container {
+        width: fit-content;
+        height: fit-content;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         border-radius: 25px;
-        padding: 20px;
+        padding: 35px;
         text-decoration: none;
         color: var(--black_color);
+        margin: 10px;
+        margin-right: 30px;
     }
 
     .box-shadow {
-        box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 15px 20px 5px rgba(0, 0, 0, 0.07);
     }
 
     .event-image {

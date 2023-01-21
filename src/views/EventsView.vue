@@ -1,3 +1,11 @@
+<script>
+import events from '../assets/js/events.js'
+
+export default {
+  extends: events
+}
+</script>
+
 <template>
   <main class="general-container">
     <section class="sorter-section panel">
@@ -34,21 +42,11 @@
         </RouterLink>
       </div>
       <section class="events-panel">
-        <Event v-for="event in event_query" :key="event.id" :name="event.username" :location="event.location" :date="event.date"/>
+        <Event v-for="event in event_query" :key="event.id" :id="event.id" :name="event.username" :location="event.location" :date="event.date"/>
     </section>
     </section>
   </main>
 </template>
-
-<script>
-
-import events from '../assets/js/events.js'
-
-export default {
-  extends: events
-}
-</script>
-
 
 <style scoped>
 .general-container {
@@ -97,7 +95,7 @@ export default {
 
 .input-group {
   width: 100%;
-  height: 100%;
+  height: 340px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -182,7 +180,18 @@ export default {
 **************************/
 
 .events-panel {
-  width: 100%;
+  height: 530px;
+  width: 857px;
+  margin-top: 20px;
+  padding-bottom: 40px;
+
+  overflow: hidden;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .events-row {

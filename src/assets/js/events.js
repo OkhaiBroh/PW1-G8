@@ -1,10 +1,22 @@
+import Event from "../components/Event.vue";
+
 export default {
     data() {
         return {
             name: '',
             date: '',
             location: '',
-            event_query: []
+            event_query: [
+                {id: 1, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
+                {id: 2, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
+                {id: 3, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
+                {id: 4, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
+                {id: 5, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
+                {id: 6, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
+                {id: 7, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
+                {id: 8, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
+                {id: 9, name: "La fiestita", location: "Barcelona", date: "21/01/2023"}
+            ]
         }
     },
     components: {
