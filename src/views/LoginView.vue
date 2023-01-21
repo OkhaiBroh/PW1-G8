@@ -29,10 +29,8 @@
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <button v-on:click.prevent="Login()">Login</button>
-        <RouterLink class="link-text" to="/register-account">
-          Not registered? Register
-        </RouterLink>
+        <RouterLink v-on:click.prevent="Login()" class="link-button" to="/events"> Login </RouterLink>
+        <RouterLink class="link-text" to="/register-account"> Not registered? Register </RouterLink>
       </div>
     </div>
     <div class="login-register-column">
