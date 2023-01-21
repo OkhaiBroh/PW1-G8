@@ -1,3 +1,16 @@
+<script>
+import FriendRequest from "./../assets/components/FriendRequestComponent.vue";
+import Friend from "./../assets/components/FriendComponent.vue";
+export default{
+    components: {
+        FriendRequest, 
+        Friend
+    }
+}
+</script>
+
+
+
 <template>
   <main class="background">
     <section class="panel">
@@ -60,34 +73,10 @@
             <b>Tomas Uzcudun Tomas Uzcudun</b>
           </div>
         </article>
-        <article class="friend_div">
-          <img
-            src="../assets/icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
-          <div class="friend_text">
-            <b>Arnau Ros Sánchez</b>
-          </div>
-        </article>
-
-        <article class="friend_div">
-          <img
-            src="../assets/icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
-
-          <div class="friend-text-buttons">
-            <b>Tomas </b>
-          </div>
-          <div class="buttons">
-            <div class="accept-button">
-              <img src="../assets/icons/ico_tick.svg" class="ico-accept" />
-            </div>
-            <div class="reject-button">
-              <img src="../assets/icons/ico_close.svg" class="ico-reject" />
-            </div>
-          </div>
-        </article>
+        <Friend />
+        
+        <FriendRequest/>
+        
       </div>
     </section>
   </main>
