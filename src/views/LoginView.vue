@@ -46,37 +46,40 @@
 
 <script>
 
-let token = '';
+import AuthService from '/src/assets/js/AuthService.js'
 
 export default {
-    data() {
-        return {
-          email: '',
-          password: ''
-        }
-    },
-    methods: {
-        Login() {
-            let url = "http://puigmal.salle.url.edu/api/v2/users/login";
-            
-            let data = {
-              email: this.email,
-              password: this.password
-            };
+  data() {
+      return {
+        email: '',
+        password: ''
+      }
+  },
+  methods: {
+      Login() {
+          let url = "http://puigmal.salle.url.edu/api/v2/users/login";
+          
+          let data = {
+            email: this.email,
+            password: this.password
+          };
 
-            fetch(url, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-                },
-              body: JSON.stringify(data)
-              })
-              .then(response => token = response.json())
-              .then(data => console.log(data))
-              .catch(error => console.error(error))
+          fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .catch(error => console.error(error))
+            .then(data2 => {
+              AuthService.setToken(data2.accessToken);
 
-            console.log("TOKEN: " + token);
-        }
-    }
+              let prueba = AuthService.getToken();
+              console.log(prueba);
+            })
+      }
+  }
 }
 </script>
