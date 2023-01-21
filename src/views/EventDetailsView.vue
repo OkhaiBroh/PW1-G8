@@ -38,8 +38,7 @@ export default {
         
 
        
-    }))
-    .catch(error => console.error(error))
+    })).catch(error => console.error(error))
 
   // Assistances
 
@@ -60,10 +59,15 @@ export default {
         } 
         })
        
-    })
+    }).catch(error => console.error(error))
+    
 
-    .catch(error => console.error(error))
-
+    fetch('http://puigmal.salle.url.edu/api/v2/users', { headers })
+    .then(response => response.json()) 
+    .then(data => data.forEach(event =>{
+        console.log(event);
+       
+    })).catch(error => console.error(error))
   }, 
   methods: {
     rateEvent(rating) {
