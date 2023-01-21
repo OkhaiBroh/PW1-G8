@@ -3,8 +3,12 @@ export default {
         return {
             name: '',
             date: '',
-            location: ''
+            location: '',
+            event_query: []
         }
+    },
+    components: {
+        Event
     },
     methods: {
         search () {
