@@ -57,25 +57,25 @@ export default {
     },
     methods: {
         Login() {
-            let url = "http://puigmal.salle.url.edu/api/v2/users/login";
-            
-            let data = {
-              email: this.email,
-              password: this.password
-            };
+          let url = "http://puigmal.salle.url.edu/api/v2/users/login";
+          
+          let data = {
+            email: this.email,
+            password: this.password
+          };
 
-            fetch(url, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-                },
-              body: JSON.stringify(data)
-              })
-              .then(response => token = response.json())
-              .then(data => console.log(data))
-              .catch(error => console.error(error))
+          fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(data)
+            })
+            .then(response => token = response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
 
-            console.log("TOKEN: " + token);
+          console.log("TOKEN: " + token);
         }
     }
 }
