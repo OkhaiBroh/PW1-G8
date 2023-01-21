@@ -12,7 +12,7 @@ export default{
             class="friend_ico"
           />
           <div class="friend_text">
-            <b>Arnau Ros Sánchez</b>
+            <b> {{ username }} </b>
           </div>
         </article>    
 </template>

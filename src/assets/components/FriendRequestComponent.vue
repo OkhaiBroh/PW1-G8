@@ -12,7 +12,7 @@ export default{
           />
 
           <div class="friend-text-buttons">
-            <b>Tomas </b>
+            <b> {{ username }} </b>
           </div>
           <div class="buttons">
             <div class="accept-button">
