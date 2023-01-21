@@ -1,3 +1,4 @@
+let savedId;
 let savedToken;
 
 class AuthService {
@@ -7,6 +8,13 @@ class AuthService {
     }
     getToken() {
         return savedToken;
+    }
+
+    setID(id) {
+        savedId = id;
+    }
+    getID() {
+        return savedId;
     }
 }
 

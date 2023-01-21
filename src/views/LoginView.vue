@@ -56,29 +56,54 @@ export default {
       }
   },
   methods: {
+      GetUserID(getIdURL) {
+        console.log(getIdURL);
+          fetch(getIdURL, {
+            method: 'GET',
+            headers: {
+              "Authorization": "Bearer " + AuthService.getToken(),
+              'Content-Type': 'application/json'
+              },
+          })
+          .then(response => response.json())
+          .catch(error => console.error(error))
+          .then(result => {
+            result.forEach(element => {
+              let elemento = element;
+              AuthService.setID(elemento.id);
+            });
+
+            let prueba = AuthService.getID();
+            console.log('ID:' + prueba);
+          })
+      },
+
       Login() {
-          let url = "http://puigmal.salle.url.edu/api/v2/users/login";
+          let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
           
           let data = {
             email: this.email,
             password: this.password
           };
 
-          fetch(url, {
+          fetch(loginURL, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
               },
             body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .catch(error => console.error(error))
-            .then(data2 => {
-              AuthService.setToken(data2.accessToken);
+          })
+          .then(response => response.json())
+          .catch(error => console.error(error))
+          .then(result => {
+            AuthService.setToken(result.accessToken);
 
-              let prueba = AuthService.getToken();
-              console.log(prueba);
-            })
+            let prueba = AuthService.getToken();
+            console.log(prueba);
+
+            let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
+            this.GetUserID(getIdURL);
+          })
       }
   }
 }
