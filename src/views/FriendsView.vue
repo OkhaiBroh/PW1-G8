@@ -1,94 +1,78 @@
+<script>
+import FriendRequest from "./../assets/components/FriendRequestComponent.vue";
+import Friend from "./../assets/components/FriendComponent.vue";
+export default{
+  data () {
+    return {
+      friends: [
+        { id: 1, username: "Tomas" },
+        { id: 2, username: "Arnau" },
+        { id: 3, username: "David" },
+      ],
+      friends_request: [
+        { id: 1, username: "Tomas" },
+        { id: 2, username: "Arnau" },
+         { id: 3, username: "Tomas" },
+        { id: 4, username: "Arnau" },
+         { id: 5, username: "Tomas" },
+        { id: 6, username: "Arnau" },
+        { id: 7, username: "David" }
+      ], 
+      option: "list"
+    }
+  },
+  components: {
+    FriendRequest, 
+    Friend
+  },
+  methods: {
+    toList: function(){
+      this.option = "list"
+      document.getElementById("list").style.backgroundColor = "var(--blue_color)";
+      document.getElementById("list").style.color = "var(--white_color)";
+
+      document.getElementById("request_list").style.backgroundColor = "var(--white_color)";
+      document.getElementById("request_list").style.color = "var(--black_color)";
+
+    },
+    toRequestList: function(){
+      this.option = "request_list";
+      document.getElementById("request_list").style.backgroundColor = "var(--blue_color)";
+      document.getElementById("request_list").style.color = "var(--white_color)";
+
+      document.getElementById("list").style.backgroundColor = "var(--white_color)";
+      document.getElementById("list").style.color = "var(--black_color)";
+    }
+  }
+  
+}
+</script>
+
+
+
 <template>
   <main class="background">
     <section class="panel">
       <p class="friends">Friends</p>
       <div class="friends_options">
-        <div class="option">
-          <b class="option_text">Requests</b>
+        <div id="list" class="option" v-on:click=toList>
+          <b class="option_text">List</b>
           <img src="../assets/icons/ico_user.svg" class="ico" />
         </div>
 
-        <div class="option">
-          <b class="option_text">List</b>
+        <div id="request_list" class="option" v-on:click=toRequestList>
+          <b class="option_text">Requests</b>
           <img src="../assets/icons/ico_user.svg" class="ico" />
         </div>
       </div>
     </section>
 
     <!-- List of friends-->
-    <section class="list_panel">
-      <div class="friend_row">
-        <!-- Example of a friend -->
-        <article class="friend_div">
-          <img
-            src="../assets/icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
-          <div class="friend_text">
-            <b>Tomas Uzcudun</b>
-          </div>
-        </article>
-
-        <article class="friend_div">
-          <img
-            src="../assets/icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
-          <div class="friend_text">
-            <b>Tomas Uzcudun</b>
-          </div>
-        </article>
-
-        <article class="friend_div">
-          <img
-            src="../assets/icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
-          <div class="friend_text">
-            <b>Tomas Uzcudun</b>
-          </div>
-        </article>
-      </div>
-
-      <div class="friend_row">
-        <article class="friend_div">
-          <img
-            src="../assets/icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
-          <div class="friend_text">
-            <b>Tomas Uzcudun Tomas Uzcudun</b>
-          </div>
-        </article>
-        <article class="friend_div">
-          <img
-            src="../assets/icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
-          <div class="friend_text">
-            <b>Arnau Ros Sánchez</b>
-          </div>
-        </article>
-
-        <article class="friend_div">
-          <img
-            src="../assets/icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
-
-          <div class="friend-text-buttons">
-            <b>Tomas </b>
-          </div>
-          <div class="buttons">
-            <div class="accept-button">
-              <img src="../assets/icons/ico_tick.svg" class="ico-accept" />
-            </div>
-            <div class="reject-button">
-              <img src="../assets/icons/ico_close.svg" class="ico-reject" />
-            </div>
-          </div>
-        </article>
-      </div>
+    <section v-if="option ==='list'" class="list_panel">
+        <Friend v-for="friend in friends" :key="friend.id" :username="friend.username" />
+    </section>
+    <section v-if="option ==='request_list'" class="list_panel">
+        <FriendRequest v-for="friend_request in friends_request" :key="friend_request.id" :username="friend_request.username" />
     </section>
   </main>
 </template>
@@ -99,13 +83,12 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 9vh;
+  padding: 5vh;
 }
 .panel {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 
   margin: 50px;
   background-color: white;
@@ -140,19 +123,20 @@
 
 .list_panel {
   display: flex;
-  flex-direction: column;
-  flex: 100%;
-
-  align-items: center;
-
-  margin: 50px;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin: 30px;
   background: var(--white_color);
   box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.05);
-  padding: 30px;
+ 
   margin-top: 0px;
   margin-bottom: 0px;
   border-radius: 20px;
   padding: 30px;
+
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 700px;
 }
 .ico {
   width: 25px;
@@ -226,6 +210,11 @@
   width: 20px;
   height: 20px;
 }
+.col {
+  display: flex;
+  
+
+}
 
 @media (max-width: 1000px) {
   .background {
@@ -238,6 +227,9 @@
     padding: 0;
   }
   .panel {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     margin: 20px;
     padding: 0px;
     padding-top: 20px;
@@ -266,8 +258,9 @@
     margin: 20px;
     padding: 10px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding-bottom: 20px;
+    justify-content: center;
   }
   .friend_row {
     display: flex;
