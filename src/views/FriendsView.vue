@@ -112,7 +112,6 @@ export default{
     <!-- List of friends-->
     <section v-if="option ==='list'" class="list_panel">
         <Friend v-for="friend in friends" :key="friend.id" :id="friend.id" :username="friend.username" />
-end v-for="friend in friends" :key="friend.id" :username="friend.username" />
     </section>
     <section v-if="option ==='request_list'" class="list_panel">
         <FriendRequest v-for="friend_request in friends_request" :key="friend_request.id" :username="friend_request.username" />
