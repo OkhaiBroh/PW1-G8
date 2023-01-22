@@ -29,10 +29,8 @@
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <button v-on:click.prevent="Login()">Login</button>
-        <RouterLink class="link-text" to="/register-account">
-          Not registered? Register
-        </RouterLink>
+        <RouterLink v-on:click.prevent="Login()" class="link-button" to="/events"> Login </RouterLink>
+        <RouterLink class="link-text" to="/register-account"> Not registered? Register </RouterLink>
       </div>
     </div>
     <div class="login-register-column">
@@ -46,37 +44,60 @@
 
 <script>
 
-let token = '';
+import AuthService from '/src/assets/js/AuthService.js'
 
 export default {
-    data() {
-        return {
-          email: '',
-          password: ''
-        }
-    },
-    methods: {
-        Login() {
-            let url = "http://puigmal.salle.url.edu/api/v2/users/login";
-            
-            let data = {
-              email: this.email,
-              password: this.password
-            };
+  data() {
+      return {
+        email: '',
+        password: ''
+      }
+  },
+  methods: {
+      GetUserID(getIdURL) {
+        console.log(getIdURL);
+          fetch(getIdURL, {
+            method: 'GET',
+            headers: {
+              "Authorization": "Bearer " + AuthService.getToken(),
+              'Content-Type': 'application/json'
+              },
+          })
+          .then(response => response.json())
+          .catch(error => console.error(error))
+          .then(result => {
+            result.forEach(element => {
+              let elemento = element;
+              AuthService.setID(elemento.id);
+            });
 
-            fetch(url, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-                },
-              body: JSON.stringify(data)
-              }) 
-              .then(response => token = response.json())
-              .then(data => console.log(data))
-              .catch(error => console.error(error))
+      Login() {
+          let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
+          
+          let data = {
+            email: this.email,
+            password: this.password
+          };
 
-            console.log("TOKEN: " + token);
-        }
-    }
+          fetch(loginURL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(data)
+          })
+          .then(response => response.json())
+          .catch(error => console.error(error))
+          .then(result => {
+            AuthService.setToken(result.accessToken);
+
+            let prueba = AuthService.getToken();
+            console.log(prueba);
+
+            let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
+            this.GetUserID(getIdURL);
+          })
+      }
+  }
 }
 </script>
