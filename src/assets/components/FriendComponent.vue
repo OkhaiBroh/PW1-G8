@@ -1,7 +1,9 @@
 <script>
 
-export default{
-    props: ["id", "username"]
+export default {
+  
+  props: ["id", "username", "image"]
+  
 
 }
 </script>
@@ -10,13 +12,13 @@ export default{
     <RouterLink class="friend_div" :to="{name:'other profile', params: {id:id} }">
 
           <img
-            src="../icons/ico_profile_default.svg"
+            :src=image onerror="this.src='src/assets/icons/ico_profile_default.svg'"
             class="friend_ico"
           />
           <div class="friend_text">
             <b> {{ username }} </b>
           </div>
-        </RouterLink>    
+    </RouterLink>    
 
 </template>
 
@@ -38,7 +40,7 @@ export default{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+
     text-decoration: none;
     color: var(--black_color);
 
