@@ -1,11 +1,13 @@
 <script>
 
+
 import Comment from '../assets/components/Comment.vue'
 import AuthService from '../assets/js/AuthService.js'
 
 export default {
   data() {
     return {
+
       eventID: this.$route.params.id,
       userID: AuthService.getID(),
       token: AuthService.getToken(),
@@ -26,7 +28,7 @@ export default {
   },
   methods: {
     async checkAssistance () {
-      
+    
       let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances/" + this.userID;
       const response = await fetch(url, {
         method: 'GET', 
@@ -42,6 +44,7 @@ export default {
       // Clear the array of comments
       this.comments.length = 0;
       let comment;
+
       let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
       fetch(url, {
         method: 'GET',
@@ -58,6 +61,7 @@ export default {
                 id : assistance.id,
                 username: assistance.name + " " + assistance.last_name,
                 text: assistance.comentary,
+
               }
               this.comments.push(comment);
           } 
@@ -79,6 +83,7 @@ export default {
     },
 
     rateEvent(rating) {
+
       this.checkAssistance().then(assistance => {
         
       if(assistance.length == 0){
@@ -113,6 +118,7 @@ export default {
         alert("You are already in this event");
         return;
       } else {
+
           let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
 
           
@@ -136,6 +142,7 @@ export default {
     
     }, 
     postComment() {
+
       this.checkAssistance().then(assistance => {
         
       if(assistance.length == 0){
@@ -198,22 +205,24 @@ export default {
 
     let name, fecha;
     let evento;
+
     const headers = new Headers();
     headers.append("Authorization", "Bearer " + this.token);
     fetch('http://puigmal.salle.url.edu/api/v2/events/' + this.eventID, { headers })
     .then(response => response.json()) 
     .then(data => data.forEach(event =>{
 
+
         evento = event;
         console.log(evento);
         this.description = evento.description;
         this.location = evento.location;
+
         this.image = evento.image;
         // Format date
         this.name = evento.name;
         this.date = evento.eventStart_date.substring(0, evento.eventStart_date.indexOf('T')).replaceAll("-", "/");
-        this.date += " - " + evento.eventEnd_date.substring(0, evento.eventEnd_date.indexOf('T')).replaceAll("-", "/")
-
+        this.date += " - " + evento.eventEnd_date.substring(0, evento.eventEnd_date.indexOf('T')).replaceAll("-", "/");
        
     })).catch(error => console.error(error))
 
