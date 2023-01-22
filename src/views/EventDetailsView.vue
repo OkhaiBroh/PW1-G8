@@ -1,19 +1,18 @@
 <script>
 
-import Comment from './Comment.vue'
+import Comment from '../assets/components/Comment.vue'
 import AuthService from '../assets/js/AuthService.js'
 
 export default {
   data() {
     return {
+      eventID: this.$route.params.id,
       userID: AuthService.getID(),
       token: AuthService.getToken(),
-      comments: [
-        { id: 1, username: 'David', text: 'FJAL' },
-        { id: 2, username: 'Tomas', text: 'fajdfafa' },
-        { id: 3, username: 'Arnau', text: 'baojdafouia' },
-      ],
+      
+      comments: [],
       name: "La Fiestita",
+      image: "https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg'",
       description: "Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga. descripcion muy larga.Una descripcion muy larga.",
       location:"Unknown",
       date: "Unknown",
@@ -27,8 +26,8 @@ export default {
   },
   methods: {
     async checkAssistance () {
-      let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances/" + this.userID;
+      
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances/" + this.userID;
       const response = await fetch(url, {
         method: 'GET', 
         headers: {
@@ -43,8 +42,7 @@ export default {
       // Clear the array of comments
       this.comments.length = 0;
       let comment;
-      let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
       fetch(url, {
         method: 'GET',
         headers: {
@@ -59,7 +57,7 @@ export default {
               comment = {
                 id : assistance.id,
                 username: assistance.name + " " + assistance.last_name,
-                text: assistance.comentary
+                text: assistance.comentary,
               }
               this.comments.push(comment);
           } 
@@ -83,8 +81,7 @@ export default {
     rateEvent(rating) {
       this.updateStars(rating);
 
-      let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
       let assistance = {
         puntuation: rating*2,
       };
@@ -111,8 +108,7 @@ export default {
         alert("You are already in this event");
         return;
       } else {
-          let id = 1295;
-          let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+          let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
 
           
           fetch(url, {
@@ -135,10 +131,10 @@ export default {
     
     }, 
     postComment() {
-       console.log(this.new_comment);
+       console.log(this.eventID);
 
       let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
       let assistance = {
         comentary: this.new_comment,
       }
@@ -154,7 +150,7 @@ export default {
       }).then(response => response.json()
       ).then(data => {
         console.log('My data' + data);
-        getComments();
+        this.getComments();
       }
       ).catch(error => {
         this.getComments();
@@ -166,7 +162,7 @@ export default {
       try {
         await navigator.clipboard.writeText('http://127.0.0.1:5173' + window.location.pathname);
         console.log('Link copied to clipboard');
-        console.log(this.$route.fullPath)
+        console.log(window.location.pathname)
       } catch (err) {
         console.error('Failed to copy');
       }
@@ -192,21 +188,21 @@ export default {
 
     let name, fecha;
     let evento;
-    let id = 1295;
     const headers = new Headers();
     headers.append("Authorization", "Bearer " + this.token);
-    fetch('http://puigmal.salle.url.edu/api/v2/events/' + id, { headers })
+    fetch('http://puigmal.salle.url.edu/api/v2/events/' + this.eventID, { headers })
     .then(response => response.json()) 
     .then(data => data.forEach(event =>{
+
         evento = event;
         console.log(evento);
         this.description = evento.description;
         this.location = evento.location;
+        this.image = evento.image;
         // Format date
         this.name = evento.name;
         this.date = evento.eventStart_date.substring(0, evento.eventStart_date.indexOf('T')).replaceAll("-", "/");
         this.date += " - " + evento.eventEnd_date.substring(0, evento.eventEnd_date.indexOf('T')).replaceAll("-", "/")
-        document.getElementById("event-image").src = evento.image;
 
        
     })).catch(error => console.error(error))
@@ -275,7 +271,7 @@ export default {
         <img
           id="event-image"
           class="ico-event"
-          src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+          :src=image onerror="this.src='https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg'"
           alt=""
         />
         <div class="join-button" v-on:click="joinEvent()">
@@ -411,6 +407,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 40px;
+  width: 500px;
 }
 
 .comment-button,
@@ -427,6 +424,7 @@ export default {
   color: var(--white_color);
   text-decoration: none;
   align-items: center;
+  
 }
 .share-ico {
   height: 31px;
