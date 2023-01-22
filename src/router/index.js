@@ -79,7 +79,7 @@ const router = createRouter({
       component: () => import("../views/CreateEventViewStep4.vue"),
     },
     {
-      path: "/other-profile",
+      path: "/other-profile/:id",
       name: "other profile",
 
       component: () => import("../views/OtherProfileView.vue"),
