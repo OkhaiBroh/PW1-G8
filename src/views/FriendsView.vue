@@ -1,6 +1,7 @@
 <script>
 import FriendRequest from "./../assets/components/FriendRequestComponent.vue";
 import Friend from "./../assets/components/FriendComponent.vue";
+import FriendOptions from "./../assets/components/FriendOptions.vue";
 import AuthService from "./../assets/js/AuthService.js";
 export default{
   data () {
@@ -14,17 +15,14 @@ export default{
   },
   components: {
     FriendRequest, 
-    Friend
+    Friend,
+    FriendOptions
   },
   methods: {
     toList: function(){
       this.friends.length = 0;
       this.option = "list"
-      document.getElementById("list").style.backgroundColor = "var(--blue_color)";
-      document.getElementById("list").style.color = "var(--white_color)";
-
-      document.getElementById("request_list").style.backgroundColor = "var(--white_color)";
-      document.getElementById("request_list").style.color = "var(--black_color)";
+      console.log("DIOS");
 
       // API
       let url = "http://puigmal.salle.url.edu/api/v2/users";
@@ -58,11 +56,7 @@ export default{
     toRequestList: function(){
       this.friends_request.length = 0;
       this.option = "request_list";
-      document.getElementById("request_list").style.backgroundColor = "var(--blue_color)";
-      document.getElementById("request_list").style.color = "var(--white_color)";
-
-      document.getElementById("list").style.backgroundColor = "var(--white_color)";
-      document.getElementById("list").style.color = "var(--black_color)";
+     
 
       // API 
       let url = "http://puigmal.salle.url.edu/api/v2/friends/requests";
@@ -102,21 +96,8 @@ export default{
 
 <template>
   <main class="background">
-    <section class="panel">
-      <p class="friends">Friends</p>
-      <div class="friends_options">
-        <div id="list" class="option" v-on:click=toList>
-          <b class="option_text">List</b>
-          <img src="../assets/icons/ico_user.svg" class="ico" />
-        </div>
-
-        <div id="request_list" class="option" v-on:click=toRequestList>
-          <b class="option_text">Requests</b>
-          <img src="../assets/icons/ico_user.svg" class="ico" />
-        </div>
-      </div>
-    </section>
-
+    
+    <FriendOptions v-on:to-list="toList"/>
     <!-- List of friends-->
     <section v-if="option ==='list'" class="list_panel">
         <Friend v-for="friend in friends" :key="friend.id" :id="friend.id" :username="friend.username" :image="friend.image" />
@@ -135,41 +116,7 @@ export default{
   align-content: center;
   padding: 5vh;
 }
-.panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
-  margin: 50px;
-  background-color: white;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border-radius: 20px;
-  padding: 100px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-.friends {
-  font-size: 45px;
-  font-weight: 700;
-}
-.option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-  border: 4px solid var(--blue_color);
-  margin-top: 70px;
-  width: 80%;
-  padding: 30px;
-}
-.option:active {
-  background-color: var(--blue_color);
-}
-.option_text {
-  margin-bottom: 15px;
-  font-size: 20px;
-}
 
 .list_panel {
   display: flex;
@@ -189,10 +136,7 @@ export default{
   width: 1000px;
   height: 700px;
 }
-.ico {
-  width: 25px;
-  height: 25px;
-}
+
 
 .friend_div {
   background-color: var(--white_color);
