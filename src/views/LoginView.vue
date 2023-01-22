@@ -78,7 +78,7 @@ export default {
 
       Login() {
           let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
-          
+
           let data = {
             email: this.email,
             password: this.password
