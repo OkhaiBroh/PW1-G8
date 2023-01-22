@@ -3,6 +3,11 @@ import events from '../js/events.js'
 
 export default {
   extends: events,
+  methods: {
+    sortList() {
+      this.search("http://puigmal.salle.url.edu/api/v2/events/best")
+    }
+  }
 }
 </script>
 
@@ -10,7 +15,7 @@ export default {
     <div class="upper-section">
         <div class="sorter">
             <img class="ico" src="../icons/rating_sort_ico.svg" alt="calendar ico"/>
-            <p class="text"> SORT BY RATING </p>
+            <button class="text" v-on:click="sortList()"> SORT BY RATING </button>
         </div>
         <RouterLink class="create-btn" to="/create-event-1">
           Create
@@ -52,6 +57,11 @@ export default {
 .text {
     font-size: 20px;
     font-weight: bold;
+    background: none;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
 }
 
 .text:hover {
