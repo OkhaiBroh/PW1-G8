@@ -42,7 +42,7 @@ export default {
           <input class="input longitude-input" name="event-type" type="text" v-model="longitude"/>
         </div>
       </section>
-      <section class="data-input">
+      <section class="data-input part2">
         <div class="event-participants-input camp">
           <p class="camp-title participants">Participants</p>
           <input
@@ -138,6 +138,10 @@ export default {
   .create-btn {
     margin: 10px 0 20px 0;
     width: 90px;
+  }
+
+  .part2 {
+    margin-top: 0;
   }
 }
 </style>
