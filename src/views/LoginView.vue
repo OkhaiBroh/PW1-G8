@@ -101,7 +101,7 @@ export default {
             let token = AuthService.getToken();
             console.log('token: ' + token);
 
-            if (typeof token === null || token === 'undefined') {
+            if (typeof token === 'undefined' || token === null) {
               alert ('Email or Password wrong!');
             } else {
               let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;

@@ -62,7 +62,7 @@ export default {
         id="img"
         class="ppic"
         alt="profile pic"
-        src="../assets/icons/ico_profile_default.svg"
+        onerror="this.src='https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg';"
       />
       <button class="send-request-btn" v-on:click="sendFriendRequest">Send Request</button>
     </section>
