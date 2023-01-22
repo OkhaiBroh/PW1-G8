@@ -33,3 +33,17 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### GitHub Repository
+
+```sh
+https://github.com/OkhaiBroh/PW1-G8
+```
+
+### Developer Notes :
+
+```sh
+Hay una rama que no esta en M2 pero sin embargo presenta trabajo realizado. 
+Esta rama es: JS-Send-Receive-Messages
+En ella podemos encontrar código sin finalizar del envío y recepción de mensajes entre usuarios.
+```
