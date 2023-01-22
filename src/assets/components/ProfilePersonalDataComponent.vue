@@ -2,8 +2,8 @@
     <div class="profile box-shadow">
         <p class="title-text center-text">Profile</p>
         <img class="profile-image" id="image"/>
-        <button class="log-out-button">Log Out</button>
-        <button class="del-acc-button">Delete Account</button>
+        <button v-on:click="logoutAccount()" class="log-out-button">Log Out</button>
+        <button v-on:click="deleteAccount()" class="del-acc-button">Delete Account</button>
     </div>
     <div class="personal-data box-shadow">
         <p class="title-text center-text">Personal Data</p>
@@ -81,7 +81,41 @@ export default {
             .then(response => response.json())
             .then(data => console.log(data))
             .catch(error => console.error(error))
-        }
+        },
+
+        logoutAccount() {
+            AuthService.setToken(null);
+            AuthService.setID(null);
+
+            console.log(AuthService.getToken());
+            console.log(document.cookie);
+            
+            const cookies = document.cookie.split(";");
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i];
+                const eqPos = cookie.indexOf("=");
+                const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+
+            console.log(document.cookie);
+            this.$router.push("/");
+        },
+        
+        deleteAccount() {
+            let url = "http://puigmal.salle.url.edu/api/v2/users/";
+
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    "Authorization": "Bearer " + AuthService.getToken(),
+                    'Content-Type': 'application/json'
+                }
+            })
+
+            alert('The account has been deleted!')
+            this.logoutAccount();
+        },
     }
 }
 </script>

@@ -70,15 +70,14 @@ export default {
               let elemento = element;
               AuthService.setID(elemento.id);
 
-            });
-            document.cookie = "id=" + AuthService.getID();
-            let prueba = AuthService.getID();
-            console.log('ID: ' + prueba);
+              });
+              document.cookie = "id=" + AuthService.getID();
+              let prueba = AuthService.getID();
+              console.log('ID: ' + prueba); 
           })
       },
 
       Login() {
-
           let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
 
           let data = {
@@ -99,15 +98,16 @@ export default {
             AuthService.setToken(result.accessToken);
 
             let token = AuthService.getToken();
-            console.log(token);
+            console.log('token: ' + token);
 
-            let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
-            this.GetUserID(getIdURL);
-
-            document.cookie = "token=" + AuthService.getToken();
-
-            if (token != null) this.$router.push('/events')
-            else alert ('Email or Password wrong!');
+            if (typeof token === null || token === 'undefined') {
+              alert ('Email or Password wrong!');
+            } else {
+              let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
+              this.GetUserID(getIdURL);
+              document.cookie = "token=" + AuthService.getToken();
+              this.$router.push('/events')
+            } 
           })
       }
   }
