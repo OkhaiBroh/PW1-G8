@@ -10,7 +10,7 @@ export default {
 <template>
     <RouterLink class="friend_div" :to="{name:'other profile', params: {id:id} }">
           <img
-            src="../icons/ico_profile_default.svg"
+            :src="image" onerror="../icons/ico_profile_default.svg"
             class="friend_ico"
           />
           <div class="friend_text">

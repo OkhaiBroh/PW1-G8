@@ -22,6 +22,9 @@ export default {
             document.getElementById("list").style.color = "var(--black_color)";
             this.$emit('to-request-list');
         }
+    },
+    mounted() {
+      this.toList();
     }
 }
 

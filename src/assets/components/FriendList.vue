@@ -74,7 +74,7 @@ export default {
             }
             console.log(user);
             if (user.image == null) {
-                user.image = "../assets/icons/ico_profile_default.svg";
+                user.image = "../icons/ico_profile_default.svg";
             }
             this.friends_request.push(user);
             

@@ -1,14 +1,11 @@
 <script>
-import FriendRequest from "./../assets/components/FriendRequestComponent.vue";
-import Friend from "./../assets/components/FriendComponent.vue";
+
 import FriendOptions from "./../assets/components/FriendOptions.vue";
 import FriendList from "./../assets/components/FriendList.vue";
-import AuthService from "./../assets/js/AuthService.js";
 export default{
   
   components: {
-    FriendRequest, 
-    Friend,
+   
     FriendOptions,
     FriendList
   }
