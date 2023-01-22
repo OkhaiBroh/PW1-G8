@@ -85,6 +85,9 @@ button {
 
     padding: 10px;
     margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
 }
 
 .link-button:hover, button:hover {
@@ -140,4 +143,10 @@ button {
     transform: translate(0px, -35px) scale(0.8);
     padding-left: 0px;
     color: var(--black_color);
-}     
+}  
+
+@media (max-width: 1000px) {
+    html, body {
+        overflow-y: scroll;
+    }
+}
