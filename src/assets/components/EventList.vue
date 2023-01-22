@@ -1,3 +1,11 @@
+<script>
+import events from '../js/events.js'
+
+export default {
+  extends: events,
+}
+</script>
+
 <template>
     <div class="upper-section">
         <div class="sorter">
@@ -8,6 +16,9 @@
           Create
         </RouterLink>
     </div>
+    <section class="events-panel">
+        <Event v-for="event in event_query" :key="event.id" :id="event.id" :name="event.name" :image="event.image" :location="event.location" :date="event.date"></Event>
+    </section>
 </template>
 
 <style scoped>
@@ -65,6 +76,43 @@
 
 .sorter:hover {
     cursor: pointer;
+}
+
+.events-panel {
+  height: 530px;
+  width: 857px;
+  margin-top: 20px;
+  padding-bottom: 40px;
+
+  overflow: hidden;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.events-panel::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 20px;
+}
+
+/* Track */
+.events-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.events-panel::-webkit-scrollbar-thumb {
+  background: var(--blue_color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.events-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--blue_color);
 }
 
 </style>

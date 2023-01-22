@@ -1,5 +1,4 @@
 import Event from "../components/Event.vue";
-import EventBar from "../components/EventBar.vue";
 
 export default {
     data() {
@@ -11,13 +10,13 @@ export default {
         }
     },
     components: {
-        Event,
-        EventBar
+        Event
     },
     mounted: function() {
         let url = "http://puigmal.salle.url.edu/api/v2/events";
 
         console.log(url);
+        this.event_query = []
 
         fetch(url, {
             method: 'GET',
@@ -26,26 +25,17 @@ export default {
             }
         })
         .then(response => response.json())
-        .then(data => data.forEach(event => {
+        .then(data => 
+            data.forEach(event => {
                 this.event_query.push({id: event.id, name: event.name, image: event.image, location: event.location, date: event.date.substring(0,10).replaceAll("-","/")})
-                console.log(this.event_query)
             })
         )
         .catch(error => console.error(error))
     },
     methods: {
-        search () {
-            let url = "http://puigmal.salle.url.edu/api/v2/events";
-           
-            if (this.location != "" || this.name != "" || this.date != "") {
-                url = url + "/search?";
-                if (this.location != "") url = url + "location=" + this.location + "&";
-                if (this.name != "") url = url + "keyword=" + this.name + "&";
-                if (this.date != "") url = url + "date=" + this.date + "&"; 
-            }
-            url = url.slice(0, -1);
-
-            console.log(url);
+        search (url) {
+            console.log(url)
+            this.event_query = []
 
             fetch(url, {
                 method: 'GET',
@@ -54,7 +44,11 @@ export default {
                 }
             })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => 
+                data.forEach(event => {
+                    this.event_query.push({id: event.id, name: event.name, image: event.image, location: event.location, date: event.date.substring(0,10).replaceAll("-","/")})
+                })
+            )
             .catch(error => console.error(error))
         }
     }

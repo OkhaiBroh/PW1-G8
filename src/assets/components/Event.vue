@@ -7,17 +7,17 @@ export default {
 
 <template>
     <div class="event-container box-shadow">
-        <img class="event-image" :src=image onerror='this.src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"' alt=""/>
+        <img id="id" class="event-image" :src=image onerror="this.src='https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg';" alt=""/>
         <div class="info-container">
-            <p class="timeline-title-text"> {{ name }} </p>
+            <p class="timeline-title-text"> {{ this.name }} </p>
         </div>
         <div class="info-container">
             <img class="ico" src="../icons/ico_location.svg" alt="location ico"/>
-            <p class="timeline-info-text" > {{ location }} </p>
+            <p class="timeline-info-text" > {{ this.location }} </p>
         </div>
         <div class="info-container">
             <img class="ico" src="../icons/ico_calendar.svg" alt="calendar ico"/>
-            <p class="timeline-info-text"> {{ date }} </p>
+            <p class="timeline-info-text"> {{ this.date }} </p>
         </div>
     </div>  
 </template>

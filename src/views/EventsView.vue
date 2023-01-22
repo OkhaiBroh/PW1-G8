@@ -1,36 +1,22 @@
 <script>
-import events from '../assets/js/events.js'
+import EventList from "../assets/components/EventList.vue";
+import EventSearch from "../assets/components/EventSearch.vue"
 
 export default {
-  extends: events
+  components: {
+    EventList,
+    EventSearch
+  }
 }
 </script>
 
 <template>
   <main class="general-container">
     <section class="sorter-section panel">
-      <p class="sort-by-text title">Search By</p>
-      <div class="input-group">
-        <div class="input-pack">
-          <label class="input-label" for="name-query"> Name </label>
-          <input class="name-input input" name="name-query" type="text" v-model="name" />
-        </div>
-        <div class="input-pack">
-          <label class="input-label" for="location-query"> Location </label>
-          <input class="location-input input" name="location-query" type="text" v-model="location" />
-        </div>
-        <div class="input-pack">
-          <label class="input-label" for="name-query"> Start Date </label>
-          <input class="date-input input" name="date-query" type="date" v-model="date" />
-        </div>
-      </div>
-      <button class="search-btn" v-on:click.prevent="search"> Search </button>
+      <EventSearch v-on:search="(url) => this.$refs.list.search(url)"></EventSearch>
     </section>
     <section class="searcher-section panel">
-      <EventBar></EventBar>
-      <section class="events-panel">
-        <Event v-for="event in event_query" :key="event.id" :id="event.id" :name="event.name" :image="event.image" :location="event.location" :date="event.date"/>
-    </section>
+      <EventList ref="list"></EventList>
     </section>
   </main>
 </template>
@@ -60,101 +46,9 @@ export default {
   padding: 40px 60px 40px 60px;
 }
 
-.title {
-  font-weight: bold;
-  font-size: 25px;
-
-  margin-top: 20px;
-  margin-bottom: 60px;
-}
-
-/*************************
-          SEARCHER
-**************************/
-
-.input-label {
-  font-size: 18px;
-}
-
 .sorter-section {
   margin-right: 80px;
 }
-
-.input-group {
-  width: 100%;
-  height: 340px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.input-pack {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 40px;
-}
-
-.input {
-  border: 2px solid var(--blue_color);
-  border-radius: 100px;
-  padding: 5px 20px 5px 20px;
-}
-
-.input-label {
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
-/*************************
-        EVENTS
-**************************/
-
-.events-panel {
-  height: 530px;
-  width: 857px;
-  margin-top: 20px;
-  padding-bottom: 40px;
-
-  overflow: hidden;
-  overflow-y: scroll;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.events-row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-
-  margin-top: 20px;
-}
-
-.events-panel::-webkit-scrollbar {
-  width: 15px;
-  border-radius: 20px;
-}
-
-/* Track */
-.events-panel::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-/* Handle */
-.events-panel::-webkit-scrollbar-thumb {
-  background: var(--blue_color);
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-.events-panel::-webkit-scrollbar-thumb:hover {
-  background: var(--blue_color);
-}
-
-
 
 @media (max-width: 1000px) {
   .general-container {
@@ -227,12 +121,6 @@ export default {
   .events-panel {
     display: flex;
     align-items: center;
-    flex-direction: column;
-  }
-
-  .events-row {
-    width: 80%;
-    display: flex;
     flex-direction: column;
   }
 
