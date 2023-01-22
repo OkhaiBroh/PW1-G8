@@ -16,7 +16,8 @@
 
       <form
         action="/register-security"
-        class="login-register-panel register-panel-width">
+        class="login-register-panel register-panel-width"
+      >
         <div class="horizontal-input">
           <img class="ico-25px" src="../assets/icons/ico_user.svg" />
           <div class="input-form">
@@ -40,7 +41,8 @@
               placeholder="Lastname"
               type="text"
               v-model="lastname"
-              required/>
+              required
+            />
             <label class="label-input" for="lastname"> Lastname* </label>
           </div>
         </div>
@@ -73,7 +75,11 @@
           </div>
         </div>
 
-        <RouterLink v-on:click.prevent="addUser" class="link-button" to="/register-security">
+        <RouterLink
+          v-on:click.prevent="addUser"
+          class="link-button"
+          to="/register-security"
+        >
           Next
         </RouterLink>
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
@@ -90,7 +96,6 @@
 </template>
 
 <style scoped>
-
 .line {
   border: 2px solid var(--dark_gray_color);
   width: 100px;
@@ -192,10 +197,9 @@
 </style>
 
 <script>
-import register from '../assets/js/register.js'
+import register from "../assets/js/register.js";
 
 export default {
-  extends: register
-}
+  extends: register,
+};
 </script>
-

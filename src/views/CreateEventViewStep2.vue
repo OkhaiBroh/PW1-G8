@@ -1,9 +1,9 @@
 <script>
-import newEvent from '../assets/js/newEvent.js'
+import newEvent from "../assets/js/newEvent.js";
 
 export default {
-  extends: newEvent
-}
+  extends: newEvent,
+};
 </script>
 
 <template>
@@ -59,7 +59,13 @@ export default {
       </section>
       <div class="button-panel">
         <RouterLink class="back-btn" to="/create-event-1"> Back </RouterLink>
-        <RouterLink class="next-btn" to="/create-event-3" v-on:click="addEventStep2()"> Next </RouterLink>
+        <RouterLink
+          class="next-btn"
+          to="/create-event-3"
+          v-on:click="addEventStep2()"
+        >
+          Next
+        </RouterLink>
       </div>
     </form>
   </main>

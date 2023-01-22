@@ -1,17 +1,17 @@
 <script>
-import ProfilePersonalDataComponent from '../assets/components/ProfilePersonalDataComponent.vue'
-import ProfileSecurityComponent from '../assets/components/ProfileSecurityComponent.vue'
-import ProfileStatisticsComponent from '../assets/components/ProfileStatisticsComponent.vue';
-import ProfileTimelineComponent from '../assets/components/ProfileTimelineComponent.vue';
-  
+import ProfilePersonalDataComponent from "../assets/components/ProfilePersonalDataComponent.vue";
+import ProfileSecurityComponent from "../assets/components/ProfileSecurityComponent.vue";
+import ProfileStatisticsComponent from "../assets/components/ProfileStatisticsComponent.vue";
+import ProfileTimelineComponent from "../assets/components/ProfileTimelineComponent.vue";
+
 export default {
   components: {
     ProfilePersonalDataComponent,
     ProfileSecurityComponent,
     ProfileStatisticsComponent,
     ProfileTimelineComponent,
-  }
-}
+  },
+};
 </script>
 
 <template>
@@ -35,6 +35,5 @@ export default {
 </template>
 
 <style>
-  @import '../assets/css/profile.css';
+@import "../assets/css/profile.css";
 </style>
-

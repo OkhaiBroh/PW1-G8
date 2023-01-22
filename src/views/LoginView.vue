@@ -29,8 +29,10 @@
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <button v-on:click.prevent="Login()" to="/events"> Login </button>
-        <RouterLink class="link-text" to="/register-account"> Not registered? Register </RouterLink>
+        <button v-on:click.prevent="Login()" to="/events">Login</button>
+        <RouterLink class="link-text" to="/register-account">
+          Not registered? Register
+        </RouterLink>
       </div>
     </div>
     <div class="login-register-column">
@@ -43,84 +45,78 @@
 </template>
 
 <script>
-
-import AuthService from '/src/assets/js/AuthService.js'
+import AuthService from "/src/assets/js/AuthService.js";
 // TODO: hace el login aunque el usuario no exista
 export default {
   data() {
-      return {
-        email: '',
-        password: ''
-      }
+    return {
+      email: "",
+      password: "",
+    };
   },
   methods: {
-      GetUserID(getIdURL) {
-        console.log(getIdURL);
-          fetch(getIdURL, {
-            method: 'GET',
-            headers: {
-              "Authorization": "Bearer " + AuthService.getToken(),
-              'Content-Type': 'application/json'
-              },
-          })
-          .then(response => response.json())
-          .catch(error => console.error(error))
-          .then(result => {
-            result.forEach(element => {
-              let elemento = element;
-              AuthService.setID(elemento.id);
+    GetUserID(getIdURL) {
+      console.log(getIdURL);
+      fetch(getIdURL, {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + AuthService.getToken(),
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .catch((error) => console.error(error))
+        .then((result) => {
+          result.forEach((element) => {
+            let elemento = element;
+            AuthService.setID(elemento.id);
+          });
+          document.cookie = "id=" + AuthService.getID();
+          let prueba = AuthService.getID();
+          console.log("ID: " + prueba);
+        });
+    },
 
-              });
-              document.cookie = "id=" + AuthService.getID();
-              let prueba = AuthService.getID();
-              console.log('ID: ' + prueba); 
+    Login() {
+      let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
 
-          })
-      },
+      let data = {
+        email: this.email,
+        password: this.password,
+      };
 
-      Login() {
-          let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
+      fetch(loginURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .catch((error) => console.error(error))
+        .then((result) => {
+          AuthService.setToken(result.accessToken);
 
-          let data = {
-            email: this.email,
-            password: this.password
-          };
+          let token = AuthService.getToken();
+          console.log("token: " + token);
 
-          fetch(loginURL, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-              },
-            body: JSON.stringify(data)
-          })
-          .then(response => response.json())
-          .catch(error => console.error(error))
-          .then(result => {
-            AuthService.setToken(result.accessToken);
-
-            let token = AuthService.getToken();
-            console.log('token: ' + token);
-
-<<<<<<< HEAD
-            if (typeof token === null || typeof token === 'undefined') {
-=======
-            if (typeof token === 'undefined' || token === null) {
->>>>>>> 150a1a148579dc84da2a3d44d5ba0287e1ef5e7e
-              alert ('Email or Password wrong!');
-            } else {
-              let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
-              this.GetUserID(getIdURL);
-              document.cookie = "token=" + AuthService.getToken();
-              this.$router.push('/events')
-            } 
-
-          })
-      }
-  }, 
+          if (typeof token === "undefined" || token === null) {
+            alert("Email or Password wrong!");
+          } else {
+            let getIdURL =
+              "http://puigmal.salle.url.edu/api/v2/users/search?s=" +
+              this.email;
+            this.GetUserID(getIdURL);
+            document.cookie = "token=" + AuthService.getToken();
+            this.$router.push("/events");
+          }
+        });
+    },
+  },
   mounted() {
     if (AuthService.getToken() != null) {
-      this.$router.push('/events')
+      this.$router.push("/events");
     }
-  }
-}
+  },
+};
 </script>

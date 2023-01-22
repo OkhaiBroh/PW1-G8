@@ -47,7 +47,11 @@
             </label>
           </div>
         </div>
-        <RouterLink v-on:click.prevent="registerAccount" class="link-button" to="/register-successful">
+        <RouterLink
+          v-on:click.prevent="registerAccount"
+          class="link-button"
+          to="/register-successful"
+        >
           Register
         </RouterLink>
         <RouterLink class="link-text" to="/"> Registered? Log in </RouterLink>
@@ -70,9 +74,9 @@
 </style>
 
 <script>
-import register from '../assets/js/register.js'
+import register from "../assets/js/register.js";
 
 export default {
-  extends: register
-}
+  extends: register,
+};
 </script>

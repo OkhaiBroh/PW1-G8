@@ -1,57 +1,57 @@
 <script>
-import AuthService from '../assets/js/AuthService.js';
+import AuthService from "../assets/js/AuthService.js";
 
 export default {
   data() {
     return {
       // Con esto puedes saber el id del usuario
       profileId: this.$route.params.id,
-    }
+    };
   },
   mounted() {
     let url = "http://puigmal.salle.url.edu/api/v2/users/" + this.profileId;
 
     fetch(url, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        "Authorization": "Bearer " + AuthService.getToken()
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + AuthService.getToken(),
       },
     })
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(element => {
-        document.getElementById('name').value = element.name;
-        document.getElementById('lastname').value = element.last_name;
-        document.getElementById('email').value = element.email;
-        document.getElementById('img').src = element.image;
-      });
-    })
-    .catch(error => console.error(error))
+      .then((response) => response.json())
+      .then((data) => {
+        data.forEach((element) => {
+          document.getElementById("name").value = element.name;
+          document.getElementById("lastname").value = element.last_name;
+          document.getElementById("email").value = element.email;
+          document.getElementById("img").src = element.image;
+        });
+      })
+      .catch((error) => console.error(error));
   },
   methods: {
     sendFriendRequest() {
       let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.profileId;
 
       fetch(url, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          "Authorization": "Bearer " + AuthService.getToken()
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + AuthService.getToken(),
         },
       })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        alert('Friend Request has been sent corretly!')
-      })
-      .catch(error => {
-        console.error(error)
-        alert('An error has occurred while sending a friend request!')
-      })
-    }
-  }
-}
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          alert("Friend Request has been sent corretly!");
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("An error has occurred while sending a friend request!");
+        });
+    },
+  },
+};
 </script>
 
 <template>
@@ -64,7 +64,9 @@ export default {
         alt="profile pic"
         onerror="this.src='https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg';"
       />
-      <button class="send-request-btn" v-on:click="sendFriendRequest">Send Request</button>
+      <button class="send-request-btn" v-on:click="sendFriendRequest">
+        Send Request
+      </button>
     </section>
     <section class="data-section panel">
       <p class="personal-data-title title"></p>

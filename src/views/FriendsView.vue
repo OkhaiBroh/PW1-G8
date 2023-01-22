@@ -1,26 +1,21 @@
 <script>
-
 import FriendOptions from "./../assets/components/FriendOptions.vue";
 import FriendList from "./../assets/components/FriendList.vue";
-export default{
-  
+export default {
   components: {
-   
     FriendOptions,
-    FriendList
-  }
-  
-}
+    FriendList,
+  },
+};
 </script>
-
-
 
 <template>
   <main class="background">
-    
-    <FriendOptions v-on:to-list="this.$refs.list.toList()" v-on:to-request-list="this.$refs.list.toRequestList()"/>
-    <FriendList  ref="list"/>
-    
+    <FriendOptions
+      v-on:to-list="this.$refs.list.toList()"
+      v-on:to-request-list="this.$refs.list.toRequestList()"
+    />
+    <FriendList ref="list" />
   </main>
 </template>
 
@@ -33,14 +28,14 @@ export default{
   padding: 5vh;
 }
 .list {
-  width:1000px;
+  width: 1000px;
   height: 700px;
 }
 
 @media (max-width: 1000px) {
   .background {
     flex-direction: column;
-    
+
     width: 100%;
     align-content: unset;
     justify-content: unset;

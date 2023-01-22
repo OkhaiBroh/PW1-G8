@@ -1,75 +1,74 @@
 <script>
-      import AuthService from "../js/AuthService.js";
+import AuthService from "../js/AuthService.js";
 
 export default {
-
-    data() {
-        return {
-            token: AuthService.getToken(),
-        }
-    },
-    props: ["id", "username", "image"], 
-    methods: {
-        accept: function(){
-            console.log("accept");
-             // API
-            let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.id;
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + this.token
-                }
-            }).then(response => response.json())
-            .then(result => {
-               alert("Friend added");
-               this.$emit('update');
-            })
-            .catch(error => console.error(error));
+  data() {
+    return {
+      token: AuthService.getToken(),
+    };
+  },
+  props: ["id", "username", "image"],
+  methods: {
+    accept: function () {
+      console.log("accept");
+      // API
+      let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.id;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.token,
         },
-        reject: function(){
-            console.log("reject");
-            let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.id;
-            fetch(url, {
-                method: 'DELETE',
-                headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + this.token
-                }
-            }).then(response => response.json())
-            .then(result => {
-               alert("Friend request rejected");
-               this.$emit('update');
-            })
-            .catch(error => console.error(error));
-        }
-    }
-}
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          alert("Friend added");
+          this.$emit("update");
+        })
+        .catch((error) => console.error(error));
+    },
+    reject: function () {
+      console.log("reject");
+      let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.id;
+      fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + this.token,
+        },
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          alert("Friend request rejected");
+          this.$emit("update");
+        })
+        .catch((error) => console.error(error));
+    },
+  },
+};
 </script>
 
 <template>
-    <article class="friend_div">
-          <img
-            src="../icons/ico_profile_default.svg"
-            class="friend_ico"
-          />
+  <article class="friend_div">
+    <img src="../icons/ico_profile_default.svg" class="friend_ico" />
 
-          <div class="friend-text-buttons">
-            <b> {{ username }} </b>
-          </div>
-          <div class="buttons">
-            <div class="accept-button" v-on:click="accept()">
-              <img src="../icons/ico_tick.svg" class="ico-accept" />
-            </div>
-            <div class="reject-button" v-on:click="reject()">
-              <img src="../icons/ico_close.svg" class="ico-reject" />
-            </div>
-          </div>
-        </article>
+    <div class="friend-text-buttons">
+      <b> {{ username }} </b>
+    </div>
+    <div class="buttons">
+      <div class="accept-button" v-on:click="accept()">
+        <img src="../icons/ico_tick.svg" class="ico-accept" />
+      </div>
+      <div class="reject-button" v-on:click="reject()">
+        <img src="../icons/ico_close.svg" class="ico-reject" />
+      </div>
+    </div>
+  </article>
 </template>
 
 <style scoped>
-
 .friend_div {
   background-color: var(--white_color);
   padding: 10px;
@@ -125,5 +124,4 @@ export default {
   width: 20px;
   height: 20px;
 }
-
 </style>

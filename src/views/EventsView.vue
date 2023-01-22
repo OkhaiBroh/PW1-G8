@@ -1,19 +1,21 @@
 <script>
 import EventList from "../assets/components/EventList.vue";
-import EventSearch from "../assets/components/EventSearch.vue"
+import EventSearch from "../assets/components/EventSearch.vue";
 
 export default {
   components: {
     EventList,
-    EventSearch
-  }
-}
+    EventSearch,
+  },
+};
 </script>
 
 <template>
   <main class="general-container">
     <section class="sorter-section panel">
-      <EventSearch v-on:search="(url) => this.$refs.list.search(url)"></EventSearch>
+      <EventSearch
+        v-on:search="(url) => this.$refs.list.search(url)"
+      ></EventSearch>
     </section>
     <section class="searcher-section panel">
       <EventList ref="list"></EventList>
@@ -67,7 +69,6 @@ export default {
     padding: 20px;
     align-items: center;
   }
-
 
   .searcher-section {
     margin-bottom: 20px;

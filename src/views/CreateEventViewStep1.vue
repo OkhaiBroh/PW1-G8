@@ -1,9 +1,9 @@
 <script>
-import newEvent from '../assets/js/newEvent.js'
+import newEvent from "../assets/js/newEvent.js";
 
 export default {
-  extends: newEvent
-}
+  extends: newEvent,
+};
 </script>
 
 <template>
@@ -30,7 +30,12 @@ export default {
         <div class="name-description-camps">
           <div class="event-name-input camp">
             <p class="camp-title name">Name</p>
-            <input class="input name-input" name="event-name" type="text" v-model="name"/>
+            <input
+              class="input name-input"
+              name="event-name"
+              type="text"
+              v-model="name"
+            />
           </div>
           <div class="event-location-input camp">
             <p class="camp-title location">Location</p>
@@ -53,7 +58,13 @@ export default {
         </div>
       </section>
       <div class="button-panel">
-        <RouterLink class="next-btn" to="/create-event-2" v-on:click="addEventStep1()"> Next </RouterLink>
+        <RouterLink
+          class="next-btn"
+          to="/create-event-2"
+          v-on:click="addEventStep1()"
+        >
+          Next
+        </RouterLink>
       </div>
     </form>
   </main>

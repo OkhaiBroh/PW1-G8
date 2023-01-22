@@ -2,28 +2,28 @@ let savedId;
 let savedToken;
 
 class AuthService {
-    constructor() {}
-    setToken(token) {
-        savedToken = token;
+  constructor() {}
+  setToken(token) {
+    savedToken = token;
+  }
+  getToken() {
+    if (savedToken == null) {
+      let cookie = document.cookie.split("; ");
+      savedToken = cookie[0].split("=")[1];
     }
-    getToken() {
-        if (savedToken == null) {
-            let cookie = document.cookie.split('; ');
-            savedToken = cookie[0].split('=')[1];  
-        }
-        return savedToken;
-    }
+    return savedToken;
+  }
 
-    setID(id) {
-        savedId = id;
+  setID(id) {
+    savedId = id;
+  }
+  getID() {
+    if (savedId == null) {
+      let cookie = document.cookie.split("; ");
+      savedId = cookie[1].split("=")[1];
     }
-    getID() {
-        if (savedId == null) {
-            let cookie = document.cookie.split('; ');
-            savedId = cookie[1].split('=')[1];
-        }
-        return savedId;
-    }
+    return savedId;
+  }
 }
 
 const instance = new AuthService();
