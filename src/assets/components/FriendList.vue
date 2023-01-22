@@ -96,8 +96,7 @@ export default {
     <section v-if="option ==='list'" class="list-panel">
         <Friend v-for="friend in friends" :key="friend.id" :id="friend.id" :username="friend.username" :image="friend.image" />
     </section>
-    <!-- NOTE: if there are no friends requests the section won't be displayed -->
-    <section v-if="option ==='request_list'" class="list_panel">
+    <section v-if="option ==='request_list'" class="list-panel">
         <FriendRequest v-for="friend_request in friends_request" 
             :key="friend_request.id" :id="friend_request.id" 
             :username="friend_request.username"
