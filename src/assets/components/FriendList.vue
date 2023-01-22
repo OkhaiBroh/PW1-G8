@@ -72,7 +72,7 @@ export default {
                 username: element.name,
                 image: element.image
             }
-            
+            console.log(user);
             if (user.image == null) {
                 user.image = "../assets/icons/ico_profile_default.svg";
             }

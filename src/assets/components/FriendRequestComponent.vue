@@ -38,7 +38,7 @@ export default {
                 }
             }).then(response => response.json())
             .then(result => {
-               alert("Friend added");
+               alert("Friend request rejected");
                this.$emit('update');
             })
             .catch(error => console.error(error));
