@@ -372,7 +372,14 @@ border-radius: 15px;
 display: flex;
 justify-content: space-evenly;
 margin-top: 50px;
+
+flex-wrap: wrap;
+overflow: hidden;
+flex-direction: column;
+overflow-x: scroll;
+height: 300px;
 }
+
 
 .event-container {
 display: flex;

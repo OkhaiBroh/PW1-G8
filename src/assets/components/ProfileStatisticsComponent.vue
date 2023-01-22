@@ -22,9 +22,21 @@ export default {
         .then(response => response.json())
         .then(data => {
             data.forEach(element => {
+                console.log('avg score: ' + element.avg_score); 
+
                 this.average_score = element.avg_score;
                 this.num_comments = element.num_comments;
                 this.percentage_comments = element.percentage_commenters_below;
+
+                if (element.avg_score == null) {
+                    this.average_score = 0;   
+                } 
+                if (element.num_comments == null) {
+                    this.num_comments = 0;   
+                } 
+                if (element.percentage_commenters_below == null) {
+                    this.percentage_comments = 0;   
+                }
             });
         })
         .catch(error => console.error(error))

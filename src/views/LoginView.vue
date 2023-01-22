@@ -29,7 +29,7 @@
             <label class="label-input" for="password"> Password </label>
           </div>
         </div>
-        <RouterLink v-on:click.prevent="Login()" class="link-button" to="/events"> Login </RouterLink>
+        <button v-on:click.prevent="Login()" to="/events"> Login </button>
         <RouterLink class="link-text" to="/register-account"> Not registered? Register </RouterLink>
       </div>
     </div>
@@ -73,13 +73,14 @@ export default {
             });
             document.cookie = "id=" + AuthService.getID();
             let prueba = AuthService.getID();
+            console.log('ID: ' + prueba);
           })
       },
 
       Login() {
 
           let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
-          
+
           let data = {
             email: this.email,
             password: this.password
@@ -97,12 +98,16 @@ export default {
           .then(result => {
             AuthService.setToken(result.accessToken);
 
-            let prueba = AuthService.getToken();
+            let token = AuthService.getToken();
+            console.log(token);
 
             let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
             this.GetUserID(getIdURL);
 
             document.cookie = "token=" + AuthService.getToken();
+
+            if (token != null) this.$router.push('/events')
+            else alert ('Email or Password wrong!');
           })
       }
   }
