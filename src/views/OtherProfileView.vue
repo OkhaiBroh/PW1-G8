@@ -1,3 +1,16 @@
+<script>
+
+export default {
+  data() {
+    return {
+      // Con esto puedes saber el id del usuario
+      profileId:this.$route.params.id
+    }
+  },
+}
+</script>
+
+
 <template>
   <main class="general-container">
     <section class="profile-section panel">
@@ -10,7 +23,7 @@
       <button class="send-request-btn">Send Request</button>
     </section>
     <section class="data-section panel">
-      <p class="personal-data-title title">Personal Data</p>
+      <p class="personal-data-title title"></p>
       <div class="user-data">
         <div class="user-name-lastname">
           <div class="user-name input">

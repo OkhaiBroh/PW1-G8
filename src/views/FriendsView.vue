@@ -1,9 +1,12 @@
 <script>
 import FriendRequest from "./../assets/components/FriendRequestComponent.vue";
 import Friend from "./../assets/components/FriendComponent.vue";
+import AuthService from "./../assets/js/AuthService.js";
 export default{
   data () {
     return {
+      token: AuthService.getToken(),
+      userID: AuthService.getID(),
       friends: [
         { id: 1, username: "Tomas" },
         { id: 2, username: "Arnau" },
@@ -34,6 +37,28 @@ export default{
       document.getElementById("request_list").style.backgroundColor = "var(--white_color)";
       document.getElementById("request_list").style.color = "var(--black_color)";
 
+      // API
+      let url = "http://puigmal.salle.url.edu/api/v2/users";
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.token
+        }
+      }).then(response => response.json())
+      .then(result => {
+        result.forEach(element => { 
+          let user = {
+            id: element.id,
+            username: element.name
+          }
+          this.friends.push(user);
+          
+        });
+      })
+      .catch(error => console.error(error));
+
+
     },
     toRequestList: function(){
       this.option = "request_list";
@@ -42,6 +67,20 @@ export default{
 
       document.getElementById("list").style.backgroundColor = "var(--white_color)";
       document.getElementById("list").style.color = "var(--black_color)";
+
+      // API 
+      let url = "http://puigmal.salle.url.edu/api/v2/friends/requests";
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.token
+        }
+      }).then(response => response.json())
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => console.error(error))
     }
   }
   
@@ -69,7 +108,7 @@ export default{
 
     <!-- List of friends-->
     <section v-if="option ==='list'" class="list_panel">
-        <Friend v-for="friend in friends" :key="friend.id" :username="friend.username" />
+        <Friend v-for="friend in friends" :key="friend.id" :id="friend.id" :username="friend.username" />
     </section>
     <section v-if="option ==='request_list'" class="list_panel">
         <FriendRequest v-for="friend_request in friends_request" :key="friend_request.id" :username="friend_request.username" />
