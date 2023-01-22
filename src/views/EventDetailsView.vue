@@ -1,16 +1,223 @@
+<script>
+
+import Comment from './Comment.vue'
+import AuthService from '../assets/js/AuthService.js'
+
+export default {
+  data() {
+    return {
+      userID: AuthService.getID(),
+      token: AuthService.getToken(),
+      comments: [
+        { id: 1, username: 'David', text: 'FJAL' },
+        { id: 2, username: 'Tomas', text: 'fajdfafa' },
+        { id: 3, username: 'Arnau', text: 'baojdafouia' },
+      ],
+      name: "La Fiestita",
+      description: "Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga. descripcion muy larga.Una descripcion muy larga.",
+      location:"Unknown",
+      date: "Unknown",
+      user_rating: 0,
+      user_comment: '',
+      new_comment: ''
+    }
+  },
+  components: {
+    Comment
+  },
+  methods: {
+    async checkAssistance () {
+      let id = 1295;
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances/" + this.userID;
+      const response = await fetch(url, {
+        method: 'GET', 
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.token
+        }
+      });
+      return response.json();
+
+    },
+    getComments() {
+      // Clear the array of comments
+      this.comments.length = 0;
+      let comment;
+      let id = 1295;
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.token
+      }
+      }).then(response => response.json()) 
+      .then(data  =>{
+          console.log(data);
+          data.forEach(assistance =>{
+          if (assistance.comentary != null) {
+              comment = {
+                id : assistance.id,
+                username: assistance.name + " " + assistance.last_name,
+                text: assistance.comentary
+              }
+              this.comments.push(comment);
+          } 
+          })
+      }).catch(error => console.error(error))
+    }, 
+    
+    updateStars(rating) {
+      let s; 
+ 
+      for (let i = 1; i <= 5; i++) {
+        s = "star_" + i;
+
+        if ( i <= rating) 
+        document.getElementById(s).src = "/src/assets/icons/ico_star_full.svg"; 
+        else
+        document.getElementById(s).src = "/src/assets/icons/ico_star_empty.svg";
+      }
+    },
+
+    rateEvent(rating) {
+      this.updateStars(rating);
+
+      let id = 1295;
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+      let assistance = {
+        puntuation: rating*2,
+      };
+      console.log(JSON.stringify(assistance));
+      fetch(url, {
+        method: 'PUT',
+        headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(assistance),
+
+      }).then(response => response.json()
+      ).then(data => console.log(data)
+      ).catch(error => console.error(error))
+
+    }, 
+    joinEvent() {
+      this.checkAssistance().then(assistance => {
+        console.log("MY ASSISTANCE");
+        console.log("hola" +assistance);
+      if(assistance.length != 0){
+        alert("You are already in this event");
+        return;
+      } else {
+          let id = 1295;
+          let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+
+          
+          fetch(url, {
+          method: 'POST', 
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + this.token
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        
+        }).then(response => response.json()
+        ).then(data => console.log(data)
+        ).catch(error => console.error(error))
+
+
+      }
+      }).catch(error => console.error(error))
+
+      
+    
+    }, 
+    postComment() {
+       console.log(this.new_comment);
+
+      let id = 1295;
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+      let assistance = {
+        comentary: this.new_comment,
+      }
+      fetch(url, {
+        method: 'PUT',
+        headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(assistance),
+
+      }).then(response => response.json()
+      ).then(data => {
+        console.log('My data' + data);
+        getComments();
+      }
+      ).catch(error => console.error(error))
+
+    }
+  }, 
+
+  
+
+  mounted: function () {
+    
+  
+    
+    this.checkAssistance().then(assistance => {
+      if(assistance.length != 0){
+        if (assistance[0].puntuation != null) {
+          console.log(assistance[0].puntuation);
+          this.updateStars(assistance[0].puntuation / 2);
+        } else {
+          this.updateStars(0);
+        } 
+        this.user_rating = assistance[0].puntuation;
+        this.user_comments = assistance[0].comentary;
+      }
+    }).catch(error => console.error(error))
+
+    let name, fecha;
+    let evento;
+    let id = 1295;
+    const headers = new Headers();
+    headers.append("Authorization", "Bearer " + this.token);
+    fetch('http://puigmal.salle.url.edu/api/v2/events/' + id, { headers })
+    .then(response => response.json()) 
+    .then(data => data.forEach(event =>{
+        evento = event;
+        console.log(evento);
+        this.description = evento.description;
+        this.location = evento.location;
+        // Format date
+        this.name = evento.name;
+        this.date = evento.eventStart_date.substring(0, evento.eventStart_date.indexOf('T')).replaceAll("-", "/");
+        this.date += " - " + evento.eventEnd_date.substring(0, evento.eventEnd_date.indexOf('T')).replaceAll("-", "/")
+        document.getElementById("event-image").src = evento.image;
+
+       
+    })).catch(error => console.error(error))
+
+  // 
+    this.getComments();
+    
+  } 
+}
+</script>
+
+
 <template>
   <main class="background">
     <section class="panel">
       <div class="event-details">
         <div class="name-container">
-          <b class="event-name">La Fiestita</b>
+          <b class="event-name"> {{ name }}</b>
         </div>
         <div class="event-description">
-          Una descripcion muy larga.Una descripcion muy larga.Una descripcion
-          muy larga.Una descripcion muy larga.Una descripcion muy larga.Una
-          descripcion muy larga.Una descripcion muy larga.Una descripcion muy
-          larga.Una descripcion muy larga.Una descripcion muy larga. descripcion
-          muy larga.Una descripcion muy larga.
+          <p> {{description}} </p>
         </div>
         <div class="extra-info">
           <div class="location-info">
@@ -19,7 +226,7 @@
               src="../assets/icons/ico_location.svg"
               alt=""
             />
-            <p>Barcelona</p>
+            <p> {{location}} </p>
           </div>
           <div class="date-info">
             <img
@@ -27,7 +234,7 @@
               src="../assets/icons/ico_calendar.svg"
               alt=""
             />
-            <p>1/10/2022 - 5/10/2022</p>
+            <p> {{date}} </p>
           </div>
         </div>
 
@@ -56,11 +263,12 @@
       </div>
       <div class="right-container">
         <img
+          id="event-image"
           class="ico-event"
           src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
           alt=""
         />
-        <div class="join-button">
+        <div class="join-button" v-on:click="joinEvent()">
           <b>Join the event</b>
           <img class="share-ico" src="../assets/icons/ico_plus.svg" />
         </div>
@@ -73,11 +281,11 @@
       </div>
 
       <div class="rating-div">
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
-        <img class="ico-star" src="../assets/icons/ico_star_empty.svg" />
+        <img id="star_1" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(1)" />
+        <img id="star_2" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(2)" />
+        <img id="star_3" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(3)" />
+        <img id="star_4" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(4)" />
+        <img id="star_5" class="ico-star" src="../assets/icons/ico_star_empty.svg" v-on:click="rateEvent(5)" />
       </div>
     </section>
 
@@ -86,44 +294,24 @@
         <b>Comments</b>
       </div>
       <!-- Comment-->
-      <article class="comment-article">
-        <img class="ico-user" src="../assets/icons/ico_profile_default.svg" />
-        <div class="comment-info">
-          <div class="comment-user-name">
-            <b>Tomas Uzucudn</b>
-          </div>
-          <div class="comment-text">
-            mucho pero mucho texto :) mucho pero mucho texto :) mucho pero mucho
-            texto :) mucho pero mucho texto :) mucho pero mucho texto :) mucho
-            pero mucho texto :) mucho pero mucho texto :) mucho pero mucho texto
-            :)
-          </div>
-        </div>
-      </article>
+      
+      <ul>
+        <Comment v-for="comment in comments" :key="comment.id" :username="comment.username" :text="comment.text" />
+      </ul>
+      
 
-      <article class="comment-article">
-        <img class="ico-user" src="../assets/icons/ico_profile_default.svg" />
-        <div class="comment-info">
-          <div class="comment-user-name">
-            <b>Arnau Ros</b>
-          </div>
-          <div class="comment-text">
-            mucho pero mucho texto :) mucho pero mucho texto :) mucho pero mucho
-            texto :) mucho pero mucho texto :) mucho pero mucho texto :) mucho
-            pero mucho texto :) mucho pero mucho texto :) mucho pero mucho texto
-            :)
-          </div>
-        </div>
-      </article>
 
       <form method="" class="comment-bar">
         <input
+          v-model="this.new_comment"
           class="comment-input"
           name="message-query"
           placeholder="Message..."
           type="text"
+         
         />
-        <button class="send_button"></button>
+        
+        <img class="send_button" v-on:click="postComment()">
       </form>
     </section>
   </main>
@@ -180,6 +368,9 @@
 
 .event-details {
   margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .event-description {
   text-align: justify;
@@ -187,10 +378,10 @@
 }
 
 .extra-info {
-  align-self: flex-end;
+  
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 30px;
 }
 
@@ -274,6 +465,7 @@
   padding-left: 50px;
   padding-right: 50px;
   align-items: center;
+  margin-top: 20px;
 }
 .right-container {
   height: 100%;
@@ -419,3 +611,6 @@
   }
 }
 </style>
+
+
+
