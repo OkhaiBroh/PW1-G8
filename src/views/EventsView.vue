@@ -68,63 +68,8 @@ export default {
     align-items: center;
   }
 
-  .title {
-    font-size: 25px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
 
-  .buttons-selecter {
-    width: 100%;
-    flex-direction: row;
-  }
-
-  .opt-but {
-    /*height: 40px;
-    width: 120px;*/
-    margin-bottom: 20px;
-  }
-
-  .buttons-selecter {
-    height: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .top-buttons,
-  .bottom-buttons {
-    height: 100%;
-    align-items: center;
-  }
-
-  .upper-searcher-section {
-    flex-direction: column;
-  }
-
-  .search-input {
-    height: 30px;
-    width: 220px;
-  }
-
-  .search-bar {
-    margin-bottom: 20px;
-  }
-
-  .create-btn {
-    height: 30px;
-    width: auto;
-    margin: 0 0 20px 0;
-    padding: 10px;
-  }
-
-  .events-panel {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .event-container {
+  .searcher-section {
     margin-bottom: 20px;
   }
 }

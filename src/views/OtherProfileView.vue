@@ -1,33 +1,89 @@
+<script>
+import AuthService from '../assets/js/AuthService.js';
+
+export default {
+  data() {
+    return {
+      // Con esto puedes saber el id del usuario
+      profileId: this.$route.params.id,
+    }
+  },
+  mounted() {
+    let url = "http://puigmal.salle.url.edu/api/v2/users/" + this.profileId;
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        "Authorization": "Bearer " + AuthService.getToken()
+      },
+    })
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(element => {
+        document.getElementById('name').value = element.name;
+        document.getElementById('lastname').value = element.last_name;
+        document.getElementById('email').value = element.email;
+        document.getElementById('img').src = element.image;
+      });
+    })
+    .catch(error => console.error(error))
+  },
+  methods: {
+    sendFriendRequest() {
+      let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.profileId;
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          "Authorization": "Bearer " + AuthService.getToken()
+        },
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        alert('Friend Request has been sent corretly!')
+      })
+      .catch(error => {
+        console.error(error)
+        alert('An error has occurred while sending a friend request!')
+      })
+    }
+  }
+}
+</script>
+
 <template>
   <main class="general-container">
     <section class="profile-section panel">
       <p class="profile-title title">Profile</p>
       <img
+        id="img"
         class="ppic"
-        src="../assets/icons/ico_profile_default.svg"
         alt="profile pic"
       />
-      <button class="send-request-btn">Send Request</button>
+      <button class="send-request-btn" v-on:click="sendFriendRequest">Send Request</button>
     </section>
     <section class="data-section panel">
-      <p class="personal-data-title title">Personal Data</p>
+      <p class="personal-data-title title"></p>
       <div class="user-data">
         <div class="user-name-lastname">
           <div class="user-name input">
             <p class="camp-title-text">Name</p>
             <input
+              id="name"
               class="camp-content-text"
               type="text"
-              value="Tomas"
               readonly="readonly"
             />
           </div>
           <div class="user-lastname input">
             <p class="camp-title-text">Lastname</p>
             <input
+              id="lastname"
               class="camp-content-text"
               type="text"
-              value="Uzcudun"
               readonly="readonly"
             />
           </div>
@@ -35,9 +91,9 @@
         <div class="user-email input">
           <p class="camp-title-text">Email</p>
           <input
+            id="email"
             class="email-camp camp-content-text"
             type="text"
-            value="tomas.uzcudun@students.salle.url.edu"
             readonly="readonly"
           />
         </div>
@@ -91,7 +147,7 @@
 .ppic {
   width: 165px;
   height: 165px;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .send-request-btn {

@@ -1,19 +1,20 @@
 <script>
 
-import Comment from './Comment.vue'
+
+import Comment from '../assets/components/Comment.vue'
 import AuthService from '../assets/js/AuthService.js'
 
 export default {
   data() {
     return {
+
+      eventID: this.$route.params.id,
       userID: AuthService.getID(),
       token: AuthService.getToken(),
-      comments: [
-        { id: 1, username: 'David', text: 'FJAL' },
-        { id: 2, username: 'Tomas', text: 'fajdfafa' },
-        { id: 3, username: 'Arnau', text: 'baojdafouia' },
-      ],
+      
+      comments: [],
       name: "La Fiestita",
+      image: "https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg'",
       description: "Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga.Una descripcion muy larga. descripcion muy larga.Una descripcion muy larga.",
       location:"Unknown",
       date: "Unknown",
@@ -27,8 +28,8 @@ export default {
   },
   methods: {
     async checkAssistance () {
-      let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances/" + this.userID;
+    
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances/" + this.userID;
       const response = await fetch(url, {
         method: 'GET', 
         headers: {
@@ -43,8 +44,8 @@ export default {
       // Clear the array of comments
       this.comments.length = 0;
       let comment;
-      let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+
+      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
       fetch(url, {
         method: 'GET',
         headers: {
@@ -59,7 +60,8 @@ export default {
               comment = {
                 id : assistance.id,
                 username: assistance.name + " " + assistance.last_name,
-                text: assistance.comentary
+                text: assistance.comentary,
+
               }
               this.comments.push(comment);
           } 
@@ -81,38 +83,43 @@ export default {
     },
 
     rateEvent(rating) {
-      this.updateStars(rating);
 
-      let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
-      let assistance = {
-        puntuation: rating*2,
-      };
-      console.log(JSON.stringify(assistance));
-      fetch(url, {
-        method: 'PUT',
-        headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.token
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify(assistance),
+      this.checkAssistance().then(assistance => {
+        
+      if(assistance.length == 0){
+        alert("You cannot rate if you are not in the event");
+        return;
+      } else {
+        this.updateStars(rating);
 
-      }).then(response => response.json()
-      ).then(data => console.log(data)
-      ).catch(error => console.error(error))
+        let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
+        let assistance = {
+          puntuation: rating*2,
+        };
+        console.log(JSON.stringify(assistance));
+        fetch(url, {
+          method: 'PUT',
+          headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.token
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify(assistance),
 
+          }).then(response => response.json()
+          ).then(data => console.log(data))
+      }
+      }).catch(error => console.error(error))
     }, 
     joinEvent() {
       this.checkAssistance().then(assistance => {
-        console.log("MY ASSISTANCE");
-        console.log("hola" +assistance);
+        
       if(assistance.length != 0){
         alert("You are already in this event");
         return;
       } else {
-          let id = 1295;
-          let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
+
+          let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
 
           
           fetch(url, {
@@ -135,34 +142,50 @@ export default {
     
     }, 
     postComment() {
-       console.log(this.new_comment);
 
-      let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + id + "/assistances";
-      let assistance = {
-        comentary: this.new_comment,
+      this.checkAssistance().then(assistance => {
+        
+      if(assistance.length == 0){
+        alert("You cannot comment if you are not in this event");
+        return;
+      } else {
+        let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
+        let assistance = {
+          comentary: this.new_comment,
+        }
+          fetch(url, {
+            method: 'PUT',
+            headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + this.token
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(assistance),
+
+          }).then(response => response.json()
+          ).then(data => {
+            this.getComments();
+          }
+          ).catch(error => {
+            this.getComments();
+          })
+
       }
-      fetch(url, {
-        method: 'PUT',
-        headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.token
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify(assistance),
+      }).catch(error => console.error(error))
 
-      }).then(response => response.json()
-      ).then(data => {
-        console.log('My data' + data);
-        getComments();
+    }, 
+
+    async copyLink() {
+      try {
+        await navigator.clipboard.writeText('http://127.0.0.1:5173' + window.location.pathname);
+        console.log('Link copied to clipboard');
+        console.log(window.location.pathname)
+      } catch (err) {
+        console.error('Failed to copy');
       }
-      ).catch(error => console.error(error))
-
     }
   }, 
-
   
-
   mounted: function () {
     
   
@@ -182,22 +205,24 @@ export default {
 
     let name, fecha;
     let evento;
-    let id = 1295;
+
     const headers = new Headers();
     headers.append("Authorization", "Bearer " + this.token);
-    fetch('http://puigmal.salle.url.edu/api/v2/events/' + id, { headers })
+    fetch('http://puigmal.salle.url.edu/api/v2/events/' + this.eventID, { headers })
     .then(response => response.json()) 
     .then(data => data.forEach(event =>{
+
+
         evento = event;
         console.log(evento);
         this.description = evento.description;
         this.location = evento.location;
+
+        this.image = evento.image;
         // Format date
         this.name = evento.name;
         this.date = evento.eventStart_date.substring(0, evento.eventStart_date.indexOf('T')).replaceAll("-", "/");
-        this.date += " - " + evento.eventEnd_date.substring(0, evento.eventEnd_date.indexOf('T')).replaceAll("-", "/")
-        document.getElementById("event-image").src = evento.image;
-
+        this.date += " - " + evento.eventEnd_date.substring(0, evento.eventEnd_date.indexOf('T')).replaceAll("-", "/");
        
     })).catch(error => console.error(error))
 
@@ -255,7 +280,7 @@ export default {
               alt=""
             />
           </a>
-          <div class="share-button">
+          <div class="share-button" v-on:click="copyLink()">
             <b class="button-text">Share</b>
             <img class="share-ico" src="../assets/icons/ico_share.svg" alt="" />
           </div>
@@ -265,7 +290,7 @@ export default {
         <img
           id="event-image"
           class="ico-event"
-          src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
+          :src=image onerror="this.src='https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg'"
           alt=""
         />
         <div class="join-button" v-on:click="joinEvent()">
@@ -401,6 +426,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 40px;
+  width: 500px;
 }
 
 .comment-button,
@@ -417,6 +443,7 @@ export default {
   color: var(--white_color);
   text-decoration: none;
   align-items: center;
+  
 }
 .share-ico {
   height: 31px;
@@ -528,7 +555,7 @@ export default {
     padding: 0;
   }
   .extra-info {
-    align-self: flex-end;
+    align-self: flex-center;
     display: flex;
 
     flex-direction: column;
@@ -546,6 +573,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    width: fit-content;
   }
   .comment-button,
   .rate-us-button,

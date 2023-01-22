@@ -74,10 +74,12 @@ export default {
               document.cookie = "id=" + AuthService.getID();
               let prueba = AuthService.getID();
               console.log('ID: ' + prueba); 
+
           })
       },
 
       Login() {
+
           let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
 
           let data = {
@@ -97,6 +99,7 @@ export default {
           .then(result => {
             AuthService.setToken(result.accessToken);
 
+
             let token = AuthService.getToken();
             console.log('token: ' + token);
 
@@ -108,6 +111,7 @@ export default {
               document.cookie = "token=" + AuthService.getToken();
               this.$router.push('/events')
             } 
+
           })
       }
   }
