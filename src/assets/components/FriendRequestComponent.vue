@@ -1,6 +1,14 @@
 <script>
 export default{
-    props: ["username"]
+    props: ["id", "username", "image"], 
+    methods: {
+        accept: function(){
+            console.log("accept");
+        },
+        reject: function(){
+            console.log("reject");
+        }
+    }
 }
 </script>
 
@@ -15,10 +23,10 @@ export default{
             <b> {{ username }} </b>
           </div>
           <div class="buttons">
-            <div class="accept-button">
+            <div class="accept-button" v-on:click="accept()">
               <img src="../icons/ico_tick.svg" class="ico-accept" />
             </div>
-            <div class="reject-button">
+            <div class="reject-button" v-on:click="reject()">
               <img src="../icons/ico_close.svg" class="ico-reject" />
             </div>
           </div>

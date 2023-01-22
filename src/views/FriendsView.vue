@@ -7,20 +7,8 @@ export default{
     return {
       token: AuthService.getToken(),
       userID: AuthService.getID(),
-      friends: [
-        { id: 1, username: "Tomas" },
-        { id: 2, username: "Arnau" },
-        { id: 3, username: "David" },
-      ],
-      friends_request: [
-        { id: 1, username: "Tomas" },
-        { id: 2, username: "Arnau" },
-         { id: 3, username: "Tomas" },
-        { id: 4, username: "Arnau" },
-         { id: 5, username: "Tomas" },
-        { id: 6, username: "Arnau" },
-        { id: 7, username: "David" }
-      ], 
+      friends: [],
+      friends_request: [], 
       option: "list"
     }
   },
@@ -30,6 +18,7 @@ export default{
   },
   methods: {
     toList: function(){
+      this.friends.length = 0;
       this.option = "list"
       document.getElementById("list").style.backgroundColor = "var(--blue_color)";
       document.getElementById("list").style.color = "var(--white_color)";
@@ -50,8 +39,14 @@ export default{
         result.forEach(element => { 
           let user = {
             id: element.id,
-            username: element.name
+            username: element.name,
+            image: element.image
           }
+          
+          if (user.image == null) {
+            user.image = "../icons/ico_profile_default.svg";
+          }
+          console.log(user);
           this.friends.push(user);
           
         });
@@ -61,6 +56,7 @@ export default{
 
     },
     toRequestList: function(){
+      this.friends_request.length = 0;
       this.option = "request_list";
       document.getElementById("request_list").style.backgroundColor = "var(--blue_color)";
       document.getElementById("request_list").style.color = "var(--white_color)";
@@ -78,10 +74,25 @@ export default{
         }
       }).then(response => response.json())
       .then(result => {
-        console.log(result);
+        result.forEach(element => { 
+          let user = {
+            id: element.id,
+            username: element.name,
+            image: element.image
+          }
+          
+          if (user.image == null) {
+            user.image = "../assets/icons/ico_profile_default.svg";
+          }
+          this.friends_request.push(user);
+          
+        });
       })
       .catch(error => console.error(error))
     }
+  },
+  mounted() {
+    this.toList();
   }
   
 }
@@ -108,10 +119,10 @@ export default{
 
     <!-- List of friends-->
     <section v-if="option ==='list'" class="list_panel">
-        <Friend v-for="friend in friends" :key="friend.id" :id="friend.id" :username="friend.username" />
+        <Friend v-for="friend in friends" :key="friend.id" :id="friend.id" :username="friend.username" :image="friend.image" />
     </section>
     <section v-if="option ==='request_list'" class="list_panel">
-        <FriendRequest v-for="friend_request in friends_request" :key="friend_request.id" :username="friend_request.username" />
+        <FriendRequest v-for="friend_request in friends_request" :key="friend_request.id" :id="friend_request.id" :username="friend_request.username" :image="friend_request.image" />
     </section>
   </main>
 </template>
@@ -175,6 +186,7 @@ export default{
 
   overflow: hidden;
   overflow-y: scroll;
+  width: 1000px;
   height: 700px;
 }
 .ico {

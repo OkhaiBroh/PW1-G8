@@ -1,7 +1,9 @@
 <script>
 
-export default{
-    props: ["id", "username"]
+export default {
+  
+  props: ["id", "username", "image"]
+  
 }
 </script>
 
@@ -14,7 +16,7 @@ export default{
           <div class="friend_text">
             <b> {{ username }} </b>
           </div>
-        </RouterLink>    
+    </RouterLink>    
 </template>
 
 <style scoped>
@@ -35,7 +37,7 @@ export default{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+
     text-decoration: none;
     color: var(--black_color);
 
