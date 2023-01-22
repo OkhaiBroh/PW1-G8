@@ -1,12 +1,12 @@
 <script>
 import FriendButton from './FriendButton.vue'
 import ChatBox from './ChatBox.vue'
-//import AuthService from '../assets/js/AuthService.js'
+import AuthService from '../assets/js/AuthService.js'
 export default {
     data(){
         return{
-            userID: 9/*AuthService.getID()*/,
-            token: "ksksksksksk"/*AuthService.getToken()*/,
+            userID: AuthService.getID(),
+            token: AuthService.getToken(),
             friends:[
                 {id: 1, friendname: "Arnau Ros"},
                 {id: 2, friendname: "David Deu"},

@@ -1,6 +1,32 @@
 <script>
+import AuthService from '../assets/js/AuthService.js'
     export default {
         name: "FriendButton",
+        data(){
+            return{
+                userID: AuthService.getID(),
+                token: AuthService.getToken(),
+                friends:[
+                    {id: 1, friendname: "Arnau Ros"},
+                    {id: 2, friendname: "David Deu"},
+                    {id: 3, friendname: "Tomas Uzcudun"},
+                ],
+                messages:[
+                    {   id: 1,
+                        content: "Hey",
+                        userIDSend: 9,
+                        userIDRecived: 1,
+                        timeStamp: "2022-02-06T06:43:00.000Z"
+                    },
+                    {   id: 2,
+                        content: "Holas",
+                        userIDSend: 1,
+                        userIDRecived: 9,
+                        timeStamp: "2022-02-06T06:43:10.000Z"
+                    },
+                ],
+            }    
+        },
         props: {
             friendname: String
         },

@@ -1,11 +1,11 @@
 <script>
-//import AuthService from '../assets/js/AuthService.js'
+import AuthService from '../assets/js/AuthService.js'
     export default {
         name: "ChatBox",
         data(){
             return{
-                userID: 9/*AuthService.getID()*/,
-                token: "ksksksksksk"/*AuthService.getToken()*/,
+                userID: AuthService.getID(),
+                token: AuthService.getToken(),
                 friendName:""
             }   
         },
