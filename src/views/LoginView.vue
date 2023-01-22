@@ -101,7 +101,7 @@ export default {
             let token = AuthService.getToken();
             console.log('token: ' + token);
 
-            if (typeof token === null || token === 'undefined') {
+            if (typeof token === null || typeof token === 'undefined') {
               alert ('Email or Password wrong!');
             } else {
               let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
@@ -115,7 +115,6 @@ export default {
   }, 
   mounted() {
     if (AuthService.getToken() != null) {
-      console.log("DIOS")
       this.$router.push('/events')
     }
   }
