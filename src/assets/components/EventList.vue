@@ -3,6 +3,12 @@ import events from '../js/events.js'
 
 export default {
   extends: events,
+
+  methods: {
+    sortList() {
+      this.search("http://puigmal.salle.url.edu/api/v2/events/best")
+    }
+  }
 }
 </script>
 
@@ -10,7 +16,9 @@ export default {
     <div class="upper-section">
         <div class="sorter">
             <img class="ico" src="../icons/rating_sort_ico.svg" alt="calendar ico"/>
-            <p class="text"> SORT BY RATING </p>
+
+            <button class="text" v-on:click="sortList()"> SORT BY RATING </button>
+
         </div>
         <RouterLink class="create-btn" to="/create-event-1">
           Create
@@ -52,6 +60,11 @@ export default {
 .text {
     font-size: 20px;
     font-weight: bold;
+    background: none;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
 }
 
 .text:hover {
@@ -114,5 +127,44 @@ export default {
 .events-panel::-webkit-scrollbar-thumb:hover {
   background: var(--blue_color);
 }
+
+@media (max-width: 1000px) {
+    .upper-section {
+      padding: 0;
+      flex-direction: column-reverse;
+    }
+
+    .create-btn {
+      height: 30px;
+      width: auto;
+      margin: 20px 0 20px 0;
+      padding: 5px;
+    }
+
+    .events-panel {
+      max-width: 80%;
+      height: 330px;
+      margin: 0;
+      padding: 0;
+
+      overflow: auto;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: column;
+      margin-left: 25px;
+    }
+
+    .text {
+      width: fit-content;
+      padding: 0;
+    }
+
+    .events-panel::-webkit-scrollbar {
+      margin-top: 10px;
+    }
+}
+
 
 </style>

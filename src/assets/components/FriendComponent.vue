@@ -1,20 +1,28 @@
 <script>
 
 export default {
-    props: ["id", "username"]
+
+  
+  props: ["id", "username", "image"]
+  
+
+
 }
 </script>
 
 <template>
-    <RouterLink class="friend_div" :to="{ name:'other profile', params: {id:id} }">
+
+    <RouterLink class="friend_div" :to="{name:'other profile', params: {id:id} }">
+
           <img
-            src="../icons/ico_profile_default.svg"
+            :src=image onerror="this.src='src/assets/icons/ico_profile_default.svg'"
             class="friend_ico"
           />
           <div class="friend_text">
             <b> {{ username }} </b>
           </div>
-        </RouterLink>    
+    </RouterLink>    
+
 </template>
 
 <style scoped>
@@ -35,9 +43,10 @@ export default {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+
     text-decoration: none;
     color: var(--black_color);
+
 
     box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.08);
     }

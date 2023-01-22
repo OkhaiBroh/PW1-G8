@@ -6,7 +6,11 @@ export default {
 </script>
 
 <template>
+
     <RouterLink class="event-container box-shadow" :to=" { name: 'events details', params: {id:id} }">
+
+    <div class="event-container box-shadow">
+
         <img id="id" class="event-image" :src=image onerror="this.src='https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg';" alt=""/>
         <div class="info-container">
             <p class="timeline-title-text"> {{ this.name }} </p>
@@ -19,6 +23,7 @@ export default {
             <img class="ico" src="../icons/ico_calendar.svg" alt="calendar ico"/>
             <p class="timeline-info-text"> {{ this.date }} </p>
         </div>
+
     </RouterLink>  
 </template>
 
