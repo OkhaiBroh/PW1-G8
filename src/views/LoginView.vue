@@ -79,7 +79,6 @@ export default {
       },
 
       Login() {
-
           let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
 
           let data = {
@@ -98,7 +97,6 @@ export default {
           .catch(error => console.error(error))
           .then(result => {
             AuthService.setToken(result.accessToken);
-
 
             let token = AuthService.getToken();
             console.log('token: ' + token);

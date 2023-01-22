@@ -62,6 +62,7 @@ export default {
         id="img"
         class="ppic"
         alt="profile pic"
+        src="../assets/icons/ico_profile_default.svg"
       />
       <button class="send-request-btn" v-on:click="sendFriendRequest">Send Request</button>
     </section>
