@@ -164,9 +164,9 @@ export default {
 
     async copyLink() {
       try {
-        await navigator.clipboard.writeText(this.$router.currentRoute.fullPath);
+        await navigator.clipboard.writeText('http://127.0.0.1:5173' + window.location.pathname);
         console.log('Link copied to clipboard');
-        console.log(this.$router.currentRoute.fullPath)
+        console.log(this.$route.fullPath)
       } catch (err) {
         console.error('Failed to copy');
       }
