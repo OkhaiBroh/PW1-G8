@@ -1,0 +1,453 @@
+.margin-right {
+margin-right: 10px;
+}
+
+button {
+width: 100%;
+}
+
+.round-button-arrow {
+display: flex;
+align-items: center;
+}
+
+.rounded-button {
+width: 75px;
+height: 75px;
+
+border-radius: 100%;
+
+margin: 0;
+padding: 0;
+
+align-items: center;
+display: flex;
+justify-content: center;
+}
+
+/*****************************************
+    *               Background               *
+    ******************************************/
+
+.div-container {
+padding: 50px 300px 50px 300px;
+}
+
+/*****************************************
+    *             Profile Section            *
+    ******************************************/
+
+.profile-data {
+display: flex;
+justify-content: space-between;
+
+margin-top: 50px;
+}
+
+/*****************************************
+    *               Profile Box              *
+    ******************************************/
+
+.profile {
+display: flex;
+flex-direction: column;
+align-items: center;
+
+border-radius: 20px;
+
+background-color: white;
+
+margin-right: 25px;
+padding: 45px;
+}
+
+.box-shadow {
+box-shadow: 0px 30px 80px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-text {
+font-size: 30px;
+font-weight: 700;
+}
+
+.center-text {
+text-align: center;
+}
+
+.profile-image {
+width: 200px;
+height: 200px;
+
+object-fit: cover;
+
+margin: 25px 0 25px 0;
+}
+
+.log-out-button {
+font-weight: 700;
+background-color: var(--orange_color);
+margin: 0;
+}
+
+.del-acc-button {
+font-weight: 700;
+background-color: var(--red_color);
+margin: 25px 0 0 0;
+}
+
+.del-acc-button:hover {
+background-color: var(--selected_red_color);
+}
+
+.log-out-button:hover {
+background-color: var(--selected_orange_color);
+}
+
+/*****************************************
+    *            Personal Data Box           *
+    ******************************************/
+
+.personal-data {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+border-radius: 20px;
+
+background-color: white;
+
+margin-left: 25px;
+padding: 45px 65px 45px 65px;
+
+flex: 1;
+}
+
+.name-lastname-container {
+display: flex;
+justify-content: space-between;
+}
+
+.input-text {
+font-size: 15px;
+font-weight: 700;
+
+margin-left: 20px;
+}
+
+.email-input {
+outline: none;
+border: 3px solid black;
+border-radius: 25px;
+height: 35px;
+
+margin-top: 10px;
+padding-left: 15px;
+}
+
+.input {
+outline: none;
+border: 3px solid black;
+border-radius: 25px;
+width: 200px;
+height: 35px;
+
+margin-top: 10px;
+padding-left: 15px;
+}
+
+.input-margin {
+margin-right: 25px;
+}
+
+.container {
+display: flex;
+flex-direction: column;
+}
+
+.email-container {
+display: flex;
+flex-direction: column;
+}
+
+.save-changes {
+font-weight: 700;
+margin: 0;
+width: fit-content;
+padding: 10px 25px 10px 25px;
+}
+
+.save-changes-container {
+display: flex;
+justify-content: center;
+}
+
+/*****************************************
+    *             Security Section           *
+    ******************************************/
+
+.margin-btn-password {
+margin-top: 50px;
+}
+
+/*****************************************
+    *           Statistics Section           *
+    ******************************************/
+
+.num-comm-text {
+font-size: 35px;
+font-weight: 700;
+margin: 50px;
+}
+
+.statistics-text {
+font-size: 15px;
+margin-bottom: 25px;
+max-width: 175px;
+text-align: center;
+font-weight: 700;
+}
+
+.statistics-block {
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+.graphs {
+display: flex;
+justify-content: space-evenly;
+flex-direction: row;
+
+margin-top: 50px;
+}
+
+.security-container,
+.statistics-container,
+.timeline-container {
+display: flex;
+flex-direction: column;
+
+border-radius: 20px;
+
+background-color: white;
+
+margin-top: 50px;
+padding: 50px;
+}
+
+.statistics,
+.timeline {
+margin-bottom: 50px;
+}
+
+.inputs-container {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+margin-top: 50px;
+}
+
+/*****************************************
+    *           Rounded Progress Bar         *
+    *           Average Event Score          *
+    ******************************************/
+
+.aes-progress-circle {
+position: absolute;
+
+width: 140px;
+height: 140px;
+
+fill: none;
+
+stroke: var(--blue_color);
+stroke-width: 20px;
+stroke-dasharray: 100;
+stroke-dashoffset: 100;
+
+animation: anim 2s linear forwards;
+}
+
+.bg-circle {
+position: absolute;
+
+width: 140px;
+height: 140px;
+
+fill: none;
+
+stroke: var(--dark_gray_color);
+stroke-width: 20px;
+stroke-dasharray: 472;
+}
+
+/* 
+        100 - 65 = 35
+
+        100 = maximo del progress
+        65 el porcetaje que quieres mostrar
+    */
+
+@keyframes anim {
+100% {
+    stroke-dashoffset: 35;
+}
+}
+
+.progress-container {
+width: 140px;
+height: 140px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.progress-text {
+font-size: 25px;
+font-weight: 700;
+}
+
+/*****************************************
+    *           Rounded Progress Bar         *
+    *           Users Lower Num Com          *
+    ******************************************/
+
+.ulnc-progress-circle {
+position: absolute;
+
+width: 140px;
+height: 140px;
+
+fill: none;
+
+stroke: var(--blue_color);
+stroke-width: 20px;
+stroke-dasharray: 100;
+stroke-dashoffset: 100;
+
+animation: anim2 2s linear forwards;
+}
+
+@keyframes anim2 {
+100% {
+    stroke-dashoffset: 55;
+}
+}
+
+/*****************************************
+    *             Timeline Section           *
+    ******************************************/
+
+.timeline-title-text {
+font-weight: 700;
+font-size: 20px;
+
+margin-top: 20px;
+}
+
+.timeline-info-text {
+font-size: 14px;
+}
+
+.ico {
+margin-right: 10px;
+}
+
+.info-container {
+display: flex;
+justify-content: center;
+flex-direction: row;
+
+margin-top: 10px;
+}
+
+.event-image {
+max-width: 175px;
+border-radius: 15px;
+}
+
+.events-container {
+display: flex;
+justify-content: space-evenly;
+margin-top: 50px;
+}
+
+.event-container {
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+
+padding: 35px;
+margin: 25px;
+
+border-radius: 25px;
+}
+
+@media (max-width: 1750px) {
+.div-container {
+    padding: 50px 100px 50px 100px;
+}
+}
+
+@media (max-width: 1200px) {
+.profile,
+.personal-data,
+.security,
+.statistics,
+.timeline {
+    flex-direction: column;
+    margin: 20px;
+}
+
+.profile-data,
+.name-lastname-container,
+.round-button-arrow {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div-container {
+    padding: 0;
+}
+
+.input {
+    width: auto;
+    margin-right: 0;
+}
+
+.title-text {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.container {
+    margin-bottom: 25px;
+}
+
+.email-container {
+    margin-bottom: 50px;
+}
+
+.save-changes {
+    width: 100%;
+}
+
+.inputs-container,
+.security-container,
+.graphs,
+.events-container {
+    margin: 0;
+    flex-direction: column;
+}
+
+.margin-btn-password {
+    margin-top: 25px;
+}
+
+.timeline-container {
+    padding: 25px;
+}
+}

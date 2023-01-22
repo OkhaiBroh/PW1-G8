@@ -1,19 +1,12 @@
 import { createApp, VueElement } from "vue";
 import App from "./App.vue";
 import router from "./router";
-//import {authService} from '../src/assets/js/AuthService.js'
+import AuthService from '../src/assets/js/AuthService.js'
 
 import "./assets/main.css";
 
-//authService.Login();
+VueElement.prototype.$authService = AuthService;
 
 const app = createApp(App);
 app.use(router);
 app.mount("#app");
-
-/*Vue.prototype.$token = new Token();
-
-new Vue({
-
-})*/
-

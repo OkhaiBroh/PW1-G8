@@ -194,8 +194,6 @@
 <script>
 import register from '../assets/js/register.js'
 
-//this.$authService.Login();
-
 export default {
   extends: register
 }
