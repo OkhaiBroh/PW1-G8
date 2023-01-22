@@ -125,4 +125,42 @@ export default {
   background: var(--blue_color);
 }
 
+@media (max-width: 1000px) {
+    .upper-section {
+      padding: 0;
+      flex-direction: column-reverse;
+    }
+
+    .create-btn {
+      height: 30px;
+      width: auto;
+      margin: 20px 0 20px 0;
+      padding: 5px;
+    }
+
+    .events-panel {
+      max-width: 80%;
+      height: 330px;
+      margin: 0;
+      padding: 0;
+
+      overflow: auto;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: column;
+      margin-left: 25px;
+    }
+
+    .text {
+      width: fit-content;
+      padding: 0;
+    }
+
+    .events-panel::-webkit-scrollbar {
+      margin-top: 10px;
+    }
+}
+
 </style>
