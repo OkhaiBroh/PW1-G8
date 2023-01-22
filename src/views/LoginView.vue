@@ -114,6 +114,12 @@ export default {
 
           })
       }
+  }, 
+  mounted() {
+    if (AuthService.getToken() != null) {
+      console.log("DIOS")
+      this.$router.push('/events')
+    }
   }
 }
 </script>

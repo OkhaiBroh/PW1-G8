@@ -99,6 +99,11 @@ export default {
             }
 
             console.log(document.cookie);
+            while (AuthService.getToken() != null){
+                AuthService.setToken(null);
+                console.log(AuthService.getToken());
+            }
+
             this.$router.push("/");
         },
         
