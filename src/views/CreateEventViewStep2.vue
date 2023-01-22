@@ -143,15 +143,14 @@ export default {
     margin-bottom: 20px;
   }
 
-  .event-image {
-    height: 146px;
-    width: 280px;
-  }
-
   .back-btn,
   .next-btn {
     margin: 10px 0 20px 0;
     width: 90px;
+  }
+
+  .event-image {
+    width: 88%;
   }
 }
 </style>

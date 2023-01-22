@@ -45,7 +45,7 @@
 <script>
 
 import AuthService from '/src/assets/js/AuthService.js'
-
+// TODO: hace el login aunque el usuario no exista
 export default {
   data() {
       return {
@@ -69,14 +69,17 @@ export default {
             result.forEach(element => {
               let elemento = element;
               AuthService.setID(elemento.id);
-            });
 
-            let prueba = AuthService.getID();
-            console.log('ID:' + prueba);
+              });
+              document.cookie = "id=" + AuthService.getID();
+              let prueba = AuthService.getID();
+              console.log('ID: ' + prueba); 
+
           })
       },
 
       Login() {
+
           let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
 
           let data = {
@@ -96,14 +99,19 @@ export default {
           .then(result => {
             AuthService.setToken(result.accessToken);
 
+
             let token = AuthService.getToken();
-            console.log(token);
+            console.log('token: ' + token);
 
-            let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
-            this.GetUserID(getIdURL);
+            if (typeof token === null || token === 'undefined') {
+              alert ('Email or Password wrong!');
+            } else {
+              let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
+              this.GetUserID(getIdURL);
+              document.cookie = "token=" + AuthService.getToken();
+              this.$router.push('/events')
+            } 
 
-            if (token != null) this.$router.push('/events')
-            else alert ('Email or Password wrong!');
           })
       }
   }

@@ -1,6 +1,49 @@
 <script>
-export default{
-    props: ["username"]
+      import AuthService from "../js/AuthService.js";
+
+export default {
+
+    data() {
+        return {
+            token: AuthService.getToken(),
+        }
+    },
+    props: ["id", "username", "image"], 
+    methods: {
+        accept: function(){
+            console.log("accept");
+             // API
+            let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.id;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.token
+                }
+            }).then(response => response.json())
+            .then(result => {
+               alert("Friend added");
+               this.$emit('update');
+            })
+            .catch(error => console.error(error));
+        },
+        reject: function(){
+            console.log("reject");
+            let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.id;
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.token
+                }
+            }).then(response => response.json())
+            .then(result => {
+               alert("Friend request rejected");
+               this.$emit('update');
+            })
+            .catch(error => console.error(error));
+        }
+    }
 }
 </script>
 
@@ -15,10 +58,10 @@ export default{
             <b> {{ username }} </b>
           </div>
           <div class="buttons">
-            <div class="accept-button">
+            <div class="accept-button" v-on:click="accept()">
               <img src="../icons/ico_tick.svg" class="ico-accept" />
             </div>
-            <div class="reject-button">
+            <div class="reject-button" v-on:click="reject()">
               <img src="../icons/ico_close.svg" class="ico-reject" />
             </div>
           </div>
