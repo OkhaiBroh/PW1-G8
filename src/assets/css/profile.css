@@ -254,32 +254,32 @@ margin-top: 50px;
     ******************************************/
 
 .aes-progress-circle {
-position: absolute;
+    position: absolute;
 
-width: 140px;
-height: 140px;
+    width: 140px;
+    height: 140px;
 
-fill: none;
+    fill: none;
 
-stroke: var(--blue_color);
-stroke-width: 20px;
-stroke-dasharray: 100;
-stroke-dashoffset: 100;
+    stroke: var(--blue_color);
+    stroke-width: 20px;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
 
-animation: anim 2s linear forwards;
+    animation: anim 2s linear forwards;
 }
 
 .bg-circle {
-position: absolute;
+    position: absolute;
 
-width: 140px;
-height: 140px;
+    width: 140px;
+    height: 140px;
 
-fill: none;
+    fill: none;
 
-stroke: var(--dark_gray_color);
-stroke-width: 20px;
-stroke-dasharray: 472;
+    stroke: var(--dark_gray_color);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
 }
 
 /* 
@@ -292,7 +292,7 @@ stroke-dasharray: 472;
 @keyframes anim {
 100% {
     stroke-dashoffset: 35;
-}
+    }
 }
 
 .progress-container {

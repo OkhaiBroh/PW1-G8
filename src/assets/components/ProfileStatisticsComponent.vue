@@ -48,7 +48,7 @@ export default {
                     pathLength="100"
                 ></circle>
                 </svg>
-                <svg class="aes-progress-circle">
+                <svg id="avg_score" class="aes-progress-circle">
                 <circle
                     cx="70"
                     cy="70"
