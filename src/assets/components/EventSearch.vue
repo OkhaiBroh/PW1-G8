@@ -22,6 +22,7 @@ export default {
 }
 </script>
 
+
 <template>
     <p class="sort-by-text title">Search By</p>
     <div class="input-group">
@@ -82,6 +83,7 @@ export default {
         margin-left: 10px;
         margin-bottom: 10px;
     }
+
 
     @media (max-width: 1000px) {
         .search-btn {

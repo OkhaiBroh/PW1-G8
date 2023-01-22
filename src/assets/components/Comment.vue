@@ -6,7 +6,7 @@
 
 <template>
     <article class="comment-article">
-        <img class="ico-user" src="../assets/icons/ico_profile_default.svg" />
+        <img class="ico-user" src="../icons/ico_profile_default.svg" />
         <div class="comment-info">
           <div class="comment-user-name">
             <b> {{ username }}</b>

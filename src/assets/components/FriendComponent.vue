@@ -1,14 +1,17 @@
 <script>
 
 export default {
+
   
   props: ["id", "username", "image"]
   
+
 
 }
 </script>
 
 <template>
+
     <RouterLink class="friend_div" :to="{name:'other profile', params: {id:id} }">
 
           <img

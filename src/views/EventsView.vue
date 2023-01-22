@@ -68,6 +68,7 @@ export default {
     align-items: center;
   }
 
+
   .searcher-section {
     margin-bottom: 20px;
   }
