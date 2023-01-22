@@ -547,7 +547,7 @@ export default {
     padding: 0;
   }
   .extra-info {
-    align-self: flex-end;
+    align-self: flex-center;
     display: flex;
 
     flex-direction: column;
@@ -565,6 +565,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    width: fit-content;
   }
   .comment-button,
   .rate-us-button,
