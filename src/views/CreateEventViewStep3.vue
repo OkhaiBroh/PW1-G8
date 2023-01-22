@@ -1,3 +1,12 @@
+<script>
+import newEvent from '../assets/js/newEvent.js'
+
+export default {
+  extends: newEvent
+}
+
+</script>
+
 <template>
   <main class="general-container">
     <form class="main-panel">
@@ -19,22 +28,38 @@
         </div>
       </div>
       <section class="data-input">
+        <div class="event-latitude-input camp">
+          <p class="camp-title latitude">Latitude</p>
+          <input
+            class="input latitude-input"
+            name="event-latitude"
+            type="text"
+            v-model="latitude"
+          />
+        </div>
+        <div class="event-longitude-input camp">
+          <p class="camp-title longitude">Longitude</p>
+          <input class="input longitude-input" name="event-type" type="text" v-model="longitude"/>
+        </div>
+      </section>
+      <section class="data-input">
         <div class="event-participants-input camp">
           <p class="camp-title participants">Participants</p>
           <input
             class="input participants-input"
             name="event-participants"
             type="text"
+            v-model="n_participators"
           />
         </div>
         <div class="event-type-input camp">
           <p class="camp-title type">Type</p>
-          <input class="input type-input" name="event-type" type="text" />
+          <input class="input type-input" name="event-type" type="text" v-model="type"/>
         </div>
       </section>
       <div class="button-panel">
         <RouterLink class="back-btn" to="/create-event-2"> Back </RouterLink>
-        <RouterLink class="create-btn" to="/create-event-4">
+        <RouterLink class="create-btn" to="/create-event-4" v-on:click="addEvent()">
           Create
         </RouterLink>
       </div>
@@ -70,8 +95,7 @@
           DATA INPUT
     **********************/
 
-.event-participants-input,
-.event-type-input {
+.input {
   margin-right: 30px;
 }
 
@@ -79,10 +103,6 @@
   font-weight: bold;
   margin-bottom: 6px;
   margin-left: 15px;
-}
-
-.input {
-  height: 136px;
 }
 
 /**********************

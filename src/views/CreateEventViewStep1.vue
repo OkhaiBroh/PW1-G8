@@ -1,3 +1,11 @@
+<script>
+import newEvent from '../assets/js/newEvent.js'
+
+export default {
+  extends: newEvent
+}
+</script>
+
 <template>
   <main class="general-container">
     <form class="main-panel">
@@ -22,7 +30,7 @@
         <div class="name-description-camps">
           <div class="event-name-input camp">
             <p class="camp-title name">Name</p>
-            <input class="input name-input" name="event-name" type="text" />
+            <input class="input name-input" name="event-name" type="text" v-model="name"/>
           </div>
           <div class="event-location-input camp">
             <p class="camp-title location">Location</p>
@@ -30,6 +38,7 @@
               class="input location-input"
               name="event-location"
               type="text"
+              v-model="location"
             />
           </div>
         </div>
@@ -39,11 +48,12 @@
             class="input description-input"
             name="event-description"
             type="text"
+            v-model="description"
           />
         </div>
       </section>
       <div class="button-panel">
-        <RouterLink class="next-btn" to="/create-event-2"> Next </RouterLink>
+        <RouterLink class="next-btn" to="/create-event-2" v-on:click="addEventStep1()"> Next </RouterLink>
       </div>
     </form>
   </main>

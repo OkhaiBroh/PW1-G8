@@ -1,3 +1,11 @@
+<script>
+import newEvent from '../assets/js/newEvent.js'
+
+export default {
+  extends: newEvent
+}
+</script>
+
 <template>
   <main class="general-container">
     <form class="main-panel">
@@ -25,7 +33,8 @@
             <input
               class="input start-date-input"
               name="event-start-date"
-              type="text"
+              type="date"
+              v-model="start_date"
             />
           </div>
           <div class="event-end-date-input camp">
@@ -33,22 +42,24 @@
             <input
               class="input end-date-input"
               name="event-end-date"
-              type="text"
+              type="date"
+              v-model="end_date"
             />
           </div>
         </div>
         <div class="event-image-input camp">
-          <p class="camp-title photo">Image</p>
-          <img
-            class="event-image"
-            src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"
-            alt=""
+          <p class="camp-title photo">Image URL</p>
+          <input
+            class="input event-image"
+            name="event-image-path"
+            type="text"
+            v-model="image"
           />
         </div>
       </section>
       <div class="button-panel">
         <RouterLink class="back-btn" to="/create-event-1"> Back </RouterLink>
-        <RouterLink class="next-btn" to="/create-event-3"> Next </RouterLink>
+        <RouterLink class="next-btn" to="/create-event-3" v-on:click="addEventStep2()"> Next </RouterLink>
       </div>
     </form>
   </main>
@@ -94,7 +105,6 @@
 
 .event-image {
   width: 340px;
-  height: 148px;
   border: 2px solid var(--black_color);
   border-radius: 20px;
 }
