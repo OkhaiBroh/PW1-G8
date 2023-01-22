@@ -79,31 +79,36 @@ export default {
     },
 
     rateEvent(rating) {
-      this.updateStars(rating);
+      this.checkAssistance().then(assistance => {
+        
+      if(assistance.length == 0){
+        alert("You cannot rate if you are not in the event");
+        return;
+      } else {
+        this.updateStars(rating);
 
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
-      let assistance = {
-        puntuation: rating*2,
-      };
-      console.log(JSON.stringify(assistance));
-      fetch(url, {
-        method: 'PUT',
-        headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.token
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify(assistance),
+        let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
+        let assistance = {
+          puntuation: rating*2,
+        };
+        console.log(JSON.stringify(assistance));
+        fetch(url, {
+          method: 'PUT',
+          headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + this.token
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify(assistance),
 
-      }).then(response => response.json()
-      ).then(data => console.log(data)
-      ).catch(error => console.error(error))
-
+          }).then(response => response.json()
+          ).then(data => console.log(data))
+      }
+      }).catch(error => console.error(error))
     }, 
     joinEvent() {
       this.checkAssistance().then(assistance => {
-        console.log("MY ASSISTANCE");
-        console.log("hola" +assistance);
+        
       if(assistance.length != 0){
         alert("You are already in this event");
         return;
@@ -131,30 +136,36 @@ export default {
     
     }, 
     postComment() {
-       console.log(this.eventID);
+      this.checkAssistance().then(assistance => {
+        
+      if(assistance.length == 0){
+        alert("You cannot comment if you are not in this event");
+        return;
+      } else {
+        let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
+        let assistance = {
+          comentary: this.new_comment,
+        }
+          fetch(url, {
+            method: 'PUT',
+            headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + this.token
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(assistance),
 
-      let id = 1295;
-      let url = 'http://puigmal.salle.url.edu/api/v2/events/' + this.eventID + "/assistances";
-      let assistance = {
-        comentary: this.new_comment,
-      }
-      fetch(url, {
-        method: 'PUT',
-        headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.token
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify(assistance),
+          }).then(response => response.json()
+          ).then(data => {
+            console.log('My data' + data);
+            this.getComments();
+          }
+          ).catch(error => {
+            this.getComments();
+          })
 
-      }).then(response => response.json()
-      ).then(data => {
-        console.log('My data' + data);
-        this.getComments();
       }
-      ).catch(error => {
-        this.getComments();
-      })
+      }).catch(error => console.error(error))
 
     }, 
 
