@@ -1,30 +1,42 @@
 <script>
 
-export default{
-    props: ["id", "name", "location", "date"]
+export default {
+    props: ["id", "name", "image", "location", "date"]
 }
 </script>
 
 <template>
     <div class="event-container box-shadow">
-        <img
-            class="event-image" src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg" alt=""/>
-        <p class="timeline-title-text"> {{ name }} </p>
+        <img class="event-image" :src=image onerror='this.src="https://st.depositphotos.com/1053646/1770/i/950/depositphotos_17700789-stock-photo-dance-club.jpg"' alt=""/>
+        <div class="info-container">
+            <p class="timeline-title-text"> {{ name }} </p>
+        </div>
         <div class="info-container">
             <img class="ico" src="../icons/ico_location.svg" alt="location ico"/>
-            <p class="timeline-info-text"> {{ location }} </p>
+            <p class="timeline-info-text" > {{ location }} </p>
         </div>
         <div class="info-container">
             <img class="ico" src="../icons/ico_calendar.svg" alt="calendar ico"/>
             <p class="timeline-info-text"> {{ date }} </p>
         </div>
-    </div>   
+    </div>  
 </template>
 
 <style scoped>
+    .timeline-info-text, .timeline-title-text {
+        width: 120px;
+        overflow: hidden; 
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .timeline-title-text {
+        width: 160px;
+    }
+
     .event-container {
-        width: fit-content;
-        height: fit-content;
+        width: 140px;
+        height: 175px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -38,11 +50,12 @@ export default{
     }
 
     .box-shadow {
-        box-shadow: 0px 15px 20px 5px rgba(0, 0, 0, 0.07);
+        box-shadow: 5px 15px 20px 5px rgba(0, 0, 0, 0.07);
     }
 
     .event-image {
-        max-width: 145px;
+        width: 145px;
+        height: 97px;
         border-radius: 15px;
     }
 
@@ -67,6 +80,7 @@ export default{
         justify-content: center;
         flex-direction: row;
         margin-top: 10px;
+        text-align: center;
     }
 
 </style>

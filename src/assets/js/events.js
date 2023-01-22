@@ -1,4 +1,5 @@
 import Event from "../components/Event.vue";
+import EventBar from "../components/EventBar.vue";
 
 export default {
     data() {
@@ -6,21 +7,31 @@ export default {
             name: '',
             date: '',
             location: '',
-            event_query: [
-                {id: 1, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
-                {id: 2, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
-                {id: 3, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
-                {id: 4, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
-                {id: 5, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
-                {id: 6, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
-                {id: 7, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
-                {id: 8, name: "La fiestita", location: "Barcelona", date: "21/01/2023"},
-                {id: 9, name: "La fiestita", location: "Barcelona", date: "21/01/2023"}
-            ]
+            event_query: []
         }
     },
     components: {
-        Event
+        Event,
+        EventBar
+    },
+    mounted: function() {
+        let url = "http://puigmal.salle.url.edu/api/v2/events";
+
+        console.log(url);
+
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MjM4NSwibmFtZSI6Ik9raGFpQnJvaCIsImxhc3RfbmFtZSI6Ik5vbmUiLCJlbWFpbCI6ImFybmF1QGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxNS8xMC8wNS8yMi8zNy9ibGFuay1wcm9maWxlLXBpY3R1cmUtOTczNDYwXzk2MF83MjAucG5nIn0.f47aywurpTVpWb6QmpLJoWY3UsLyZy0T-c3OqMO7FTQ"
+            }
+        })
+        .then(response => response.json())
+        .then(data => data.forEach(event => {
+                this.event_query.push({id: event.id, name: event.name, image: event.image, location: event.location, date: event.date.substring(0,10).replaceAll("-","/")})
+                console.log(this.event_query)
+            })
+        )
+        .catch(error => console.error(error))
     },
     methods: {
         search () {

@@ -27,22 +27,9 @@ export default {
       <button class="search-btn" v-on:click.prevent="search"> Search </button>
     </section>
     <section class="searcher-section panel">
-      <div class="upper-searcher-section">
-        <div class="search-bar">
-          <input
-            class="search-input"
-            name="search-query"
-            placeholder="Search..."
-            type="text"
-          /> <!-- v-model is the assignment to JS reference -->
-          
-        </div>
-        <RouterLink class="create-btn" to="/create-event-1">
-          Create
-        </RouterLink>
-      </div>
+      <EventBar></EventBar>
       <section class="events-panel">
-        <Event v-for="event in event_query" :key="event.id" :id="event.id" :name="event.username" :location="event.location" :date="event.date"/>
+        <Event v-for="event in event_query" :key="event.id" :id="event.id" :name="event.name" :image="event.image" :location="event.location" :date="event.date"/>
     </section>
     </section>
   </main>
@@ -57,11 +44,11 @@ export default {
   align-content: center;
   flex-direction: row;
 
-  padding: 80px;
+  padding: 70px;
 }
 
 .panel {
-  height: 85%;
+  height: 88%;
   display: flex;
 
   flex-direction: column;
@@ -119,63 +106,6 @@ export default {
 }
 
 /*************************
-      SEARCHER + CREATE
-**************************/
-
-.upper-searcher-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  padding: 10px 20px 0px 20px;
-}
-
-.search-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  border: 4px solid var(--blue_color);
-  border-radius: 100px;
-  padding: 10px;
-}
-
-.search-input {
-  width: 540px;
-  vertical-align: center;
-  border: none;
-  margin: 2px 0px 2px 15px;
-}
-
-.search-input:focus {
-  outline: none;
-}
-
-.create-btn, .search-btn {
-  background-color: var(--blue_color);
-  color: var(--white_color);
-  border-radius: 25px;
-  padding: 10px;
-  text-decoration: none;
-  text-align: center;
-
-  border: 2px solid var(--blue_color);
-  font-weight: 700;
-  width: 150px;
-  margin: 0 0 0 40px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.search-btn {
-  margin: 0px;
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-/*************************
         EVENTS
 **************************/
 
@@ -200,6 +130,28 @@ export default {
   width: 100%;
 
   margin-top: 20px;
+}
+
+.events-panel::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 20px;
+}
+
+/* Track */
+.events-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.events-panel::-webkit-scrollbar-thumb {
+  background: var(--blue_color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.events-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--blue_color);
 }
 
 
