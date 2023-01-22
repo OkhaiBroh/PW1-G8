@@ -69,14 +69,15 @@ export default {
             result.forEach(element => {
               let elemento = element;
               AuthService.setID(elemento.id);
-            });
 
+            });
+            document.cookie = "id=" + AuthService.getID();
             let prueba = AuthService.getID();
-            console.log('ID:' + prueba);
           })
       },
 
       Login() {
+
           let loginURL = "http://puigmal.salle.url.edu/api/v2/users/login";
           
           let data = {
@@ -97,10 +98,11 @@ export default {
             AuthService.setToken(result.accessToken);
 
             let prueba = AuthService.getToken();
-            console.log(prueba);
 
             let getIdURL = "http://puigmal.salle.url.edu/api/v2/users/search?s=" + this.email;
             this.GetUserID(getIdURL);
+
+            document.cookie = "token=" + AuthService.getToken();
           })
       }
   }
