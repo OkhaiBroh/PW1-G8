@@ -157,7 +157,6 @@ export default {
 
           }).then(response => response.json()
           ).then(data => {
-            console.log('My data' + data);
             this.getComments();
           }
           ).catch(error => {
