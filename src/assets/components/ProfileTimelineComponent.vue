@@ -1,11 +1,12 @@
 <script>
 import events from '../js/events.js'
+import AuthService from '../js/AuthService.js';
 
 export default {
   extends: events,
   methods: {
     sortList() {
-      this.search("http://puigmal.salle.url.edu/api/v2/events/best")
+      this.search("http://puigmal.salle.url.edu/api/v2/events/" + AuthService.getID() + "/events")
     }
   }
 }

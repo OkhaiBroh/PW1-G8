@@ -1,4 +1,5 @@
 import Event from "../components/Event.vue";
+import AuthService from '../js/AuthService.js';
 
 export default {
     data() {
@@ -21,7 +22,7 @@ export default {
         fetch(url, {
             method: 'GET',
             headers: {
-                "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MjM4NSwibmFtZSI6Ik9raGFpQnJvaCIsImxhc3RfbmFtZSI6Ik5vbmUiLCJlbWFpbCI6ImFybmF1QGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxNS8xMC8wNS8yMi8zNy9ibGFuay1wcm9maWxlLXBpY3R1cmUtOTczNDYwXzk2MF83MjAucG5nIn0.f47aywurpTVpWb6QmpLJoWY3UsLyZy0T-c3OqMO7FTQ"
+                "Authorization": "Bearer " + AuthService.getToken()
             }
         })
         .then(response => response.json())
@@ -40,7 +41,7 @@ export default {
             fetch(url, {
                 method: 'GET',
                 headers: {
-                    "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MjM4NSwibmFtZSI6Ik9raGFpQnJvaCIsImxhc3RfbmFtZSI6Ik5vbmUiLCJlbWFpbCI6ImFybmF1QGdtYWlsLmNvbSIsImltYWdlIjoiaHR0cHM6Ly9jZG4ucGl4YWJheS5jb20vcGhvdG8vMjAxNS8xMC8wNS8yMi8zNy9ibGFuay1wcm9maWxlLXBpY3R1cmUtOTczNDYwXzk2MF83MjAucG5nIn0.f47aywurpTVpWb6QmpLJoWY3UsLyZy0T-c3OqMO7FTQ"
+                    "Authorization": "Bearer " + AuthService.getToken()
                 }
             })
             .then(response => response.json())
