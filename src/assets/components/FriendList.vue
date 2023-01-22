@@ -93,9 +93,10 @@ export default {
 </script>
 
 <template>
-    <section v-if="option ==='list'" class="list_panel">
+    <section v-if="option ==='list'" class="list-panel">
         <Friend v-for="friend in friends" :key="friend.id" :id="friend.id" :username="friend.username" :image="friend.image" />
     </section>
+    <!-- NOTE: if there are no friends requests the section won't be displayed -->
     <section v-if="option ==='request_list'" class="list_panel">
         <FriendRequest v-for="friend_request in friends_request" 
             :key="friend_request.id" :id="friend_request.id" 
@@ -108,7 +109,7 @@ export default {
 
 <style scoped>
 
-    .list_panel {
+    .list-panel {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
@@ -128,9 +129,32 @@ export default {
 }
 
 
+.list-panel::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 20px;
+}
+
+/* Track */
+.list-panel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.list-panel::-webkit-scrollbar-thumb {
+  background: var(--blue_color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.list-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--blue_color);
+}
+
+
 @media (max-width: 1000px) {
 
-  .list_panel {
+  .list-panel {
     margin: 20px;
     padding: 10px;
     display: flex;

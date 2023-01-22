@@ -22,7 +22,7 @@ export default{
   <main class="background">
     
     <FriendOptions v-on:to-list="this.$refs.list.toList()" v-on:to-request-list="this.$refs.list.toRequestList()"/>
-    <FriendList ref="list"/>
+    <FriendList  ref="list"/>
     
   </main>
 </template>
@@ -31,16 +31,19 @@ export default{
 .background {
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-content: center;
   padding: 5vh;
+}
+.list {
+  width:1000px;
+  height: 700px;
 }
 
 @media (max-width: 1000px) {
   .background {
     flex-direction: column;
-
-    justify-content: center;
+    
     width: 100%;
     align-content: unset;
     justify-content: unset;
