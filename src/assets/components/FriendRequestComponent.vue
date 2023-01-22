@@ -1,12 +1,47 @@
 <script>
-export default{
+      import AuthService from "../js/AuthService.js";
+
+export default {
+
+    data() {
+        return {
+            token: AuthService.getToken(),
+        }
+    },
     props: ["id", "username", "image"], 
     methods: {
         accept: function(){
             console.log("accept");
+             // API
+            let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.id;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.token
+                }
+            }).then(response => response.json())
+            .then(result => {
+               alert("Friend added");
+               this.$emit('update');
+            })
+            .catch(error => console.error(error));
         },
         reject: function(){
             console.log("reject");
+            let url = "http://puigmal.salle.url.edu/api/v2/friends/" + this.id;
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.token
+                }
+            }).then(response => response.json())
+            .then(result => {
+               alert("Friend added");
+               this.$emit('update');
+            })
+            .catch(error => console.error(error));
         }
     }
 }

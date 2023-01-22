@@ -83,4 +83,39 @@ export default {
         width: 25px;
         height: 25px;
     }
+
+@media (max-width: 1000px) {
+  
+  .panel {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 0px;
+    padding-top: 20px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+  }
+  .friends {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .friends_options {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  .option {
+    width: 110px;
+    margin: 0;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+  }
+ 
+}
 </style>
+
+
