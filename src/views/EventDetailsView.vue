@@ -156,13 +156,23 @@ export default {
         console.log('My data' + data);
         getComments();
       }
-      ).catch(error => console.error(error))
+      ).catch(error => {
+        this.getComments();
+      })
 
+    }, 
+
+    async copyLink() {
+      try {
+        await navigator.clipboard.writeText(this.$router.currentRoute.fullPath);
+        console.log('Link copied to clipboard');
+        console.log(this.$router.currentRoute.fullPath)
+      } catch (err) {
+        console.error('Failed to copy');
+      }
     }
   }, 
-
   
-
   mounted: function () {
     
   
@@ -255,7 +265,7 @@ export default {
               alt=""
             />
           </a>
-          <div class="share-button">
+          <div class="share-button" v-on:click="copyLink()">
             <b class="button-text">Share</b>
             <img class="share-ico" src="../assets/icons/ico_share.svg" alt="" />
           </div>
