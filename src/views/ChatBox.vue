@@ -1,16 +1,19 @@
 <script>
 //import AuthService from '../assets/js/AuthService.js'
     export default {
+        name: "ChatBox",
         data(){
             return{
                 userID: 9/*AuthService.getID()*/,
                 token: "ksksksksksk"/*AuthService.getToken()*/,
-                friends:[
-                    {id: 1, friendname: "Arnau Ros"},
-                    {id: 2, friendname: "David Deu"},
-                    {id: 3, friendname: "Tomas Uzcudun"},
-                ],
-            }    
+                friendName:""
+            }   
+        },
+        mounted(){
+            this.$root.$on("Friend-Name", (msg) => {
+                console.log(msg);
+                friendName = msg;
+            });
         },
         methods: {
             showInput(){
@@ -20,6 +23,7 @@
                     //--------------------firstDiv.className="message_cotainer";-----------------------------//
                     firstDiv.style.cssText = 'position: relative; display: inline-block; width: 100%; margin: 0 0 10px 0; padding: 0;';
                     let secondDiv = document.createElement("div");
+                    //firstDiv.className="#message_cotainer";
                     //--------------------secondDiv.className="message-background other-message-background";-----------------------------//
                     secondDiv.style.cssText = 'display: flex; width: fit-content; border-radius: 10px; margin: 0 0 5px 0; float: right; background-color: var(--blue_color);';
                     let pElement = document.createElement("p");
@@ -62,7 +66,7 @@
     <div>
         <div class="ico-and-name">
             <img class="my_ico" src="../assets/icons/ico_user_chat.svg" />
-            <p class="p_style_user" id="friend-name-chat" >Arnau Ros Sánchez</p>
+            <p class="p_style_user" id="friend-name-chat" >{{friendName}}</p>
         </div>
         <hr class="line" />
         <div class="chat" id="chatmsgs">

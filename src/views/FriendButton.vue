@@ -1,14 +1,48 @@
 <script>
     export default {
-        props: ["friendname"]
+        name: "FriendButton",
+        props: {
+            friendname: String
+        },
+        methods:{
+            showChatByName(){
+                let friendName = document.getElementById("friend-Name").innerText;
+                console.log(friendName);
+                this.$root.$emit("Friend-Name", this.friendName);
+
+                //------GET chat with user-----//
+                let url = 'http://puigmal.salle.url.edu/api/v2/messages/';
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-type': 'application/json',
+                        'Authorization': 'Bearer' + this.token
+                    }
+                }).then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    data.forEach(element =>{
+                        message = {
+                            id: element.id,
+                            content: element.content,
+                            userIDSend: element.user_id_send,
+                            userIDRecived: element.user_id_recived,
+                            timeStamp: element.timeStamp
+                        }
+                        this.messages.push(message);
+                    })
+                }) 
+            }
+        }
     }
 </script>
 
 <template>
     <div class="user_chat">
         <button class="button_chat" @click="showChatByName()">
-          <img class="ico" src="../assets/icons/ico_user_chat.svg" />
-          <p class="p_style" id="friend-Name">{{ friendname }}</p>
+            <router-link to="/ChatBox"></router-link>
+            <img class="ico" src="../assets/icons/ico_user_chat.svg" />
+            <p class="p_style" id="friend-Name">{{ friendname }}</p>
         </button>
     </div>
 </template>
